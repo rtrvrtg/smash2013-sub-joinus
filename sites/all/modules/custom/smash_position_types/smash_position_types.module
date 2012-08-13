@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SMASH! Position Types feature.
+ */
+
+include_once 'smash_position_types.features.inc';
