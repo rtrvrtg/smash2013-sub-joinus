@@ -9,6 +9,8 @@ projects[ctools][version] = "1.1"
 
 projects[bundle_copy][version] = "1.1"
 
+projects[compass][version] = "1.0-beta1"
+
 projects[devel][version] = "1.3"
 
 projects[email][version] = "1.1"
@@ -29,6 +31,8 @@ projects[panels][version] = "3.2"
 
 projects[registration][version] = "1.0-beta3"
 
+projects[rules][version] = "2.2"
+
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
 projects[smash_position_list][download][type] = ""
@@ -37,8 +41,25 @@ projects[smash_position_list][type] = "module"
 projects[smash_position_list][subdir] = "custom"
 projects[smash_position_list][version] = "0.1"
 
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
+projects[smash_position_types][download][type] = ""
+projects[smash_position_types][download][url] = ""
+projects[smash_position_types][type] = "module"
+projects[smash_position_types][subdir] = "custom"
+projects[smash_position_types][version] = "0.1"
+
 projects[unique_field][version] = "1.0-rc1"
 
 projects[views][version] = "3.3"
+
+; Themes
+projects[zen][version] = "5.1"
+
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
+projects[smash_joinus][download][type] = ""
+projects[smash_joinus][download][url] = ""
+projects[smash_joinus][type] = "theme"
 
 
