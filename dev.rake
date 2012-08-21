@@ -3,38 +3,45 @@ require 'active_record'
 require 'yaml'
 require 'fileutils'
 
+namespace :bundler do
+  task :setup do
+    require 'rubygems'
+    require 'bundler/setup'
+  end
+end
+
 task :environment, [:env] => 'bundler:setup' do |cmd, args|
   ENV["DRUPAL_ENV"] = args[:env] || "development"
-  ActiveRecord::Base.establish_connection(YAML::load(File.open('config/database.yml')))
+  config = YAML::load(File.open('config/database.yml'))
+  ActiveRecord::Base.establish_connection(config[ENV["DRUPAL_ENV"]])
   ActiveRecord::Base.logger = Logger.new(File.open('database.log', 'a'))
 end
 
 namespace :db do
   
   desc "Show settings"
-  task :settings => :environment do
+  task :settings, :env do |cmd, args|
     env = args[:env] || "development"
     Rake::Task['environment'].invoke(env)
     
-    abcs = ActiveRecord::Base.configurations
-    puts DRUPAL_ENV
-    puts abcs[DRUPAL_ENV]
+    config = YAML::load(File.open('config/database.yml'))
+    puts config[ENV["DRUPAL_ENV"]]
   end
   
   desc "Drop database"
-  task :drop => :environment do
-    abcs = ActiveRecord::Base.configurations
-    puts DRUPAL_ENV
-    puts abcs[DRUPAL_ENV]
-    #ActiveRecord::Base.establish_connection(abcs[DRUPAL_ENV])
-    ActiveRecord::Base.connection.drop_database ActiveRecord::Base.connection.current_database rescue nil
+  task :drop, :env do |cmd, args|
+    env = args[:env] || "development"
+    Rake::Task['environment'].invoke(env)
+    
+    ActiveRecord::Base.connection.drop_database ActiveRecord::Base.connection.current_database
   end
   
   desc "Create database"
-  task :create => :environment do
-    abcs = ActiveRecord::Base.configurations
-    #ActiveRecord::Base.establish_connection(abcs[DRUPAL_ENV])
-    ActiveRecord::Base.connection.create_database ActiveRecord::Base.connection.current_database rescue nil
+  task :create, :env do |cmd, args|
+    env = args[:env] || "development"
+    Rake::Task['environment'].invoke(env)
+    
+    ActiveRecord::Base.connection.create_database ActiveRecord::Base.connection.current_database
   end
   
 end
@@ -46,7 +53,10 @@ end
 namespace :dev do
 
   desc "Basic development setup process"
-  task :setup do
+  task :setup, :env do |cmd, args|
+    env = args[:env] || "development"
+    Rake::Task['environment'].invoke(env)
+    
     if Rails.env.production?
       raise StandardError, "You probably didn't mean to setup the production database"
     end
@@ -55,7 +65,10 @@ namespace :dev do
   end
 
   # Nukes the database completely and re builds it using any seed file that is present.
-  task :nuke do
+  task :nuke, :env do |cmd, args|
+    env = args[:env] || "development"
+    Rake::Task['environment'].invoke(env)
+    
     Rake::Task["db:drop"].invoke
     Rake::Task["db:create"].invoke
   end
@@ -63,7 +76,10 @@ namespace :dev do
 
   # Creates the needed config files for the system to start.  Put extra config files into
   # the config_files array with the source example file first and the target file second
-  task :config_files do
+  task :config_files, :env do |cmd, args|
+    env = args[:env] || "development"
+    Rake::Task['environment'].invoke(env)
+    
     wd = File.expand_path File.dirname(__FILE__)
     puts wd
     config_files = [
@@ -84,24 +100,40 @@ end
 namespace :drush do
   
   desc "Runs the makefile"
-  task :make do
+  task :make, :env do |cmd, args|
+    env = args[:env] || "development"
+    Rake::Task['environment'].invoke(env)
+    
     sh "drush make joinus.make ."
   end
   
   desc "Nukes Drupal site"
-  task :nuke do
+  task :nuke, :env do |cmd, args|
+    env = args[:env] || "development"
+    Rake::Task['environment'].invoke(env)
+    
     sh "rm sites/default/settings.php"
   end
   
   desc "Installs a site"
-  task :install do
-    db_url = 'mysql://root:password@localhost/db'
-    db_su = 'root'
-    db_su_pw = 'password'
-    account_name = 'admin'
-    account_mail = 'admin@example.com'
-    site_mail = 'admin@example.com'
-    sh "drush site-install smash2013ws --db-url=$DB_URL --db-su=$SU_USER --db-su-pw=$SU_PASS --account-name=$AD_USER --account-mail=$AD_MAIL --site-mail=$AD_MAIL"
+  task :install, :env do |cmd, args|
+    env = args[:env] || "development"
+    Rake::Task['environment'].invoke(env)
+    
+    config = YAML::load(File.open('config/drush.yml'))
+    site_cfg = config[ENV["DRUPAL_ENV"]]
+    puts site_cfg
+    
+    cmd = "drush site-install smash2013ws"
+    account_setup = "--account-name=#{site_cfg['account_name']} --account-mail=#{site_cfg['account_mail']} --site-mail=#{site_cfg['site_mail']}"
+    db_switch = "--db-url=#{site_cfg['db_url']}"
+    db_su = "--db-su=#{site_cfg['db_su']} --db-su-pw=#{site_cfg['db_su_pw']}"
+    
+    if site_cfg[:db_sqlite_scheme] then
+      sh "#{cmd} #{db_switch} #{account_setup}"
+    else
+      sh "#{cmd} #{db_switch} #{db_su} #{account_setup}"
+    end
   end
   
 end
