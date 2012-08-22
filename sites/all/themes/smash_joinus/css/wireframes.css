@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Wireframes Styling
+ *
+ * Add wireframes to the basic layout elements.
+ */
+/* Fonts */
+@font-face {
+  font-family: 'ChunkFiveRegular';
+  src: url("../fonts/Chunkfive-webfont.eot");
+  src: local("☺"), url("../fonts/Chunkfive-webfont.woff") format("woff"), url("../fonts/Chunkfive-webfont.ttf") format("truetype"), url("../fonts/Chunkfive-webfont.svg#webfont90E2uSjN") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Strong Yellow, also the header bar BG */
+/* line 19, ../sass/wireframes.scss */
+.with-wireframes #header,
+.with-wireframes #main,
+.with-wireframes #content,
+.with-wireframes #navigation,
+.with-wireframes .region-sidebar-first,
+.with-wireframes .region-sidebar-second,
+.with-wireframes #footer,
+.with-wireframes .region-bottom {
+  outline: 1px solid #ccc;
+}

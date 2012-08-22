@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Form Styling
+ */
+/* Fonts */
+@font-face {
+  font-family: 'ChunkFiveRegular';
+  src: url("../fonts/Chunkfive-webfont.eot");
+  src: local("☺"), url("../fonts/Chunkfive-webfont.woff") format("woff"), url("../fonts/Chunkfive-webfont.ttf") format("truetype"), url("../fonts/Chunkfive-webfont.svg#webfont90E2uSjN") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Strong Yellow, also the header bar BG */
+@media all and (min-width: 640px) {
+  /* line 8, ../sass/forms_safe_save_012216.scss */
+  #main form {
+    margin: 0px auto;
+    width: 80%;
+  }
+}
+@media all and (min-width: 960px) {
+  /* line 8, ../sass/forms_safe_save_012216.scss */
+  #main form {
+    width: 768px;
+  }
+}
+
+/* line 19, ../sass/forms_safe_save_012216.scss */
+.form-item {
+  /* Wrapper for a form element (or group of form elements) and its label */
+  margin: 1.5em 0;
+}
+/* line 24, ../sass/forms_safe_save_012216.scss */
+.form-item input[type="text"],
+.form-item textarea,
+.form-item select {
+  -webkit-border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -ms-border-radius: 7px 7px 7px 7px;
+  -o-border-radius: 7px 7px 7px 7px;
+  border-radius: 7px 7px 7px 7px;
+  padding: 5px 10px;
+  background-color: white;
+  color: #ae0000;
+  border: 0px none;
+  font-weight: bold;
+}
+/* line 35, ../sass/forms_safe_save_012216.scss */
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  /* Highlight the form elements that caused a form submission error */
+  border: 1px solid #c00;
+}
+/* line 39, ../sass/forms_safe_save_012216.scss */
+.form-item label {
+  /* The label for a form element */
+  display: block;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+/* line 45, ../sass/forms_safe_save_012216.scss */
+.form-item label.option {
+  /* The label for a radio button or checkbox */
+  display: inline;
+  font-weight: normal;
+}
+/* line 50, ../sass/forms_safe_save_012216.scss */
+.form-item .form-required {
+  /* The part of the label that indicates a required field */
+  color: #c00;
+}
+/* line 54, ../sass/forms_safe_save_012216.scss */
+.form-item .description {
+  /* The descriptive help text (separate from the label) */
+  font-size: 0.85em;
+}
+/* line 59, ../sass/forms_safe_save_012216.scss */
+.form-checkboxes .form-item, .form-radios .form-item {
+  /* Pack groups of checkboxes and radio buttons closer together */
+  margin: 0;
+  /* Drupal core uses "0.4em 0" */
+}
+
+/* line 64, ../sass/forms_safe_save_012216.scss */
+.form-submit {
+  /* The submit button */
+}
+
+/* line 69, ../sass/forms_safe_save_012216.scss */
+.container-inline div,
+.container-inline label {
+  /* Inline labels and form divs */
+  display: inline;
+}
+
+/* line 74, ../sass/forms_safe_save_012216.scss */
+.tips {
+  /* Tips for Drupal's input formats */
+}
+
+/* line 77, ../sass/forms_safe_save_012216.scss */
+a.button {
+  /* Buttons used by contrib modules like Media */
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+/*
+ * Password confirmation
+ */
+/* line 86, ../sass/forms_safe_save_012216.scss */
+.password-parent,
+.confirm-parent {
+  margin: 0;
+}
+
+/*
+ * Search (search-block-form.tpl.php)
+ */
+/* line 94, ../sass/forms_safe_save_012216.scss */
+#block-search-form {
+  /* Wrapper for the search form */
+}
+
+/*
+ * Drupal's default login form block
+ */
+/* line 101, ../sass/forms_safe_save_012216.scss */
+#user-login-form {
+  text-align: left;
+  /* LTR */
+  /*
+   * OpenID
+   *
+   * The default styling for the OpenID login link seems to assume Garland's
+   * styling of list items.
+   */
+}
+/* line 111, ../sass/forms_safe_save_012216.scss */
+#user-login-form ul {
+  /* OpenID creates a new ul above the login form's links. */
+  margin-bottom: 0;
+  /* Position OpenID's ul next to the rest of the links. */
+}
+/* line 116, ../sass/forms_safe_save_012216.scss */
+html.js #user-login-form li.openid-link,
+#user-login-form li.openid-link {
+  /* The "Log in using OpenID" link. */
+  margin-top: 1.5em;
+  margin-left: -20px;
+  /* LTR */
+  /* Un-do some of the padding on the ul list. */
+}
+/* line 121, ../sass/forms_safe_save_012216.scss */
+#user-login-form li.user-link {
+  /* The "Cancel OpenID login" link. */
+  margin-top: 1.5em;
+}
+
+/* line 126, ../sass/forms_safe_save_012216.scss */
+#user-login ul {
+  margin: 1.5em 0;
+}
+
+/*
+ * Drupal admin tables
+ *
+ * We overrode these styles in normalize.css, but restore them for the admin
+ * section of the site.
+ */
+/* line 138, ../sass/forms_safe_save_012216.scss */
+form th {
+  text-align: left;
+  /* LTR */
+  padding-right: 1em;
+  /* LTR */
+  border-bottom: 3px solid #ccc;
+}
+/* line 144, ../sass/forms_safe_save_012216.scss */
+form tbody {
+  border-top: 1px solid #ccc;
+}
+/* line 148, ../sass/forms_safe_save_012216.scss */
+form tr.even {
+  background-color: #fff;
+}
+/* line 152, ../sass/forms_safe_save_012216.scss */
+form table .item-list ul {
+  margin: 0;
+}
+
+/*
+ * Drupal core wrongly puts this in system.menus.css. Since we override that, add it back.
+ */
+/* line 171, ../sass/forms_safe_save_012216.scss */
+td.menu-disabled {
+  background: #ccc;
+}

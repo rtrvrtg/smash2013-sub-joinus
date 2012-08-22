@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Views Styling
+ */
+/* Fonts */
+@font-face {
+  font-family: 'ChunkFiveRegular';
+  src: url("../fonts/Chunkfive-webfont.eot");
+  src: local("☺"), url("../fonts/Chunkfive-webfont.woff") format("woff"), url("../fonts/Chunkfive-webfont.ttf") format("truetype"), url("../fonts/Chunkfive-webfont.svg#webfont90E2uSjN") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Strong Yellow, also the header bar BG */
+/*
+ * Views' admin tabs
+ *
+ * The views admin tabs use the same classes as the secondary tabs. We prevent
+ * some of our tab styling from bleeding into (and breaking) the Views admin
+ * pages. If your sub-theme isn't used for admin pages, you can remove this
+ * entire section.
+ */
+/* line 18, ../sass/views-styles.scss */
+.views-displays .secondary li {
+  float: none;
+  margin: 0 6px 0;
+}
+/* line 24, ../sass/views-styles.scss */
+.views-displays .secondary a:link,
+.views-displays .secondary a:visited {
+  text-shadow: none;
+  padding: 2px 7px 3px;
+}
+/* line 29, ../sass/views-styles.scss */
+.views-displays .secondary .open > a {
+  -webkit-border-radius: 7px 7px 0 0;
+  -moz-border-radius: 7px 7px 0 0;
+  -ms-border-radius: 7px 7px 0 0;
+  -o-border-radius: 7px 7px 0 0;
+  border-radius: 7px 7px 0 0;
+}
+/* line 31, ../sass/views-styles.scss */
+.views-displays .secondary .open > a:hover {
+  color: #333;
+}
+/* line 36, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li {
+  margin: 0;
+}
+/* line 38, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li:first-child {
+  -webkit-border-radius: 0 7px 0 0;
+  -moz-border-radius: 0 7px 0 0;
+  -ms-border-radius: 0 7px 0 0;
+  -o-border-radius: 0 7px 0 0;
+  border-radius: 0 7px 0 0;
+}
+/* line 41, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li:last-child {
+  -webkit-border-radius: 0 0 7px 7px;
+  -moz-border-radius: 0 0 7px 7px;
+  -ms-border-radius: 0 0 7px 7px;
+  -o-border-radius: 0 0 7px 7px;
+  border-radius: 0 0 7px 7px;
+}
+
+/* line 49, ../sass/views-styles.scss */
+.view-departments .view-content .views-row, .view-positions .view-content .views-row {
+  margin: 0;
+  padding: 0;
+}
+/* line 53, ../sass/views-styles.scss */
+.view-departments .view-content a, .view-positions .view-content a {
+  margin: 0.5em 0;
+  display: block;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -ms-border-radius: 3px 3px 3px 3px;
+  -o-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  padding: 15px 20px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+/* line 61, ../sass/views-styles.scss */
+.view-departments .view-content a.active, .view-positions .view-content a.active {
+  background-color: #b53305;
+}
+
+/* line 67, ../sass/views-styles.scss */
+.view-position-display {
+  margin-bottom: 1em;
+}
+/* line 69, ../sass/views-styles.scss */
+.view-position-display .views-field-nothing a {
+  display: inline-block;
+  float: right;
+  padding: 15px 20px;
+  color: #e1b40f;
+  background-color: #880000;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -ms-border-radius: 3px 3px 3px 3px;
+  -o-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  font-weight: bold;
+}

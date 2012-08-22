@@ -1,0 +1,378 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Page Styling
+ *
+ * Style the markup found in page.tpl.php. Also includes some styling of
+ * miscellaneous Drupal elements that appear in the $content variable, such as
+ * ul.links, .pager, .more-link, etc.
+ */
+/* Fonts */
+@font-face {
+  font-family: 'ChunkFiveRegular';
+  src: url("../fonts/Chunkfive-webfont.eot");
+  src: local("☺"), url("../fonts/Chunkfive-webfont.woff") format("woff"), url("../fonts/Chunkfive-webfont.ttf") format("truetype"), url("../fonts/Chunkfive-webfont.svg#webfont90E2uSjN") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Strong Yellow, also the header bar BG */
+/*
+ * Body
+ */
+/* line 17, ../sass/pages_safe_save_011622.scss */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * The skip-link link will be completely hidden until a user tabs to the link.
+ * See the element-focusable rule in system.base.css.
+ */
+/* line 30, ../sass/pages_safe_save_011622.scss */
+#skip-link {
+  margin: 0;
+}
+/* line 34, ../sass/pages_safe_save_011622.scss */
+#skip-link a,
+#skip-link a:visited {
+  display: block;
+  width: 100%;
+  padding: 2px 0 3px 0;
+  text-align: center;
+  background-color: #666;
+  color: #fff;
+}
+
+/*
+ * Header
+ */
+/* line 48, ../sass/pages_safe_save_011622.scss */
+#header {
+  background-color: #e1b40f;
+  color: #880000;
+}
+
+/* line 53, ../sass/pages_safe_save_011622.scss */
+#logo {
+  /* Wrapping link for logo */
+  float: left;
+  /* LTR */
+  margin: 0;
+  padding: 0;
+}
+/* line 58, ../sass/pages_safe_save_011622.scss */
+#logo img {
+  vertical-align: bottom;
+}
+
+/* line 63, ../sass/pages_safe_save_011622.scss */
+#name-and-slogan {
+  /* Wrapper for website name and slogan */
+  float: none;
+}
+
+/* line 67, ../sass/pages_safe_save_011622.scss */
+#site-name {
+  /* The name of the website */
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+/* line 73, ../sass/pages_safe_save_011622.scss */
+#site-name a:link,
+#site-name a:visited {
+  color: #000;
+  text-decoration: none;
+}
+/* line 79, ../sass/pages_safe_save_011622.scss */
+#site-name a:hover,
+#site-name a:focus {
+  text-decoration: underline;
+}
+
+/* line 84, ../sass/pages_safe_save_011622.scss */
+#site-slogan {
+  /* The slogan (or tagline) of a website */
+  margin: 0;
+  font-size: 1em;
+  font-family: "Lucida Grande", "Lucida Sans", Verdana, Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* line 91, ../sass/pages_safe_save_011622.scss */
+.region-header {
+  /* Wrapper for any blocks placed in the header region */
+  clear: both;
+  /* Clear the logo */
+}
+
+/*
+ * Main (container for everything else)
+ */
+/*
+ * Content
+ */
+/* line 112, ../sass/pages_safe_save_011622.scss */
+.breadcrumb {
+  /* The path to the current page in the form of a list of links */
+}
+/* line 113, ../sass/pages_safe_save_011622.scss */
+.breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+/* line 117, ../sass/pages_safe_save_011622.scss */
+.breadcrumb li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 130, ../sass/pages_safe_save_011622.scss */
+h1.title,
+h2.node-title,
+h2.block-title,
+h2.title,
+h2.comment-form,
+h3.title {
+  /* Comment title */
+  margin: 0;
+}
+
+/* line 134, ../sass/pages_safe_save_011622.scss */
+tr.even {
+  /* Some tables have rows marked even or odd. */
+  /* background-color: #eee; */
+  /* Drupal core uses a #eee background */
+}
+
+/* line 138, ../sass/pages_safe_save_011622.scss */
+tr.odd {
+  /* background-color: #eee; */
+  /* Drupal core uses a #eee background */
+}
+
+/* line 142, ../sass/pages_safe_save_011622.scss */
+div.messages {
+  /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
+  margin: 1.5em 0;
+  /* Drupal core uses "6px 0" margin */
+}
+/* line 145, ../sass/pages_safe_save_011622.scss */
+div.messages ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 151, ../sass/pages_safe_save_011622.scss */
+div.status {
+  /* Normal priority messages */
+}
+
+/* line 155, ../sass/pages_safe_save_011622.scss */
+div.warning,
+tr.warning {
+  /* Medium priority messages */
+  /* border: 1px solid #f0c020; */
+  /* Drupal core uses: 1px solid #f0c020 */
+}
+
+/* line 160, ../sass/pages_safe_save_011622.scss */
+div.error,
+tr.error {
+  /* High priority messages. See also the .error declaration below. */
+}
+
+/* line 163, ../sass/pages_safe_save_011622.scss */
+.error {
+  /* Errors that are separate from div.messages status messages. */
+  /* color: #e55; */
+  /* Drupal core uses a #e55 background */
+}
+
+/* line 167, ../sass/pages_safe_save_011622.scss */
+.warning {
+  /* Warnings that are separate from div.messages status messages. */
+  /* color: #e09010; */
+  /* Drupal core uses a #e09010 background */
+}
+
+/* line 171, ../sass/pages_safe_save_011622.scss */
+.tabs {
+  /* See also the tabs.css file. */
+}
+
+/* line 174, ../sass/pages_safe_save_011622.scss */
+.region-help {
+  /* Help text on a page */
+}
+
+/* line 177, ../sass/pages_safe_save_011622.scss */
+.more-help-link {
+  /* Link to more help */
+}
+
+/* line 180, ../sass/pages_safe_save_011622.scss */
+.region-content {
+  /* Wrapper for the actual page content */
+}
+
+/* line 183, ../sass/pages_safe_save_011622.scss */
+ul.inline {
+  /* List of links generated by theme_links() */
+  display: inline;
+  padding: 0;
+}
+/* line 187, ../sass/pages_safe_save_011622.scss */
+ul.inline li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 1em 0 0;
+  /* LTR */
+}
+
+/* line 193, ../sass/pages_safe_save_011622.scss */
+span.field-label {
+  /* The inline field label used by the Fences module */
+  padding: 0 1em 0 0;
+  /* LTR */
+}
+
+/* line 197, ../sass/pages_safe_save_011622.scss */
+.item-list .pager {
+  /* A list of page numbers when more than 1 page of content is available */
+  padding: 0;
+}
+/* line 200, ../sass/pages_safe_save_011622.scss */
+.item-list .pager li {
+  /* Each page number in the pager list */
+  padding: 0 0.5em;
+}
+
+/* line 205, ../sass/pages_safe_save_011622.scss */
+.feed-icon {
+  /* The link to the RSS or Atom feed for the current list of content */
+}
+
+/* line 208, ../sass/pages_safe_save_011622.scss */
+.more-link {
+  /* Aggregator, blog, and forum more link */
+}
+
+/*
+ * First sidebar (on left in LTR languages, on right in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-first
+ * (see the layout.css file.)
+ */
+/*
+ * Second sidebar (on right in LTR languages, on left in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-second
+ * (see the layout.css file.)
+ */
+/*
+ * Footer
+ */
+/* line 235, ../sass/pages_safe_save_011622.scss */
+#footer {
+  font-size: 0.8em;
+  overflow: hidden;
+}
+/* line 239, ../sass/pages_safe_save_011622.scss */
+#footer p {
+  float: left;
+}
+/* line 243, ../sass/pages_safe_save_011622.scss */
+#footer ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+/* line 248, ../sass/pages_safe_save_011622.scss */
+#footer ul li {
+  display: inline-block;
+  float: none;
+  margin: 0 0 0 -5px;
+  padding: 0 0.5em;
+  border-left: 1px solid #b53305;
+}
+/* line 258, ../sass/pages_safe_save_011622.scss */
+#footer ul li:first-child {
+  border-left: 0px none;
+}
+
+/*
+ * Page bottom
+ */
+/* line 268, ../sass/pages_safe_save_011622.scss */
+.region-bottom {
+  /* Wrapper for any blocks placed in the page bottom region */
+}
+
+/*
+ * Custom page: Select role
+ */
+/* line 276, ../sass/pages_safe_save_011622.scss */
+body.page-select-role .pane-content {
+  text-align: center;
+}
+/* line 279, ../sass/pages_safe_save_011622.scss */
+body.page-select-role .pane-content a {
+  display: block;
+}
+/* line 284, ../sass/pages_safe_save_011622.scss */
+body.page-select-role .panel-panel {
+  float: none;
+  display: block;
+  width: auto;
+}
+@media all and (min-width: 640px) {
+  /* line 291, ../sass/pages_safe_save_011622.scss */
+  body.page-select-role .panel-panel {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* line 299, ../sass/pages_safe_save_011622.scss */
+body.page-position-list .panel-panel {
+  float: none;
+  display: block;
+  width: auto;
+}
+@media all and (min-width: 640px) {
+  /* line 306, ../sass/pages_safe_save_011622.scss */
+  body.page-position-list .panel-panel {
+    float: left;
+    width: 33%;
+  }
+}
+/* line 312, ../sass/pages_safe_save_011622.scss */
+body.page-position-list .pane-description {
+  text-align: center;
+  min-height: 4em;
+}
+/* line 316, ../sass/pages_safe_save_011622.scss */
+body.page-position-list .pane-description p {
+  font-weight: bold;
+}
+
+/* line 323, ../sass/pages_safe_save_011622.scss */
+body.page-register #edit-submit {
+  display: inline-block;
+  padding: 15px 20px;
+  color: #e1b40f;
+  background-color: #880000;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -ms-border-radius: 3px 3px 3px 3px;
+  -o-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  margin-right: 10px;
+  border: 0px none;
+  font-weight: bold;
+}
