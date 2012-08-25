@@ -225,6 +225,25 @@ function STARTERKIT_preprocess_block(&$variables, $hook) {
 }
 // */
 
+/**
+ * Implements template_preprocess_page
+ */
+function smash_joinus_preprocess_page(&$variables) {
+  if (function_exists('page_manager_get_current_page')) {
+    $page = page_manager_get_current_page();
+    if (!empty($page) && isset($page['name'])){
+      if ($page['name'] == 'page-position_list' || $page['name'] == 'page-role_selector') {
+        $variables['title_prefix'] = '<div class="element-invisible">';
+        $variables['title_suffix'] = '</div>';
+      }
+    }
+  }
+}
+
+/**
+ * Implements theme_form_element
+ * Move description above element.
+ */
 function smash_joinus_form_element($variables) {
   $element = &$variables['element'];
   // This is also used in the installer, pre-database setup.
@@ -289,6 +308,32 @@ function smash_joinus_form_element($variables) {
 
   $output .= "</div>\n";
 
+  return $output;
+}
+
+/**
+ * Disable grippies on textareas
+ */
+function smash_joinus_textarea($variables) {
+  $element = $variables['element'];
+  $element['#attributes']['name'] = $element['#name'];
+  $element['#attributes']['id'] = $element['#id'];
+  $element['#attributes']['cols'] = $element['#cols'];
+  $element['#attributes']['rows'] = $element['#rows'];
+  _form_set_class($element, array('form-textarea'));
+ 
+  $wrapper_attributes = array(
+    'class' => array('form-textarea-wrapper'),
+  );
+ 
+  // Add resizable behavior.
+  if (!empty($element['#resizable'])) {
+    $wrapper_attributes['class'][] = 'resizable';
+  }
+ 
+  $output = '<div' . drupal_attributes($wrapper_attributes) . '>';
+  $output .= '<textarea' . drupal_attributes($element['#attributes']) . '>' . check_plain($element['#value']) . '</textarea>';
+  $output .= '</div>';
   return $output;
 }
 

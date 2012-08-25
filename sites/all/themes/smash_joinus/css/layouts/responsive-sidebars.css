@@ -19,6 +19,7 @@
 }
 
 /* Strong Yellow, also the header bar BG */
+/*  53BCC2 */
 /*
  * Center the page.
  */
@@ -54,7 +55,7 @@
 /*
  * Containers for grid items and flow items.
  */
-/* line 52, ../../sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
+/* line 52, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
 #header:before, #header:after,
 #main:before,
 #main:after,
@@ -63,7 +64,7 @@
   content: "";
   display: table;
 }
-/* line 56, ../../sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
+/* line 56, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
 #header:after,
 #main:after,
 #footer:after {

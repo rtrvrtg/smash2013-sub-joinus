@@ -6,18 +6,19 @@
 @import "base";
 
 #main form {
-  @media all and (min-width: 640px) {
-    margin: 0px auto;
-    width: 80%;
-  }
-  
-  @media all and (min-width: 960px) {
-    width: 768px;
-  }
+  @include lockwidth;
 }
 
 .form-item { /* Wrapper for a form element (or group of form elements) and its label */
   margin: 1.5em 0;
+
+  input[type="text"], 
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
   
   input[type="text"], 
   textarea, 
@@ -45,6 +46,7 @@
   label.option { /* The label for a radio button or checkbox */
     display: inline;
     font-weight: normal;
+    font-size: 0.8em;
   }
 
   .form-required { /* The part of the label that indicates a required field */

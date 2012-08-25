@@ -55,19 +55,29 @@ body {
   margin: 0;
   padding: 0;
 
+  width: 20%;
+
   img {
+    float: right;
+    width: 100%;
+    max-width: 131px;
     vertical-align: bottom;
   }
 }
 
 #name-and-slogan { /* Wrapper for website name and slogan */
   float: none;
+  margin-left: 20%;
 }
 
 #site-name { /* The name of the website */
-  margin: 0;
+  margin: 0.5em 0 0 0;
   font-size: 2em;
-  line-height: 1.5em;
+  line-height: 1em;
+  
+  @media all and (min-width: 640px) {
+    margin: 1.5em 0 0 0;
+  }
 
   a:link,
   a:visited {
@@ -77,13 +87,14 @@ body {
 
   a:hover,
   a:focus {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
 #site-slogan { /* The slogan (or tagline) of a website */
   margin: 0;
   font-size: 1em;
+  line-height: 1em;
   font-family: $lucida;
   font-weight: bold;
 }
@@ -141,6 +152,7 @@ tr.odd {
 
 div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
   margin: 1.5em 0; /* Drupal core uses "6px 0" margin */
+  @include border-radius($radiusBlunt $radiusBlunt $radiusBlunt $radiusBlunt);
 
   ul {
     margin-top: 0;
@@ -235,9 +247,12 @@ span.field-label { /* The inline field label used by the Fences module */
 #footer {
   font-size: 0.8em;
   overflow: hidden;
+  margin-top: 1em;
   
   p {
     float: left;
+    margin: 0;
+    padding: 0;    
   }
   
   ul {
@@ -308,13 +323,25 @@ body.page-position-list {
       width: 33%;
     }
   }
+}
+
+.pane-description {
+  text-align: center;
+  min-height: 4em;
   
-  .pane-description {
-    text-align: center;
-    min-height: 4em;
-    
-    p {
-      font-weight: bold;
-    }
+  h2 {
+    margin-bottom: 0;
+    font-size: 3em;
+    line-height: 1.25em;
+  }
+  
+  p {
+    font-weight: bold;
+  }
+}
+
+.page-register {
+  #page-title, div.messages {
+    @include lockwidth;
   }
 }

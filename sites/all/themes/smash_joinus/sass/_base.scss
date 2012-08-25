@@ -90,16 +90,35 @@ $font-body:        $lucida;
 $font-title:       $chunkfive;
 $font-monospace:   $courier;
 
+@mixin headerfont {
+  font-family: $font-title;
+  font-weight: normal;
+}
+
+@mixin lockwidth {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  
+  @media all and (min-width: 640px) {
+    margin: 0px auto;
+    width: 80%;
+  }
+  
+  @media all and (min-width: 960px) {
+    width: 768px;
+  }
+}
 
 //
 // Colors, etc.
 //
 
-$colorBodyBG:           #ae0000;
-$colorText:             #f6b42f;
-$colorHighlight:        #e1b40f; /* Strong Yellow, also the header bar BG */
-$colorHighlightBG:      #B53305;
-$colorHighlightDarkBG:  #800;
+$colorBodyBG:           #231F20;
+$colorText:             white;
+$colorHighlight:        #E63171; /* Strong Yellow, also the header bar BG */
+$colorHighlightBG:      #4a2582;
+$colorHighlightDarkBG:  #4a2582;  /*  53BCC2 */
 
 $radiusSharp: 3px;
 $radiusBlunt: 7px;

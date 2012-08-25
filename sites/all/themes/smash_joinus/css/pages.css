@@ -17,6 +17,7 @@
 }
 
 /* Strong Yellow, also the header bar BG */
+/*  53BCC2 */
 /*
  * Body
  */
@@ -50,8 +51,8 @@ body {
  */
 /* line 48, ../sass/pages.scss */
 #header {
-  background-color: #e1b40f;
-  color: #880000;
+  background-color: #e63171;
+  color: #4a2582;
 }
 
 /* line 53, ../sass/pages.scss */
@@ -61,47 +62,59 @@ body {
   /* LTR */
   margin: 0;
   padding: 0;
+  width: 20%;
 }
-/* line 58, ../sass/pages.scss */
+/* line 60, ../sass/pages.scss */
 #logo img {
+  float: right;
+  width: 100%;
+  max-width: 131px;
   vertical-align: bottom;
 }
 
-/* line 63, ../sass/pages.scss */
+/* line 68, ../sass/pages.scss */
 #name-and-slogan {
   /* Wrapper for website name and slogan */
   float: none;
+  margin-left: 20%;
 }
 
-/* line 67, ../sass/pages.scss */
+/* line 73, ../sass/pages.scss */
 #site-name {
   /* The name of the website */
-  margin: 0;
+  margin: 0.5em 0 0 0;
   font-size: 2em;
-  line-height: 1.5em;
+  line-height: 1em;
 }
-/* line 73, ../sass/pages.scss */
+@media all and (min-width: 640px) {
+  /* line 73, ../sass/pages.scss */
+  #site-name {
+    margin: 1.5em 0 0 0;
+  }
+}
+/* line 83, ../sass/pages.scss */
 #site-name a:link,
 #site-name a:visited {
   color: #000;
   text-decoration: none;
 }
-/* line 79, ../sass/pages.scss */
+/* line 89, ../sass/pages.scss */
 #site-name a:hover,
 #site-name a:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-/* line 84, ../sass/pages.scss */
+/* line 94, ../sass/pages.scss */
 #site-slogan {
   /* The slogan (or tagline) of a website */
   margin: 0;
   font-size: 1em;
+  line-height: 1em;
   font-family: "Lucida Grande", "Lucida Sans", Verdana, Arial, sans-serif;
   font-weight: bold;
 }
 
-/* line 91, ../sass/pages.scss */
+/* line 102, ../sass/pages.scss */
 .region-header {
   /* Wrapper for any blocks placed in the header region */
   clear: both;
@@ -114,16 +127,16 @@ body {
 /*
  * Content
  */
-/* line 112, ../sass/pages.scss */
+/* line 123, ../sass/pages.scss */
 .breadcrumb {
   /* The path to the current page in the form of a list of links */
 }
-/* line 113, ../sass/pages.scss */
+/* line 124, ../sass/pages.scss */
 .breadcrumb ol {
   margin: 0;
   padding: 0;
 }
-/* line 117, ../sass/pages.scss */
+/* line 128, ../sass/pages.scss */
 .breadcrumb li {
   display: inline;
   list-style-type: none;
@@ -131,7 +144,7 @@ body {
   padding: 0;
 }
 
-/* line 130, ../sass/pages.scss */
+/* line 141, ../sass/pages.scss */
 h1.title,
 h2.node-title,
 h2.block-title,
@@ -142,37 +155,42 @@ h3.title {
   margin: 0;
 }
 
-/* line 134, ../sass/pages.scss */
+/* line 145, ../sass/pages.scss */
 tr.even {
   /* Some tables have rows marked even or odd. */
   /* background-color: #eee; */
   /* Drupal core uses a #eee background */
 }
 
-/* line 138, ../sass/pages.scss */
+/* line 149, ../sass/pages.scss */
 tr.odd {
   /* background-color: #eee; */
   /* Drupal core uses a #eee background */
 }
 
-/* line 142, ../sass/pages.scss */
+/* line 153, ../sass/pages.scss */
 div.messages {
   /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
   margin: 1.5em 0;
   /* Drupal core uses "6px 0" margin */
+  -webkit-border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -ms-border-radius: 7px 7px 7px 7px;
+  -o-border-radius: 7px 7px 7px 7px;
+  border-radius: 7px 7px 7px 7px;
 }
-/* line 145, ../sass/pages.scss */
+/* line 157, ../sass/pages.scss */
 div.messages ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 151, ../sass/pages.scss */
+/* line 163, ../sass/pages.scss */
 div.status {
   /* Normal priority messages */
 }
 
-/* line 155, ../sass/pages.scss */
+/* line 167, ../sass/pages.scss */
 div.warning,
 tr.warning {
   /* Medium priority messages */
@@ -180,53 +198,53 @@ tr.warning {
   /* Drupal core uses: 1px solid #f0c020 */
 }
 
-/* line 160, ../sass/pages.scss */
+/* line 172, ../sass/pages.scss */
 div.error,
 tr.error {
   /* High priority messages. See also the .error declaration below. */
 }
 
-/* line 163, ../sass/pages.scss */
+/* line 175, ../sass/pages.scss */
 .error {
   /* Errors that are separate from div.messages status messages. */
   /* color: #e55; */
   /* Drupal core uses a #e55 background */
 }
 
-/* line 167, ../sass/pages.scss */
+/* line 179, ../sass/pages.scss */
 .warning {
   /* Warnings that are separate from div.messages status messages. */
   /* color: #e09010; */
   /* Drupal core uses a #e09010 background */
 }
 
-/* line 171, ../sass/pages.scss */
+/* line 183, ../sass/pages.scss */
 .tabs {
   /* See also the tabs.css file. */
 }
 
-/* line 174, ../sass/pages.scss */
+/* line 186, ../sass/pages.scss */
 .region-help {
   /* Help text on a page */
 }
 
-/* line 177, ../sass/pages.scss */
+/* line 189, ../sass/pages.scss */
 .more-help-link {
   /* Link to more help */
 }
 
-/* line 180, ../sass/pages.scss */
+/* line 192, ../sass/pages.scss */
 .region-content {
   /* Wrapper for the actual page content */
 }
 
-/* line 183, ../sass/pages.scss */
+/* line 195, ../sass/pages.scss */
 ul.inline {
   /* List of links generated by theme_links() */
   display: inline;
   padding: 0;
 }
-/* line 187, ../sass/pages.scss */
+/* line 199, ../sass/pages.scss */
 ul.inline li {
   display: inline;
   list-style-type: none;
@@ -234,30 +252,30 @@ ul.inline li {
   /* LTR */
 }
 
-/* line 193, ../sass/pages.scss */
+/* line 205, ../sass/pages.scss */
 span.field-label {
   /* The inline field label used by the Fences module */
   padding: 0 1em 0 0;
   /* LTR */
 }
 
-/* line 197, ../sass/pages.scss */
+/* line 209, ../sass/pages.scss */
 .item-list .pager {
   /* A list of page numbers when more than 1 page of content is available */
   padding: 0;
 }
-/* line 200, ../sass/pages.scss */
+/* line 212, ../sass/pages.scss */
 .item-list .pager li {
   /* Each page number in the pager list */
   padding: 0 0.5em;
 }
 
-/* line 205, ../sass/pages.scss */
+/* line 217, ../sass/pages.scss */
 .feed-icon {
   /* The link to the RSS or Atom feed for the current list of content */
 }
 
-/* line 208, ../sass/pages.scss */
+/* line 220, ../sass/pages.scss */
 .more-link {
   /* Aggregator, blog, and forum more link */
 }
@@ -277,30 +295,33 @@ span.field-label {
 /*
  * Footer
  */
-/* line 235, ../sass/pages.scss */
+/* line 247, ../sass/pages.scss */
 #footer {
   font-size: 0.8em;
   overflow: hidden;
+  margin-top: 1em;
 }
-/* line 239, ../sass/pages.scss */
+/* line 252, ../sass/pages.scss */
 #footer p {
   float: left;
+  margin: 0;
+  padding: 0;
 }
-/* line 243, ../sass/pages.scss */
+/* line 258, ../sass/pages.scss */
 #footer ul {
   float: right;
   margin: 0;
   padding: 0;
 }
-/* line 248, ../sass/pages.scss */
+/* line 263, ../sass/pages.scss */
 #footer ul li {
   display: inline-block;
   float: none;
   margin: 0 0 0 -5px;
   padding: 0 0.5em;
-  border-left: 1px solid #b53305;
+  border-left: 1px solid #4a2582;
 }
-/* line 258, ../sass/pages.scss */
+/* line 273, ../sass/pages.scss */
 #footer ul li:first-child {
   border-left: 0px none;
 }
@@ -308,7 +329,7 @@ span.field-label {
 /*
  * Page bottom
  */
-/* line 268, ../sass/pages.scss */
+/* line 283, ../sass/pages.scss */
 .region-bottom {
   /* Wrapper for any blocks placed in the page bottom region */
 }
@@ -316,47 +337,74 @@ span.field-label {
 /*
  * Custom page: Select role
  */
-/* line 276, ../sass/pages.scss */
+/* line 291, ../sass/pages.scss */
 body.page-select-role .pane-content {
   text-align: center;
 }
-/* line 279, ../sass/pages.scss */
+/* line 294, ../sass/pages.scss */
 body.page-select-role .pane-content a {
   display: block;
 }
-/* line 284, ../sass/pages.scss */
+/* line 299, ../sass/pages.scss */
 body.page-select-role .panel-panel {
   float: none;
   display: block;
   width: auto;
 }
 @media all and (min-width: 640px) {
-  /* line 291, ../sass/pages.scss */
+  /* line 306, ../sass/pages.scss */
   body.page-select-role .panel-panel {
     float: left;
     width: 50%;
   }
 }
 
-/* line 299, ../sass/pages.scss */
+/* line 314, ../sass/pages.scss */
 body.page-position-list .panel-panel {
   float: none;
   display: block;
   width: auto;
 }
 @media all and (min-width: 640px) {
-  /* line 306, ../sass/pages.scss */
+  /* line 321, ../sass/pages.scss */
   body.page-position-list .panel-panel {
     float: left;
     width: 33%;
   }
 }
-/* line 312, ../sass/pages.scss */
-body.page-position-list .pane-description {
+
+/* line 328, ../sass/pages.scss */
+.pane-description {
   text-align: center;
   min-height: 4em;
 }
-/* line 316, ../sass/pages.scss */
-body.page-position-list .pane-description p {
+/* line 332, ../sass/pages.scss */
+.pane-description h2 {
+  margin-bottom: 0;
+  font-size: 3em;
+  line-height: 1.25em;
+}
+/* line 338, ../sass/pages.scss */
+.pane-description p {
   font-weight: bold;
+}
+
+/* line 344, ../sass/pages.scss */
+.page-register #page-title, .page-register div.messages {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+@media all and (min-width: 640px) {
+  /* line 344, ../sass/pages.scss */
+  .page-register #page-title, .page-register div.messages {
+    margin: 0px auto;
+    width: 80%;
+  }
+}
+@media all and (min-width: 960px) {
+  /* line 344, ../sass/pages.scss */
+  .page-register #page-title, .page-register div.messages {
+    width: 768px;
+  }
 }

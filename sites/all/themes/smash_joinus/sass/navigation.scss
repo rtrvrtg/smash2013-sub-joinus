@@ -120,4 +120,14 @@ li a.active {
   }
 }
 
+.form-managed-file .ajax-progress {
+  display: inline-block;
+  
+  .throbber {
+    display: inline-block;
+    height: 32px;
+    margin: 2px 2px;
+    width: 32px;    
+  }
+}
 

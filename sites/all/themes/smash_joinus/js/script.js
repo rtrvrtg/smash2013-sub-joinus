@@ -19,6 +19,8 @@ $(document).ready(function(){
   $('.pane-departments, .pane-positions').delegate('.view-content a', 'mouseup', function(e){
     $(this).addClass('active');
   });
+  
+  $('#content form textarea').elastic();
 
 });
 
