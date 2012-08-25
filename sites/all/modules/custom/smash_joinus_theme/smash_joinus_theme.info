@@ -1,0 +1,12 @@
+name = SMASH! joinus Theme
+core = 7.x
+package = SMASH!
+version = 7.x-1.0
+project = smash_joinus_theme
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[variable][] = locale_custom_disabled_strings_en
+features[variable][] = locale_custom_strings_en
+features[variable][] = theme_smash_joinus_settings

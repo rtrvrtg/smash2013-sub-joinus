@@ -5,3 +5,8 @@
  */
 
 include_once 'smash_position_types.features.inc';
+
+function smash_position_types_form_alter(&$form, &$form_state, $form_id) {
+  
+}
+

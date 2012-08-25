@@ -90,7 +90,10 @@ See where we need help. All open positions are listed.',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-description',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -149,7 +152,10 @@ Select the position where you\'d like to help out.',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-description',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -214,7 +220,10 @@ Fill out the form, submit your details and we\'ll be in touch!',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-description',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

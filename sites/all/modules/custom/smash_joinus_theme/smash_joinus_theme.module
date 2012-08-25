@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SMASH! joinus Theme feature.
+ */
+
+include_once 'smash_joinus_theme.features.inc';
