@@ -1,6 +1,7 @@
 require 'active_record'
 require 'yaml'
 require 'fileutils'
+require 'logger'
 
 namespace :bundler do
   task :setup do
