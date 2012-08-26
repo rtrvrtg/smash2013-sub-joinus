@@ -48,6 +48,7 @@ dependencies[] = rules_admin
 dependencies[] = unique_field
 dependencies[] = views
 dependencies[] = views_content
+dependencies[] = views_ui
 
 dependencies[] = smash_position_list
 dependencies[] = smash_position_types

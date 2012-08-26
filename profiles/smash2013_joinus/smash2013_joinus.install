@@ -439,4 +439,13 @@ function smash2013_joinus_install() {
     ->execute();
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
+  
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'smash_joinus')
+    ->execute();
+  variable_set('theme_default', 'smash_joinus');
+  
+  variable_set('site_name', 'SMASH! 2013 - Join us!');
 }
