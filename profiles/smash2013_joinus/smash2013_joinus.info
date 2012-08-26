@@ -43,13 +43,13 @@ dependencies[] = panels
 dependencies[] = registration
 dependencies[] = registration_views
 dependencies[] = rules
-dependencies[] = rules_ui
+dependencies[] = rules_admin
 dependencies[] = unique_field
 dependencies[] = views
 dependencies[] = views_content
 
-dependencies[] = smash_joinus_list
-dependencies[] = smash_joinus_types
+dependencies[] = smash_position_list
+dependencies[] = smash_position_types
 dependencies[] = smash_joinus_permissions
 dependencies[] = smash_joinus_theme
 
