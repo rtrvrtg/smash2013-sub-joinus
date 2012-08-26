@@ -1,14 +1,16 @@
-Application Name Overview
+Join Us
 ==============================================
 
-1-2 paragraphs with an overview of the app
+HR application for SMASH! - post and register positions
 
 
 Required Environment / Minimum Setup
 ----------------------------------------------
 
-PHP or Ruby version.  
-Minimum setup required to run the app.
+PHP: See the [system requirements for Drupal 7](http://drupal.org/requirements)  
+Ruby: 1.8+
+
+We recommend a minimum of 64mb RAM allocated to PHP.
 
 
 Notable Deviations
@@ -22,15 +24,19 @@ Esoteric release schedule? Document it.
 Accessing the Site
 ----------------------------------------------
 
-Is it running locally on WEBrick, pow, unicorn, PHP-FPM?  
-Do you need to use custom subdomains or hosts?
+Runs on Apache: confirmed.  
+Should be set up to be runnable on nginx but needs custom Filecache configuration.
 
 
 Configuration
 ----------------------------------------------
 
-Who do I speak with to get the values for configuration files?  
-Who/where do I go to for dev/production database dumps?
+Configuration file values are set in *config/drush.yml*
+
+To install the dev version of the site, run  
+@bundle install@
+@bundle exec rake drush:make@  
+@bundle exec rake drush:install@
 
 
 Walkthrough / Smoke Test
@@ -69,11 +75,15 @@ How is it monitored?
 Design
 ----------------------------------------------
 
-Spot for designers to put any information they need.  
-Any custom typefaces?  
-Colour palette?  
-Grid system?  
-Where are the PSDs or mocks?
+This site uses Compass & SASS to pre-process CSS.  To update the compiled CSS:
+
+1. Go to *sites/all/themes/smash_joinus*
+2. Run @compass compile@
+
+You can also use @compass watch@ to update CSS as you edit.
+
+Colour palette is in 
+*sites/all/themes/smash_joinus/sass/_base.scss*
 
 
 Known Issues / Gotchas
