@@ -36,9 +36,16 @@ Configuration file values are set in *config/drush.yml*
 To install the dev version of the site, run  
 ```
 bundle install  
+bundle exec rake dev:config_setup
+```
+to setup blank config files at config/drush.yml.
+
+Once that's done, run
+```
 bundle exec rake drush:make  
 bundle exec rake drush:install
 ```
+to build your environment.
 
 Walkthrough / Smoke Test
 ----------------------------------------------
