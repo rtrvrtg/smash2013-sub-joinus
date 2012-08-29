@@ -17,6 +17,24 @@ task :environment, [:env] => 'bundler:setup' do |cmd, args|
   #ActiveRecord::Base.logger = Logger.new(File.open('database.log', 'a'))
 end
 
+namespace :dev do
+  
+  task :config_files do
+    config_files = [
+      ['config/drush.example.yml', 'config/drush.yml']
+    ]
+    config_files.each do |pair|
+      source = Rails.root.join(pair.first)
+      target = Rails.root.join(pair.last)
+
+      unless File.exist?(Rails.root.join(source))
+        `cp #{source} #{target}`
+      end
+    end
+  end
+  
+end
+
 namespace :drush do
 
   desc "Basic development setup process"
