@@ -12,9 +12,9 @@ end
 
 task :environment, [:env] => 'bundler:setup' do |cmd, args|
   ENV["DRUPAL_ENV"] = args[:env] || "development"
-  config = YAML::load(File.open('config/database.yml'))
-  ActiveRecord::Base.establish_connection(config[ENV["DRUPAL_ENV"]])
-  ActiveRecord::Base.logger = Logger.new(File.open('database.log', 'a'))
+  #config = YAML::load(File.open('config/database.yml'))
+  #ActiveRecord::Base.establish_connection(config[ENV["DRUPAL_ENV"]])
+  #ActiveRecord::Base.logger = Logger.new(File.open('database.log', 'a'))
 end
 
 namespace :drush do
