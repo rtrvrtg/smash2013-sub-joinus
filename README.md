@@ -34,10 +34,11 @@ Configuration
 Configuration file values are set in *config/drush.yml*
 
 To install the dev version of the site, run  
-@bundle install@
-@bundle exec rake drush:make@  
-@bundle exec rake drush:install@
-
+```
+bundle install  
+bundle exec rake drush:make  
+bundle exec rake drush:install
+```
 
 Walkthrough / Smoke Test
 ----------------------------------------------
@@ -78,9 +79,9 @@ Design
 This site uses Compass & SASS to pre-process CSS.  To update the compiled CSS:
 
 1. Go to *sites/all/themes/smash_joinus*
-2. Run @compass compile@
+2. Run `compass compile`
 
-You can also use @compass watch@ to update CSS as you edit.
+You can also use `compass watch` to update CSS as you edit.
 
 Colour palette is in 
 *sites/all/themes/smash_joinus/sass/_base.scss*
