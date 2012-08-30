@@ -28,14 +28,13 @@ end
 # The task below serves the purpose of creating symlinks for asset files.
 # User uploaded content and logs should not be checked into the repository; move them to a shared location.
 task :create_symlinks, :roles => :web do
-  run "ln -s #{shared_path}/uploads #{current_release}/uploads"
-  run "ln -s #{shared_path}/protected/runtime #{current_release}/protected/runtime"
+  run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
 end
 
 # Run drush updates
 task :run_updates, :roles => :web do
-  run "drush -y features-revert-all --root=#{deploy_to}/current"
-  run "drush -y updb --root=#{deploy_to}/current"
+  run "drush -y features-revert-all --root=#{current_release}"
+  run "drush -y updb --root=#{current_release}"
 end
 
 # Let's run these immediately after the deployment is finalised.
