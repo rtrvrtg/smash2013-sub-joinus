@@ -40,18 +40,28 @@ end
 
 # Installs site
 task :install_site, :roles => :web do
-  set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
-  set(:db_pass, Capistrano::CLI.password_prompt("DB Pass: ") )
-  set(:account_name, Capistrano::CLI.ui.ask("Account name: ") )
-  set(:account_mail, Capistrano::CLI.ui.ask("Account email: ") )
+  installed = false
+  run "drush status" do |channel, stream, data|
+    ok = /Database\s*:\s*([^\s]+)/.match(data)
+    if data[1] == 'Connected'
+      installed = true
+    end
+  end
   
-  db_url = "mysql://#{db_user}:#{db_pass}@localhost/joinus_staging"
-  
-  account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{site_mail}"
-  db_switch = "--db-url=#{db_url}"
-  db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
-  
-  run "drush site-install smash2013_joinus #{db_switch} #{db_su} #{account_setup}"
+  if installed == false
+    set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
+    set(:db_pass, Capistrano::CLI.password_prompt("DB Pass: ") )
+    set(:account_name, Capistrano::CLI.ui.ask("Account name: ") )
+    set(:account_mail, Capistrano::CLI.ui.ask("Account email: ") )
+    
+    db_url = "mysql://#{db_user}:#{db_pass}@localhost/joinus_staging"
+    
+    account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{site_mail}"
+    db_switch = "--db-url=#{db_url}"
+    db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
+    
+    run "drush site-install smash2013_joinus #{db_switch} #{db_su} #{account_setup}"
+  end
 end
  
 # The task below serves the purpose of creating symlinks for asset files.
@@ -67,11 +77,12 @@ task :run_updates, :roles => :web do
 end
 
 # Run during setup
-after "deploy:setup", :run_makefile
-after "deploy:setup", :install_site
+after "deploy:cold", :run_makefile
+after "deploy:cold", :install_site
 
 # Let's run these immediately after the deployment is finalised.
 after "deploy:finalize_update", :create_symlinks
+after "deploy:finalize_update", :run_makefile
 after "deploy:finalize_update", :run_updates
 
 # Cap the number of checked-out revisions.
