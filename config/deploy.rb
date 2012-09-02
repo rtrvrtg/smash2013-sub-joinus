@@ -56,7 +56,7 @@ task :install_site, :roles => :web do
     
     db_url = "mysql://#{db_user}:#{db_pass}@localhost/joinus_staging"
     
-    account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{site_mail}"
+    account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{account_mail}"
     db_switch = "--db-url=#{db_url}"
     db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
     
