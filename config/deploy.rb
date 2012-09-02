@@ -47,12 +47,11 @@ task :install_site, :roles => :web do
   
   db_url = "mysql://#{db_user}:#{db_pass}@localhost/joinus_staging"
   
-  cmd = "drush site-install smash2013_joinus"
   account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{site_mail}"
   db_switch = "--db-url=#{db_url}"
   db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
   
-  run "#{cmd} #{db_switch} #{db_su} #{account_setup}"
+  run "drush site-install smash2013_joinus #{db_switch} #{db_su} #{account_setup}"
 end
  
 # The task below serves the purpose of creating symlinks for asset files.
