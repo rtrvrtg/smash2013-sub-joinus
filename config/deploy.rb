@@ -72,8 +72,18 @@ end
 
 # Run drush updates
 task :run_updates, :roles => :web do
-  run "drush -y features-revert-all --root=#{current_release}"
-  run "drush -y updb --root=#{current_release}"
+  installed = false
+  run "drush status" do |channel, stream, data|
+    ok = /Database\s*:\s*([^\s]+)/.match(data)
+    if data[1] == 'Connected'
+      installed = true
+    end
+  end
+  
+  if installed == true
+    run "drush -y features-revert-all --root=#{current_release}"
+    run "drush -y updb --root=#{current_release}"
+  end
 end
 
 # Run during setup
@@ -83,6 +93,7 @@ after "deploy:cold", :install_site
 # Let's run these immediately after the deployment is finalised.
 after "deploy:finalize_update", :create_symlinks
 after "deploy:finalize_update", :run_makefile
+after "deploy:finalize_update", :install_site
 after "deploy:finalize_update", :run_updates
 
 # Cap the number of checked-out revisions.
