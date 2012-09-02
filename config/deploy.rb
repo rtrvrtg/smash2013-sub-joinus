@@ -35,7 +35,7 @@ end
 
 # Runs the makefile
 task :run_makefile, :roles => :web do
-  run "drush make #{current_release}/joinus.make #{current_release}"
+  run "drush make #{current_release}/joinus.make"
 end
 
 # Installs site
