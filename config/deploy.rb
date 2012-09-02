@@ -67,7 +67,6 @@ task :run_updates, :roles => :web do
 end
 
 # Run during setup
-after "deploy:setup", :create_symlinks
 after "deploy:setup", :run_makefile
 after "deploy:setup", :install_site
 
