@@ -43,7 +43,7 @@ namespace :drush do
   # Installs site
   task :install_site, :roles => :web do
     installed = false
-    run "drush status" do |channel, stream, data|
+    run "drush status --root=#{current_release}" do |channel, stream, data|
       ok = /Database\s*:\s*([^\s]+)/.match(data)
       if data[1] == 'Connected'
         installed = true
@@ -69,7 +69,7 @@ namespace :drush do
   # Run drush updates
   task :run_updates, :roles => :web do
     installed = false
-    run "drush status" do |channel, stream, data|
+    run "drush status --root=#{current_release}" do |channel, stream, data|
       ok = /Database\s*:\s*([^\s]+)/.match(data)
       if data[1] == 'Connected'
         installed = true
@@ -88,16 +88,17 @@ namespace :drupal do
   # The task below serves the purpose of creating symlinks for asset files.
   # User uploaded content and logs should not be checked into the repository; move them to a shared location.
   task :create_symlinks, :roles => :web do
-    run "IS_DIR=0; if [ -d #{shared_path}/sites-default ]; then IS_DIR=1; fi && echo $IS_DIR" do |channel, stream, data|
+    remote_dir_exists = false
+    run "IS_DIR=0; if [ -d #{shared_path}/sites-default ]; then IS_DIR=1; fi; echo $IS_DIR" do |channel, stream, data|
       remote_dir_exists = (data == "1")
-      
-      if remote_dir_exists
-        run "rm -rf #{current_release}/sites/default"
-      else
-        run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
-      end
-      run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
     end
+    
+    if remote_dir_exists
+      run "rm -rf #{current_release}/sites/default"
+    else
+      run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
+    end
+    run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
   end
 end
 
