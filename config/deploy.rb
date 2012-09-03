@@ -21,7 +21,11 @@ role :db,  domain, :primary => true # this can be the same as the web server
 
 # List the Drupal multi-site folders.  Use "default" if no multi-sites are installed.
 set :domains, ["default"]
- 
+
+def remote_file_exists?(full_path)
+  '1' == capture("if [ -e #{full_path} ]; then echo 1; fi").strip
+end
+
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
@@ -88,12 +92,7 @@ namespace :drupal do
   # The task below serves the purpose of creating symlinks for asset files.
   # User uploaded content and logs should not be checked into the repository; move them to a shared location.
   task :create_symlinks, :roles => :web do
-    remote_dir_exists = false
-    run "IS_DIR=0; if [ -d #{shared_path}/sites-default ]; then IS_DIR=1; fi; echo $IS_DIR" do |channel, stream, data|
-      remote_dir_exists = (data == "1")
-    end
-    
-    if !remote_dir_exists
+    if !remote_dir_exists("#{shared_path}/sites-default")
       run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
     end
     run "rm -rf #{current_release}/sites/default"
