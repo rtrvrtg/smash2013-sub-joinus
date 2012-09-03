@@ -62,7 +62,7 @@ namespace :drush do
       db_switch = "--db-url=#{db_url}"
       db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
       
-      run "drush site-install smash2013_joinus #{db_switch} #{db_su} #{account_setup} -y"
+      run "drush site-install smash2013_joinus --root=#{current_release} #{db_switch} #{db_su} #{account_setup} -y"
     end
   end
   
