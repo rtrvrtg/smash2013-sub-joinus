@@ -96,7 +96,7 @@ END
     settings_path = "#{shared_path}/sites-default/settings.php"
     if is_drupal_installed? and !remote_file_exists?(settings_path)
       File.open(settings_path, 'a+') do |f|
-        current = f.read
+        current = File.read(f)
         if !current.include(cache_cfg)?
           f.write(cache_cfg)
         end
