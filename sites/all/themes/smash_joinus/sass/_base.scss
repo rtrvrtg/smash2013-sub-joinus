@@ -114,11 +114,13 @@ $font-monospace:   $courier;
 // Colors, etc.
 //
 
-$colorBodyBG:           #231F20;
-$colorText:             white;
+$colorBodyBG:           #242424;
+$colorText:             #E93978;
+$colorTextBright:       white;
 $colorHighlight:        #E63171; /* Strong Yellow, also the header bar BG */
-$colorHighlightBG:      #4a2582;
-$colorHighlightDarkBG:  #4a2582;  /*  53BCC2 */
+$colorHighlightBG:      #5E32A2;
+$colorHighlightDarkBG:  #5E32A2; 
+$colorHeaderBG:         #422F61; 
 
 $radiusSharp: 3px;
 $radiusBlunt: 7px;

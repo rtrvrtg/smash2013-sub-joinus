@@ -59,7 +59,7 @@
       font-weight: bold;
     }
     a.active {
-      background-color: $colorHighlightBG;
+      background-color: $colorTextBright;
     }
   }
 }
@@ -70,7 +70,7 @@
     display: inline-block;
     float: right;
     padding: 15px 20px;
-    color: $colorHighlight;
+    color: $colorTextBright;
     background-color: $colorHighlightDarkBG;
     @include border-radius($radiusSharp $radiusSharp $radiusSharp $radiusSharp);
     font-weight: bold;

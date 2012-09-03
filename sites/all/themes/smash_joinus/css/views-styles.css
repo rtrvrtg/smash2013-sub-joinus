@@ -13,7 +13,6 @@
 }
 
 /* Strong Yellow, also the header bar BG */
-/*  53BCC2 */
 /*
  * Views' admin tabs
  *
@@ -86,7 +85,7 @@
 }
 /* line 61, ../sass/views-styles.scss */
 .view-departments .view-content a.active, .view-positions .view-content a.active {
-  background-color: #4a2582;
+  background-color: white;
 }
 
 /* line 67, ../sass/views-styles.scss */
@@ -98,8 +97,8 @@
   display: inline-block;
   float: right;
   padding: 15px 20px;
-  color: #e63171;
-  background-color: #4a2582;
+  color: white;
+  background-color: #5e32a2;
   -webkit-border-radius: 3px 3px 3px 3px;
   -moz-border-radius: 3px 3px 3px 3px;
   -ms-border-radius: 3px 3px 3px 3px;

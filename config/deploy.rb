@@ -101,6 +101,17 @@ namespace :drupal do
   end
 end
 
+namespace :compass do
+  # Build a fresh copy of theme stylesheets if compass is installed
+  task :make_styles, :roles => :web do
+    run "which compass > /dev/null && echo $?" do |channel, stream, data|
+      if data == "0"
+        run "cd #{current_release}/sites/all/themes/smash_joinus && compass compile"
+      end
+    end
+  end
+end
+
 
 
 # Run during setup
@@ -112,6 +123,7 @@ after "deploy:finalize_update", "drush:run_makefile"
 after "deploy:finalize_update", "drupal:create_symlinks"
 after "deploy:finalize_update", "drush:install_site"
 after "deploy:finalize_update", "drush:run_updates"
+after "deploy:finalize_update", "compass:make_styles"
 
 # Cap the number of checked-out revisions.
 after "deploy", "deploy:cacheclear"

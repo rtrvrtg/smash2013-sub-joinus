@@ -21,7 +21,6 @@
 }
 
 /* Strong Yellow, also the header bar BG */
-/*  53BCC2 */
 /*
  * Field wrappers when the Fences module is enabled.
  */
@@ -44,13 +43,19 @@
   /* Wrapper for any field. */
 }
 
+/* line 36, ../sass/fields.scss */
+.field-content {
+  text-align: justify;
+  font-size: 0.92em;
+}
+
 /*
  * Field types (Core)
  */
 /*
  * Field types (Contrib)
  */
-/* line 83, ../sass/fields.scss */
+/* line 88, ../sass/fields.scss */
 .field-type-datetime {
   /* Always use "datetime" when creating new CCK date fields. "date" and "datestamp" are legacy types. */
 }
@@ -58,7 +63,7 @@
 /*
  * Named fields
  */
-/* line 105, ../sass/fields.scss */
+/* line 110, ../sass/fields.scss */
 .field-name-field-FIELDNAME {
   /* Underscores in field name are replaced with dashes. */
 }
