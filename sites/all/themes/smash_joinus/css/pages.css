@@ -317,9 +317,12 @@ body.page-select-role .panel-panel {
   }
 }
 
+<<<<<<< HEAD
 body.page-position-list {
   /* Overrides for threecol */
 }
+=======
+>>>>>>> 6d1bd34... Turns off and removes debugging line comments; keep this on, and each of these lines will change every time somebody different compiles the CSS with Sass.
 body.page-position-list .panel-panel {
   float: none;
   display: block;

@@ -13,8 +13,12 @@
 }
 
 /* Strong Yellow, also the header bar BG */
+<<<<<<< HEAD
 /* eg. Buttons */
 /* eg. Text on top of the fuschia */
+=======
+/*  53BCC2 */
+>>>>>>> 6d1bd34... Turns off and removes debugging line comments; keep this on, and each of these lines will change every time somebody different compiles the CSS with Sass.
 #main form {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
