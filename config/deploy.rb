@@ -67,6 +67,11 @@ end
 # The task below serves the purpose of creating symlinks for asset files.
 # User uploaded content and logs should not be checked into the repository; move them to a shared location.
 task :create_symlinks, :roles => :web do
+  if !remote_dir_exists?("#{shared_path}/sites-default")
+    run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
+  else
+    run "rm -rf #{current_release}/sites/default"
+  end
   run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
 end
 
@@ -91,8 +96,8 @@ after "deploy:cold", :run_makefile
 after "deploy:cold", :install_site
 
 # Let's run these immediately after the deployment is finalised.
-after "deploy:finalize_update", :create_symlinks
 after "deploy:finalize_update", :run_makefile
+after "deploy:finalize_update", :create_symlinks
 after "deploy:finalize_update", :install_site
 after "deploy:finalize_update", :run_updates
 
