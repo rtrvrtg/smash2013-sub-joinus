@@ -13,6 +13,7 @@
   margin: 1.5em 0;
 
   input[type="text"], 
+  input[type="password"],   
   textarea {
     width: 100%;
     box-sizing: border-box;
@@ -21,6 +22,7 @@
   }
   
   input[type="text"], 
+  input[type="password"], 
   textarea, 
   select {
     @include border-radius($radiusBlunt $radiusBlunt $radiusBlunt $radiusBlunt);

@@ -1,0 +1,5 @@
+name = SMASH! joinus Modifications
+core = 7.x
+package = SMASH!
+version = 7.x-1.0
+project = smash_joinus_modifications
