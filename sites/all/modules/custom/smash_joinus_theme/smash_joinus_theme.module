@@ -5,3 +5,35 @@
  */
 
 include_once 'smash_joinus_theme.features.inc';
+
+function smash_joinus_theme_block_info() {
+  $blocks['copyright_links'] = array(
+    'info' => t('Copyright and links'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'footer',
+  );
+
+  return $blocks;
+}
+
+function smash_joinus_theme_block_view() {
+  $block = array();
+
+  switch ($delta) {
+    case 'copyright_links':
+      
+      $content = '© 2013 SMASH Inc
+
+* [Contact Us](http://www.smash.org.au/contact-us)
+* [Privacy](http://www.smash.org.au/privacy-policy)';
+      
+      $block['subject'] = NULL;
+      $block['content'] = check_markup(
+        $content,
+        'markdown'
+      );
+      break;
+  }
+  
+  return $block;
+}

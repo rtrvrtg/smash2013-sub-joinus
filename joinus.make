@@ -2,10 +2,10 @@
 core = 7.x
 
 api = 2
-projects[drupal][version] = "7.x"
+projects[drupal][version] = "7.15"
 
 ; Modules
-projects[ctools][version] = "1.1"
+projects[ctools][version] = "1.2"
 
 projects[bundle_copy][version] = "1.1"
 
@@ -13,7 +13,7 @@ projects[compass][version] = "1.0-beta1"
 
 projects[devel][version] = "1.3"
 
-projects[email][version] = "1.1"
+projects[email][version] = "1.2"
 
 projects[entity][version] = "1.0-rc3"
 
@@ -31,11 +31,19 @@ projects[link][version] = "1.0"
 
 projects[markdown][version] = "1.0"
 
-projects[panels][version] = "3.2"
+projects[panels][version] = "3.3"
 
 projects[registration][version] = "1.0-beta3"
 
 projects[rules][version] = "2.2"
+
+; Please fill the following out. Type may be one of get, git, bzr or svn,
+; and url is the url of the download.
+projects[smash_joinus_modifications][download][type] = ""
+projects[smash_joinus_modifications][download][url] = ""
+projects[smash_joinus_modifications][type] = "module"
+projects[smash_joinus_modifications][subdir] = "custom"
+projects[smash_joinus_modifications][version] = "1.0"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
@@ -75,7 +83,7 @@ projects[strongarm][version] = "2.0"
 
 projects[unique_field][version] = "1.0-rc1"
 
-projects[views][version] = "3.3"
+projects[views][version] = "3.5"
 
 ; Themes
 projects[zen][version] = "5.1"

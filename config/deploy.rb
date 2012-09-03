@@ -79,15 +79,7 @@ namespace :drush do
   
   # Run drush updates
   task :run_updates, :roles => :web do
-    installed = false
-    run "drush status --root=#{current_release}" do |channel, stream, data|
-      ok = /Database\s*:\s*([^\s]+)/.match(data)
-      if data[1] == 'Connected'
-        installed = true
-      end
-    end
-    
-    if installed == true
+    if is_drupal_installed?
       run "drush -y features-revert-all --root=#{current_release}"
       run "drush -y updb --root=#{current_release}"
     end
