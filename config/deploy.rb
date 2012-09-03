@@ -34,6 +34,14 @@ def app_exists?(app_name)
   end
 end
 
+def set_ownership(full_path)
+  if !remote_file_exists? full_path
+    run "mkdir #{full_path}"
+  end
+  run "#{try_sudo} chown smash:www-data #{full_path}"
+  run "#{try_sudo} chmod 2775 #{full_path}"
+end
+
 def is_drupal_installed?
   data = capture("drush status --root=#{current_release}").strip
   db_ok = /Database\s*:\s*([^\s]+)/.match(data)
@@ -74,6 +82,31 @@ namespace :drush do
       db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
       
       run "drush site-install smash2013_joinus --root=#{current_release} #{db_switch} #{db_su} #{account_setup} -y"
+    end
+  end
+  
+  # Append caching stuff
+  task :setup_filecache, :roles => :web do
+    cache_cfg = "
+$conf['cache_backends'] = array('sites/all/modules/filecache/filecache.inc');
+$conf['cache_default_class'] = 'DrupalFileCache';
+$conf['filecache_directory'] = '/tmp/filecache-' . substr(conf_path(), 6);
+"
+    if is_drupal_installed? and !remote_file_exists? full_path
+      File.open("#{shared_path}/sites-default/settings.php", 'w') { |f|
+        current = f.read
+        if !current.include(cache_cfg)?
+          f.write(cache_cfg)
+        end
+      }
+    end
+  end
+  
+  # Append caching stuff
+  task :setup_files, :roles => :web do
+    if is_drupal_installed?
+      set_ownership "#{shared_path}/sites-default/private"
+      set_ownership "#{shared_path}/sites-default/files"
     end
   end
   
@@ -119,6 +152,8 @@ after "deploy:finalize_update", "drush:run_makefile"
 after "deploy:finalize_update", "drupal:create_symlinks"
 after "deploy:finalize_update", "drush:install_site"
 after "deploy:finalize_update", "drush:run_updates"
+after "deploy:finalize_update", "drush:setup_files"
+after "deploy:finalize_update", "drush:setup_filecache"
 after "deploy:finalize_update", "compass:make_styles"
 
 # Cap the number of checked-out revisions.
