@@ -97,7 +97,7 @@ END
     if is_drupal_installed? and !remote_file_exists?(settings_path)
       File.open(settings_path, 'a+') do |f|
         current = File.read(f)
-        if !current.include(cache_cfg)?
+        if current.include?(cache_cfg) == false
           f.write(cache_cfg)
         end
       end
