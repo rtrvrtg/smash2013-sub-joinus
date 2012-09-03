@@ -16,7 +16,7 @@ function smash_joinus_theme_block_info() {
   return $blocks;
 }
 
-function smash_joinus_theme_block_view() {
+function smash_joinus_theme_block_view($delta = '') {
   $block = array();
 
   switch ($delta) {
