@@ -87,13 +87,13 @@ namespace :drush do
   
   # Append caching stuff
   task :setup_filecache, :roles => :web do
-    cache_cfg = "
+    cache_cfg = <<END
 $conf['cache_backends'] = array('sites/all/modules/filecache/filecache.inc');
 $conf['cache_default_class'] = 'DrupalFileCache';
 $conf['filecache_directory'] = '/tmp/filecache-' . substr(conf_path(), 6);
-"
+END
     if is_drupal_installed? and !remote_file_exists? full_path
-      File.open("#{shared_path}/sites-default/settings.php", 'w') do |f|
+      File.open("#{shared_path}/sites-default/settings.php", 'a+') do |f|
         current = f.read
         if !current.include(cache_cfg)?
           f.write(cache_cfg)
@@ -159,4 +159,3 @@ after "deploy:finalize_update", "compass:make_styles"
 # Cap the number of checked-out revisions.
 after "deploy", "deploy:cacheclear"
 after "deploy:update", "deploy:cleanup"
-
