@@ -13,32 +13,29 @@
 }
 
 /* Strong Yellow, also the header bar BG */
-/* line 8, ../sass/forms.scss */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 #main form {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 @media all and (min-width: 640px) {
-  /* line 8, ../sass/forms.scss */
   #main form {
     margin: 0px auto;
     width: 80%;
   }
 }
 @media all and (min-width: 960px) {
-  /* line 8, ../sass/forms.scss */
   #main form {
     width: 768px;
   }
 }
 
-/* line 12, ../sass/forms.scss */
 .form-item {
   /* Wrapper for a form element (or group of form elements) and its label */
   margin: 1.5em 0;
 }
-/* line 16, ../sass/forms.scss */
 .form-item input[type="text"],
 .form-item textarea {
   width: 100%;
@@ -46,7 +43,6 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-/* line 25, ../sass/forms.scss */
 .form-item input[type="text"],
 .form-item textarea,
 .form-item select {
@@ -61,44 +57,37 @@
   border: 0px none;
   font-weight: bold;
 }
-/* line 36, ../sass/forms.scss */
 .form-item input.error,
 .form-item textarea.error,
 .form-item select.error {
   /* Highlight the form elements that caused a form submission error */
   border: 1px solid #c00;
 }
-/* line 40, ../sass/forms.scss */
 .form-item label {
   /* The label for a form element */
   display: block;
   font-weight: bold;
   font-size: 1.25em;
 }
-/* line 46, ../sass/forms.scss */
 .form-item label.option {
   /* The label for a radio button or checkbox */
   display: inline;
   font-weight: normal;
   font-size: 0.8em;
 }
-/* line 52, ../sass/forms.scss */
 .form-item .form-required {
   /* The part of the label that indicates a required field */
   color: #c00;
 }
-/* line 56, ../sass/forms.scss */
 .form-item .description {
   /* The descriptive help text (separate from the label) */
   font-size: 0.85em;
 }
-/* line 61, ../sass/forms.scss */
 .form-checkboxes .form-item, .form-radios .form-item {
   /* Pack groups of checkboxes and radio buttons closer together */
   margin: 0;
   /* Drupal core uses "0.4em 0" */
 }
-/* line 65, ../sass/forms.scss */
 .form-item .grippie {
   -webkit-border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
@@ -108,7 +97,6 @@
   margin: 10px 10px 0 10px;
 }
 
-/* line 71, ../sass/forms.scss */
 .form-submit {
   /* The submit button */
   display: inline-block;
@@ -125,19 +113,16 @@
   font-weight: bold;
 }
 
-/* line 84, ../sass/forms.scss */
 .container-inline div,
 .container-inline label {
   /* Inline labels and form divs */
   display: inline;
 }
 
-/* line 89, ../sass/forms.scss */
 .tips {
   /* Tips for Drupal's input formats */
 }
 
-/* line 92, ../sass/forms.scss */
 a.button {
   /* Buttons used by contrib modules like Media */
   -webkit-appearance: button;
@@ -148,7 +133,6 @@ a.button {
 /*
  * Password confirmation
  */
-/* line 101, ../sass/forms.scss */
 .password-parent,
 .confirm-parent {
   margin: 0;
@@ -157,7 +141,6 @@ a.button {
 /*
  * Search (search-block-form.tpl.php)
  */
-/* line 109, ../sass/forms.scss */
 #block-search-form {
   /* Wrapper for the search form */
 }
@@ -165,7 +148,6 @@ a.button {
 /*
  * Drupal's default login form block
  */
-/* line 116, ../sass/forms.scss */
 #user-login-form {
   text-align: left;
   /* LTR */
@@ -176,13 +158,11 @@ a.button {
    * styling of list items.
    */
 }
-/* line 126, ../sass/forms.scss */
 #user-login-form ul {
   /* OpenID creates a new ul above the login form's links. */
   margin-bottom: 0;
   /* Position OpenID's ul next to the rest of the links. */
 }
-/* line 131, ../sass/forms.scss */
 html.js #user-login-form li.openid-link,
 #user-login-form li.openid-link {
   /* The "Log in using OpenID" link. */
@@ -191,13 +171,11 @@ html.js #user-login-form li.openid-link,
   /* LTR */
   /* Un-do some of the padding on the ul list. */
 }
-/* line 136, ../sass/forms.scss */
 #user-login-form li.user-link {
   /* The "Cancel OpenID login" link. */
   margin-top: 1.5em;
 }
 
-/* line 141, ../sass/forms.scss */
 #user-login ul {
   margin: 1.5em 0;
 }
@@ -208,7 +186,6 @@ html.js #user-login-form li.openid-link,
  * We overrode these styles in normalize.css, but restore them for the admin
  * section of the site.
  */
-/* line 153, ../sass/forms.scss */
 form th {
   text-align: left;
   /* LTR */
@@ -216,15 +193,12 @@ form th {
   /* LTR */
   border-bottom: 3px solid #ccc;
 }
-/* line 159, ../sass/forms.scss */
 form tbody {
   border-top: 1px solid #ccc;
 }
-/* line 163, ../sass/forms.scss */
 form tr.even {
   background-color: #fff;
 }
-/* line 167, ../sass/forms.scss */
 form table .item-list ul {
   margin: 0;
 }
@@ -232,7 +206,6 @@ form table .item-list ul {
 /*
  * Drupal core wrongly puts this in system.menus.css. Since we override that, add it back.
  */
-/* line 186, ../sass/forms.scss */
 td.menu-disabled {
   background: #ccc;
 }

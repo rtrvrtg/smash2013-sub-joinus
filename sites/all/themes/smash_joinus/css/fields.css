@@ -21,15 +21,15 @@
 }
 
 /* Strong Yellow, also the header bar BG */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 /*
  * Field wrappers when the Fences module is enabled.
  */
-/* line 21, ../sass/fields.scss */
 .field-label {
   /* The optional label for a field. */
 }
 
-/* line 24, ../sass/fields.scss */
 .field-FIELDNAME {
   /* Underscores in field name are replaced with dashes. */
 }
@@ -38,12 +38,10 @@
  * If you don't use the Fences module, that's fine. Really. I think. Just use
  * these selectors instead:
  */
-/* line 33, ../sass/fields.scss */
 .field {
   /* Wrapper for any field. */
 }
 
-/* line 36, ../sass/fields.scss */
 .field-content {
   text-align: justify;
   font-size: 0.92em;
@@ -55,7 +53,6 @@
 /*
  * Field types (Contrib)
  */
-/* line 88, ../sass/fields.scss */
 .field-type-datetime {
   /* Always use "datetime" when creating new CCK date fields. "date" and "datestamp" are legacy types. */
 }
@@ -63,7 +60,6 @@
 /*
  * Named fields
  */
-/* line 110, ../sass/fields.scss */
 .field-name-field-FIELDNAME {
   /* Underscores in field name are replaced with dashes. */
 }

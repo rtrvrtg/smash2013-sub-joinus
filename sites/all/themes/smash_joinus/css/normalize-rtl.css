@@ -10,13 +10,14 @@
 }
 
 /* Strong Yellow, also the header bar BG */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 /* =============================================================================
    Lists
    ========================================================================== */
 /*
  * Addresses margins set differently in IE6/7
  */
-/* line 14, ../sass/normalize-rtl.scss */
 dd {
   margin: 0 30px 0 0;
 }
@@ -24,7 +25,6 @@ dd {
 /*
  * Addresses paddings set differently in IE6/7
  */
-/* line 25, ../sass/normalize-rtl.scss */
 menu,
 ol,
 ul,
@@ -41,7 +41,6 @@ ul,
 /* =============================================================================
    Tables
    ========================================================================== */
-/* line 48, ../sass/normalize-rtl.scss */
 th {
   text-align: right;
 }

@@ -19,23 +19,23 @@
 }
 
 /* Strong Yellow, also the header bar BG */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 /*
  * Center the page.
  */
-/* line 44, ../../sass/layouts/responsive-sidebars.scss */
 #page,
 .region-bottom {
   /* For screen sizes larger than 1200px, prevent excessively long lines of text
      by setting a max-width. */
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
+  max-width: 960px;
 }
 
 /*
  * Apply the shared properties of grid items in a single, efficient ruleset.
  */
-/* line 62, ../../sass/layouts/responsive-sidebars.scss */
 #header,
 #content,
 #navigation,
@@ -54,7 +54,6 @@
 /*
  * Containers for grid items and flow items.
  */
-/* line 52, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
 #header:before, #header:after,
 #main:before,
 #main:after,
@@ -63,7 +62,6 @@
   content: "";
   display: table;
 }
-/* line 56, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
 #header:after,
 #main:after,
 #footer:after {
@@ -74,14 +72,12 @@
  * Navigation bar
  */
 @media all and (min-width: 480px) {
-  /* line 81, ../../sass/layouts/responsive-sidebars.scss */
   #main {
     padding-top: 3em;
     /* Move all the children of #main down to make room. */
     position: relative;
   }
 
-  /* line 85, ../../sass/layouts/responsive-sidebars.scss */
   #navigation {
     position: absolute;
     top: 0;
@@ -97,7 +93,6 @@
   /*
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 104, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-first #content {
     /* Span 2 columns, starting in 2nd column from left. */
     float: left;
@@ -105,7 +100,6 @@
     margin-left: 33.333%;
     margin-right: -100%;
   }
-  /* line 108, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-first .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: left;
@@ -117,7 +111,6 @@
   /*
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 118, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-second #content {
     /* Span 2 columns, starting in 1st column from left. */
     float: left;
@@ -125,7 +118,6 @@
     margin-left: 0%;
     margin-right: -66.667%;
   }
-  /* line 122, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-second .region-sidebar-second {
     /* Span 1 column, starting in 3rd column from left. */
     float: left;
@@ -137,7 +129,6 @@
   /*
    * The layout when there are two sidebars.
    */
-  /* line 132, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars #content {
     /* Span 2 columns, starting in 2nd column from left. */
     float: left;
@@ -145,7 +136,6 @@
     margin-left: 33.333%;
     margin-right: -100%;
   }
-  /* line 136, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: left;
@@ -153,7 +143,6 @@
     margin-left: 0%;
     margin-right: -33.333%;
   }
-  /* line 140, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars .region-sidebar-second {
     /* Start a new row and span all 3 columns. */
     float: left;
@@ -164,7 +153,6 @@
     padding-right: 0;
     clear: left;
   }
-  /* line 145, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars .region-sidebar-second .block {
     padding-left: 10px;
     padding-right: 10px;
@@ -174,7 +162,6 @@
     box-sizing: border-box;
     word-wrap: break-word;
   }
-  /* line 148, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
     /* Span 1 column, starting in the 1st column from left. */
     float: left;
@@ -183,7 +170,6 @@
     margin-right: -33.333%;
     clear: left;
   }
-  /* line 152, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
     /* Span 1 column, starting in the 2nd column from left. */
     float: left;
@@ -191,7 +177,6 @@
     margin-left: 33.333%;
     margin-right: -66.667%;
   }
-  /* line 155, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars .region-sidebar-second .block:nth-child(3n) {
     /* Span 1 column, starting in the 3rd column from left. */
     float: left;
@@ -207,7 +192,6 @@
   /*
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 173, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-first #content {
     /* Span 4 columns, starting in 2nd column from left. */
     float: left;
@@ -215,7 +199,6 @@
     margin-left: 20%;
     margin-right: -100%;
   }
-  /* line 177, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-first .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: left;
@@ -227,7 +210,6 @@
   /*
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 187, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-second #content {
     /* Span 4 columns, starting in 1st column from left. */
     float: left;
@@ -235,7 +217,6 @@
     margin-left: 0%;
     margin-right: -80%;
   }
-  /* line 191, ../../sass/layouts/responsive-sidebars.scss */
   .sidebar-second .region-sidebar-second {
     /* Span 1 column, starting in 5th column from left. */
     float: left;
@@ -247,7 +228,6 @@
   /*
    * The layout when there are two sidebars.
    */
-  /* line 201, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars #content {
     /* Span 3 columns, starting in 2nd column from left. */
     float: left;
@@ -255,7 +235,6 @@
     margin-left: 20%;
     margin-right: -80%;
   }
-  /* line 205, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: left;
@@ -263,7 +242,6 @@
     margin-left: 0%;
     margin-right: -20%;
   }
-  /* line 209, ../../sass/layouts/responsive-sidebars.scss */
   .two-sidebars .region-sidebar-second {
     /* Span 1 column, starting in 5th column from left. */
     float: left;

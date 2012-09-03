@@ -13,13 +13,13 @@
 }
 
 /* Strong Yellow, also the header bar BG */
-/* line 11, ../sass/tabs-rtl.scss */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 ul.primary li,
 ul.secondary li {
   float: right;
 }
 
-/* line 17, ../sass/tabs-rtl.scss */
 ul.primary li {
   margin: 0.5em 3px 0 0;
 }

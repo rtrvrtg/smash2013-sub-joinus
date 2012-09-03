@@ -13,6 +13,8 @@
 }
 
 /* Strong Yellow, also the header bar BG */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 /*
  * Views' admin tabs
  *
@@ -21,18 +23,15 @@
  * pages. If your sub-theme isn't used for admin pages, you can remove this
  * entire section.
  */
-/* line 18, ../sass/views-styles.scss */
 .views-displays .secondary li {
   float: none;
   margin: 0 6px 0;
 }
-/* line 24, ../sass/views-styles.scss */
 .views-displays .secondary a:link,
 .views-displays .secondary a:visited {
   text-shadow: none;
   padding: 2px 7px 3px;
 }
-/* line 29, ../sass/views-styles.scss */
 .views-displays .secondary .open > a {
   -webkit-border-radius: 7px 7px 0 0;
   -moz-border-radius: 7px 7px 0 0;
@@ -40,15 +39,12 @@
   -o-border-radius: 7px 7px 0 0;
   border-radius: 7px 7px 0 0;
 }
-/* line 31, ../sass/views-styles.scss */
 .views-displays .secondary .open > a:hover {
   color: #333;
 }
-/* line 36, ../sass/views-styles.scss */
 .views-displays .secondary .action-list li {
   margin: 0;
 }
-/* line 38, ../sass/views-styles.scss */
 .views-displays .secondary .action-list li:first-child {
   -webkit-border-radius: 0 7px 0 0;
   -moz-border-radius: 0 7px 0 0;
@@ -56,7 +52,6 @@
   -o-border-radius: 0 7px 0 0;
   border-radius: 0 7px 0 0;
 }
-/* line 41, ../sass/views-styles.scss */
 .views-displays .secondary .action-list li:last-child {
   -webkit-border-radius: 0 0 7px 7px;
   -moz-border-radius: 0 0 7px 7px;
@@ -65,12 +60,10 @@
   border-radius: 0 0 7px 7px;
 }
 
-/* line 49, ../sass/views-styles.scss */
 .view-departments .view-content .views-row, .view-positions .view-content .views-row {
   margin: 0;
   padding: 0;
 }
-/* line 53, ../sass/views-styles.scss */
 .view-departments .view-content a, .view-positions .view-content a {
   margin: 0.5em 0;
   display: block;
@@ -82,17 +75,20 @@
   padding: 15px 20px;
   margin: 0 0 10px 0;
   font-weight: bold;
+  color: white;
 }
-/* line 61, ../sass/views-styles.scss */
 .view-departments .view-content a.active, .view-positions .view-content a.active {
   background-color: white;
 }
+.view-departments .view-content .views-field-title .field-content, .view-positions .view-content .views-field-title .field-content {
+  font-size: 0.92em;
+  line-height: 1.63em;
+  text-align: justify;
+}
 
-/* line 67, ../sass/views-styles.scss */
 .view-position-display {
   margin-bottom: 1em;
 }
-/* line 69, ../sass/views-styles.scss */
 .view-position-display .views-field-nothing a {
   display: inline-block;
   float: right;
