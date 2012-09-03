@@ -39,7 +39,11 @@ def set_ownership(full_path)
     run "#{try_sudo} mkdir #{full_path}"
   end
   run "#{try_sudo} chown smash:www-data #{full_path}"
-  run "#{try_sudo} chmod 2775 #{full_path}"
+  set_chmod(full_path)
+end
+
+def set_chmod(full_path, perm = "2775")
+  run "#{try_sudo} chmod #{perm} #{full_path}"
 end
 
 def is_drupal_installed?
@@ -95,12 +99,16 @@ END
 
     settings_path = "#{shared_path}/sites-default/settings.php"
     if is_drupal_installed? and !remote_file_exists?(settings_path)
+      set_chmod("#{shared_path}/sites-default", "2775")
+      set_chmod(settings_path, "644")
       File.open(settings_path, 'a+') do |f|
         current = File.read(f)
         if current.include?(cache_cfg) == false
           f.write(cache_cfg)
         end
       end
+      set_chmod(settings_path, "444")
+      set_chmod("#{shared_path}/sites-default", "2555")
     end
   end
   
