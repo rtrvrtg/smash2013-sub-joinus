@@ -12,8 +12,9 @@
   font-style: normal;
 }
 
-/* Strong Yellow, also the header bar BG */
-/*  53BCC2 */
+/* Strong fuschia, also the header bar BG */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 #main form {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -52,7 +53,7 @@
   border-radius: 7px 7px 7px 7px;
   padding: 5px 10px;
   background-color: white;
-  color: #231f20;
+  color: #242424;
   border: 0px none;
   font-weight: bold;
 }
@@ -101,7 +102,7 @@
   display: inline-block;
   padding: 15px 20px;
   color: #e63171;
-  background-color: #4a2582;
+  background-color: #5e32a2;
   -webkit-border-radius: 3px 3px 3px 3px;
   -moz-border-radius: 3px 3px 3px 3px;
   -ms-border-radius: 3px 3px 3px 3px;

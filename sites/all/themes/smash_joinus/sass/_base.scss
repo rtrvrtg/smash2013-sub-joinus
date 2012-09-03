@@ -51,10 +51,11 @@ $base-line-height: 24px; // This line-height determines the basic unit of vertic
 
 $h1-font-size: 2    * $base-font-size;
 $h2-font-size: 1.5  * $base-font-size;
-$h3-font-size: 1.17 * $base-font-size;
+$h3-font-size: 1.03 * $base-font-size;
 $h4-font-size: 1    * $base-font-size;
 $h5-font-size: 0.83 * $base-font-size;
 $h6-font-size: 0.75 * $base-font-size;
+$small-copy-font-size: 0.92 * $base-font-size;
 
 // The following font family declarations are based on the Microsoft core web
 // fonts which are common fonts available on most computer systems. The DejaVu
@@ -114,11 +115,12 @@ $font-monospace:   $courier;
 // Colors, etc.
 //
 
-$colorBodyBG:           #231F20;
+$colorBodyBG:           #242424;
 $colorText:             white;
-$colorHighlight:        #E63171; /* Strong Yellow, also the header bar BG */
-$colorHighlightBG:      #4a2582;
-$colorHighlightDarkBG:  #4a2582;  /*  53BCC2 */
+$colorHighlight:        #E63171; /* Strong fuschia, also the header bar BG */
+$colorHighlightBG:      #5E32A2;
+$colorHighlightDarkBG:  #5E32A2; /* eg. Buttons */
+$colorHighlightLightBG: #422F61; /* eg. Text on top of the fuschia */
 
 $radiusSharp: 3px;
 $radiusBlunt: 7px;

@@ -47,7 +47,7 @@ body {
 
 #header {
   background-color: $colorHighlight;
-  color: $colorHighlightDarkBG;
+  color: $colorHighlightLightBG;
 }
 
 #logo { /* Wrapping link for logo */
@@ -316,7 +316,16 @@ body.page-position-list {
     display: block;
     width: auto;
   }
-  
+
+  /* Overrides for threecol */
+  .panel-3col-33 .panel-col .inside,
+  .panel-3col-33 .panel-col-first .inside {
+    margin: 0 1em 1em;
+  }
+  .panel-3col-33 .panel-col-last .inside {
+    margin: 0 0 1em 1em;
+  }
+
   @media all and (min-width: 640px) {
     .panel-panel {
       float: left;

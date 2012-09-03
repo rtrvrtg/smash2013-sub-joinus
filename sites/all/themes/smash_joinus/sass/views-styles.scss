@@ -57,9 +57,14 @@
       padding: 15px 20px;
       margin: 0 0 10px 0;
       font-weight: bold;
+      color: $colorText;
     }
     a.active {
       background-color: $colorHighlightBG;
+    }
+    .views-field-title .field-content {
+      @include adjust-font-size-to($small-copy-font-size);
+      text-align: justify;
     }
   }
 }

@@ -12,8 +12,9 @@
   font-style: normal;
 }
 
-/* Strong Yellow, also the header bar BG */
-/*  53BCC2 */
+/* Strong fuschia, also the header bar BG */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 ul li.collapsed {
   list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
 }

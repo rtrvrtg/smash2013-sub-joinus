@@ -19,8 +19,9 @@
   font-style: normal;
 }
 
-/* Strong Yellow, also the header bar BG */
-/*  53BCC2 */
+/* Strong fuschia, also the header bar BG */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -137,7 +138,7 @@ textarea {
  */
 body {
   margin: 0;
-  background-color: #231f20;
+  background-color: #242424;
   color: #e63171;
 }
 
@@ -213,12 +214,12 @@ h2 {
 }
 
 h3 {
-  font-size: 1.17em;
-  line-height: 1.28205em;
-  margin-top: 1.28205em;
-  margin-bottom: 1.28205em;
-  font-family: "ChunkFiveRegular", serif;
-  font-weight: normal;
+  font-size: 1.03em;
+  line-height: 1.45631em;
+  margin-top: 2.91262em;
+  margin-bottom: 1.45631em;
+  color: white;
+  font-weight: bold;
 }
 
 h4 {

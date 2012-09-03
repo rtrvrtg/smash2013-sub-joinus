@@ -16,8 +16,9 @@
   font-style: normal;
 }
 
-/* Strong Yellow, also the header bar BG */
-/*  53BCC2 */
+/* Strong fuschia, also the header bar BG */
+/* eg. Buttons */
+/* eg. Text on top of the fuschia */
 /*
  * Body
  */
@@ -48,7 +49,7 @@ body {
  */
 #header {
   background-color: #e63171;
-  color: #4a2582;
+  color: #422f61;
 }
 
 #logo {
@@ -278,7 +279,7 @@ span.field-label {
   float: none;
   margin: 0 0 0 -5px;
   padding: 0 0.5em;
-  border-left: 1px solid #4a2582;
+  border-left: 1px solid #5e32a2;
 }
 #footer ul li:first-child {
   border-left: 0px none;
@@ -312,10 +313,20 @@ body.page-select-role .panel-panel {
   }
 }
 
+body.page-position-list {
+  /* Overrides for threecol */
+}
 body.page-position-list .panel-panel {
   float: none;
   display: block;
   width: auto;
+}
+body.page-position-list .panel-3col-33 .panel-col .inside,
+body.page-position-list .panel-3col-33 .panel-col-first .inside {
+  margin: 0 1em 1em;
+}
+body.page-position-list .panel-3col-33 .panel-col-last .inside {
+  margin: 0 0 1em 1em;
 }
 @media all and (min-width: 640px) {
   body.page-position-list .panel-panel {

@@ -225,9 +225,10 @@ h2 {
 
 h3 {
   @include adjust-font-size-to( $h3-font-size );
-  @include leader(1, $h3-font-size);
+  @include leader(2, $h3-font-size);
   @include trailer(1, $h3-font-size);
-  @include headerfont;
+  color: $colorText;
+  font-weight: bold;
 }
 
 h4 {
