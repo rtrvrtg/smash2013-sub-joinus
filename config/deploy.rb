@@ -36,7 +36,7 @@ end
 
 def set_ownership(full_path)
   if !remote_file_exists? full_path
-    run "mkdir #{full_path}"
+    run "#{try_sudo} mkdir #{full_path}"
   end
   run "#{try_sudo} chown smash:www-data #{full_path}"
   run "#{try_sudo} chmod 2775 #{full_path}"
@@ -87,19 +87,21 @@ namespace :drush do
   
   # Append caching stuff
   task :setup_filecache, :roles => :web do
-  #  cache_cfg = <<END
-#$conf['cache_backends'] = array('sites/all/modules/filecache/filecache.inc');
-#$conf['cache_default_class'] = 'DrupalFileCache';
-#$conf['filecache_directory'] = '/tmp/filecache-' . substr(conf_path(), 6);
-#END
-  #  if is_drupal_installed? and !remote_file_exists? full_path
-  #    File.open("#{shared_path}/sites-default/settings.php", 'a+') do |f|
-  #      current = f.read
-  #      if !current.include(cache_cfg)?
-  #        f.write(cache_cfg)
-  #      end
-  #    end
-  #  end
+    cache_cfg = <<END
+$conf['cache_backends'] = array('sites/all/modules/filecache/filecache.inc');
+$conf['cache_default_class'] = 'DrupalFileCache';
+$conf['filecache_directory'] = '/tmp/filecache-' . substr(conf_path(), 6);
+END
+
+    settings_path = "#{shared_path}/sites-default/settings.php"
+    if is_drupal_installed? and !remote_file_exists?(settings_path)
+      File.open(settings_path, 'a+') do |f|
+        current = f.read
+        if !current.include(cache_cfg)?
+          f.write(cache_cfg)
+        end
+      end
+    end
   end
   
   # Append caching stuff
@@ -125,7 +127,8 @@ namespace :drupal do
   # User uploaded content and logs should not be checked into the repository; move them to a shared location.
   task :create_symlinks, :roles => :web do
     if !remote_file_exists? "#{shared_path}/sites-default"
-      run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
+      set_ownership "#{shared_path}/sites-default"
+      run "mv #{current_release}/sites/default/* #{shared_path}/sites-default"
     end
     run "rm -rf #{current_release}/sites/default"
     run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
