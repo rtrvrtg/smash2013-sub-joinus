@@ -23,7 +23,11 @@ role :db,  domain, :primary => true # this can be the same as the web server
 set :domains, ["default"]
 
 def remote_file_exists?(full_path)
-  '1' == capture("if [ -e #{full_path} ]; then echo 1; fi").strip
+  '1' == capture("if [ -e #{full_path} ]; then echo -n 1; fi").strip
+end
+
+def app_exists?(app_name)
+  '0' == capture("which #{app_name} > /dev/null && echo -n $?").strip
 end
 
 namespace :deploy do
@@ -92,7 +96,7 @@ namespace :drupal do
   # The task below serves the purpose of creating symlinks for asset files.
   # User uploaded content and logs should not be checked into the repository; move them to a shared location.
   task :create_symlinks, :roles => :web do
-    if !remote_dir_exists("#{shared_path}/sites-default")
+    if !remote_dir_exists? "#{shared_path}/sites-default"
       run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
     end
     run "rm -rf #{current_release}/sites/default"
@@ -103,10 +107,8 @@ end
 namespace :compass do
   # Build a fresh copy of theme stylesheets if compass is installed
   task :make_styles, :roles => :web do
-    run "which compass > /dev/null && echo $?" do |channel, stream, data|
-      if data == "0"
-        run "cd #{current_release}/sites/all/themes/smash_joinus && compass compile"
-      end
+    if app_exists('compass')
+      run "cd #{current_release}/sites/all/themes/smash_joinus && compass compile"
     end
   end
 end
