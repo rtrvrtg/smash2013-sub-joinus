@@ -96,7 +96,7 @@ namespace :drupal do
   # The task below serves the purpose of creating symlinks for asset files.
   # User uploaded content and logs should not be checked into the repository; move them to a shared location.
   task :create_symlinks, :roles => :web do
-    if !remote_dir_exists? "#{shared_path}/sites-default"
+    if !remote_file_exists? "#{shared_path}/sites-default"
       run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
     end
     run "rm -rf #{current_release}/sites/default"
