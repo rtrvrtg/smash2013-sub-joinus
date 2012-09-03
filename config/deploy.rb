@@ -93,11 +93,10 @@ namespace :drupal do
       remote_dir_exists = (data == "1")
     end
     
-    if remote_dir_exists
-      run "rm -rf #{current_release}/sites/default"
-    else
+    if !remote_dir_exists
       run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
     end
+    run "rm -rf #{current_release}/sites/default"
     run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
   end
 end
