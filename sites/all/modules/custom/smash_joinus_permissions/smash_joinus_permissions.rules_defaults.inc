@@ -41,7 +41,7 @@ function smash_joinus_permissions_default_rules_configuration() {
       "IF" : [
         { "text_matches" : {
             "text" : [ "account:mail" ],
-            "match" : "(geoffrey\\\\.roberts)@smash\\\\.org\\\\.au",
+            "match" : "(geoffrey\\\\.roberts|alice\\\\.perrin|anita\\\\.huynh|clara\\\\.tse|jennifer\\\\.ta|justin\\\\.yem|kenji\\\\.iwasaki|mimi\\\\.lu|noel\\\\.wu|ray\\\\.elinon|renato\\\\.gaylican|samantha\\\\.newman)@smash\\\\.org\\\\.au",
             "operation" : "regex"
           }
         }
