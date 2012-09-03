@@ -30,6 +30,12 @@ def app_exists?(app_name)
   '0' == capture("which #{app_name} > /dev/null && echo -n $?").strip
 end
 
+def is_drupal_installed?
+  data = capture("drush status --root=#{current_release}").strip
+  ok = /Database\s*:\s*([^\s]+)/.match(data)
+  data[1] == 'Connected'
+end
+
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
@@ -50,15 +56,7 @@ namespace :drush do
   
   # Installs site
   task :install_site, :roles => :web do
-    installed = false
-    run "drush status --root=#{current_release}" do |channel, stream, data|
-      ok = /Database\s*:\s*([^\s]+)/.match(data)
-      if data[1] == 'Connected'
-        installed = true
-      end
-    end
-    
-    if installed == false
+    if !is_drupal_installed?
       set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
       set(:db_pass, Capistrano::CLI.password_prompt("DB Pass: ") )
       set(:account_name, Capistrano::CLI.ui.ask("Account name: ") )
