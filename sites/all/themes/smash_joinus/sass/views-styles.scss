@@ -60,7 +60,7 @@
       color: $colorText;
     }
     a.active {
-      background-color: $colorTextBright;
+      background-color: $colorHighlightDarkBG;
     }
     .views-field-title .field-content {
       @include adjust-font-size-to($small-copy-font-size);
