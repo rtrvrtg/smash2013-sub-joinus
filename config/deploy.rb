@@ -32,8 +32,9 @@ end
 
 def is_drupal_installed?
   data = capture("drush status --root=#{current_release}").strip
-  ok = /Database\s*:\s*([^\s]+)/.match(data)
-  data[1] == 'Connected'
+  db_ok = /Database\s*:\s*([^\s]+)/.match(data)
+  d7_ok = /Drupal bootstrap\s*:\s*([^\s]+)/.match(data)
+  db_ok[1] == 'Connected' and d7_ok[1] == 'Successful'
 end
 
 namespace :deploy do
