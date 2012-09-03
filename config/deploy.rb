@@ -93,12 +93,12 @@ $conf['cache_default_class'] = 'DrupalFileCache';
 $conf['filecache_directory'] = '/tmp/filecache-' . substr(conf_path(), 6);
 "
     if is_drupal_installed? and !remote_file_exists? full_path
-      File.open("#{shared_path}/sites-default/settings.php", 'w') { |f|
+      File.open("#{shared_path}/sites-default/settings.php", 'w') do |f|
         current = f.read
         if !current.include(cache_cfg)?
           f.write(cache_cfg)
         end
-      }
+      end
     end
   end
   
