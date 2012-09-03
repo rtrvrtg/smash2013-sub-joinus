@@ -89,7 +89,7 @@ namespace :drupal do
   # User uploaded content and logs should not be checked into the repository; move them to a shared location.
   task :create_symlinks, :roles => :web do
     run "IS_DIR=0; if [ -d #{shared_path}/sites-default ]; then IS_DIR=1; fi && echo $IS_DIR" do |channel, stream, data|
-      remote_dir_exists = (data == 1)
+      remote_dir_exists = (data == "1")
       
       if remote_dir_exists
         run "rm -rf #{current_release}/sites/default"
