@@ -27,7 +27,6 @@
 /*
  * Center the page.
  */
-/* line 43, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 #page,
 .region-bottom {
   /* If you want to make the page a fixed width and centered in the viewport,
@@ -40,7 +39,6 @@
 /*
  * Apply the shared properties of grid items in a single, efficient ruleset.
  */
-/* line 61, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 #header,
 #content,
 #navigation,
@@ -56,7 +54,6 @@
 /*
  * Containers for grid items and flow items.
  */
-/* line 52, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
 #header:before, #header:after,
 #main:before,
 #main:after,
@@ -65,7 +62,6 @@
   content: "";
   display: table;
 }
-/* line 56, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
 #header:after,
 #main:after,
 #footer:after {
@@ -75,14 +71,12 @@
 /*
  * Navigation bar
  */
-/* line 79, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 #main {
   padding-top: 3em;
   /* Move all the children of #main down to make room. */
   position: relative;
 }
 
-/* line 83, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 #navigation {
   position: absolute;
   top: 0;
@@ -94,7 +88,6 @@
 /*
  * The layout when there is only one sidebar, the left one.
  */
-/* line 95, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 .sidebar-first #content {
   /* Span 4 columns, starting in 2nd column from left. */
   float: right;
@@ -102,7 +95,6 @@
   margin-right: 196px;
   margin-left: -980px;
 }
-/* line 99, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 .sidebar-first .region-sidebar-first {
   /* Span 1 column, starting in 1st column from left. */
   float: right;
@@ -114,7 +106,6 @@
 /*
  * The layout when there is only one sidebar, the right one.
  */
-/* line 109, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 .sidebar-second #content {
   /* Span 4 columns, starting in 1st column from left. */
   float: right;
@@ -122,7 +113,6 @@
   margin-right: 0px;
   margin-left: -784px;
 }
-/* line 113, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 .sidebar-second .region-sidebar-second {
   /* Span 1 column, starting in 5th column from left. */
   float: right;
@@ -134,7 +124,6 @@
 /*
  * The layout when there are two sidebars.
  */
-/* line 123, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 .two-sidebars #content {
   /* Span 3 columns, starting in 2nd column from left. */
   float: right;
@@ -142,7 +131,6 @@
   margin-right: 196px;
   margin-left: -784px;
 }
-/* line 127, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 .two-sidebars .region-sidebar-first {
   /* Span 1 column, starting in 1st column from left. */
   float: right;
@@ -150,7 +138,6 @@
   margin-right: 0px;
   margin-left: -196px;
 }
-/* line 131, /srv/www/smash2013joinus/sites/all/themes/smash_joinus/sass/layouts/fixed-width.scss */
 .two-sidebars .region-sidebar-second {
   /* Span 1 column, starting in 5th column from left. */
   float: right;
