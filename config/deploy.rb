@@ -33,73 +33,85 @@ namespace :deploy do
   end
 end
 
-# Runs the makefile
-task :run_makefile, :roles => :web do
-  run "cd #{current_release} && drush make #{current_release}/joinus.make -y"
-end
+namespace :drush do
 
-# Installs site
-task :install_site, :roles => :web do
-  installed = false
-  run "drush status" do |channel, stream, data|
-    ok = /Database\s*:\s*([^\s]+)/.match(data)
-    if data[1] == 'Connected'
-      installed = true
+  # Runs the makefile
+  task :run_makefile, :roles => :web do
+    run "cd #{current_release} && drush make #{current_release}/joinus.make -y"
+  end
+  
+  # Installs site
+  task :install_site, :roles => :web do
+    installed = false
+    run "drush status" do |channel, stream, data|
+      ok = /Database\s*:\s*([^\s]+)/.match(data)
+      if data[1] == 'Connected'
+        installed = true
+      end
+    end
+    
+    if installed == false
+      set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
+      set(:db_pass, Capistrano::CLI.password_prompt("DB Pass: ") )
+      set(:account_name, Capistrano::CLI.ui.ask("Account name: ") )
+      set(:account_mail, Capistrano::CLI.ui.ask("Account email: ") )
+      
+      db_url = "mysql://#{db_user}:#{db_pass}@localhost/joinus_staging"
+      
+      account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{account_mail}"
+      db_switch = "--db-url=#{db_url}"
+      db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
+      
+      run "drush site-install smash2013_joinus #{db_switch} #{db_su} #{account_setup} -y"
     end
   end
   
-  if installed == false
-    set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
-    set(:db_pass, Capistrano::CLI.password_prompt("DB Pass: ") )
-    set(:account_name, Capistrano::CLI.ui.ask("Account name: ") )
-    set(:account_mail, Capistrano::CLI.ui.ask("Account email: ") )
+  # Run drush updates
+  task :run_updates, :roles => :web do
+    installed = false
+    run "drush status" do |channel, stream, data|
+      ok = /Database\s*:\s*([^\s]+)/.match(data)
+      if data[1] == 'Connected'
+        installed = true
+      end
+    end
     
-    db_url = "mysql://#{db_user}:#{db_pass}@localhost/joinus_staging"
-    
-    account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{account_mail}"
-    db_switch = "--db-url=#{db_url}"
-    db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
-    
-    run "drush site-install smash2013_joinus #{db_switch} #{db_su} #{account_setup} -y"
-  end
-end
- 
-# The task below serves the purpose of creating symlinks for asset files.
-# User uploaded content and logs should not be checked into the repository; move them to a shared location.
-task :create_symlinks, :roles => :web do
-  if !remote_dir_exists?("#{shared_path}/sites-default")
-    run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
-  else
-    run "rm -rf #{current_release}/sites/default"
-  end
-  run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
-end
-
-# Run drush updates
-task :run_updates, :roles => :web do
-  installed = false
-  run "drush status" do |channel, stream, data|
-    ok = /Database\s*:\s*([^\s]+)/.match(data)
-    if data[1] == 'Connected'
-      installed = true
+    if installed == true
+      run "drush -y features-revert-all --root=#{current_release}"
+      run "drush -y updb --root=#{current_release}"
     end
   end
-  
-  if installed == true
-    run "drush -y features-revert-all --root=#{current_release}"
-    run "drush -y updb --root=#{current_release}"
+
+end
+
+namespace :drupal do
+  # The task below serves the purpose of creating symlinks for asset files.
+  # User uploaded content and logs should not be checked into the repository; move them to a shared location.
+  task :create_symlinks, :roles => :web do
+    run "IS_DIR=0; if [ -d #{shared_path}/sites-default ]; then IS_DIR=1; fi && echo $IS_DIR" do |channel, stream, data|
+      remote_dir_exists = (data == 1)
+      
+      if remote_dir_exists
+        run "rm -rf #{current_release}/sites/default"
+      else
+        run "mkdir #{shared_path}/sites-default && mv #{current_release}/sites/default/* #{shared_path}/sites-default"
+      end
+      run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
+    end
   end
 end
+
+
 
 # Run during setup
-after "deploy:cold", :run_makefile
-after "deploy:cold", :install_site
+after "deploy:cold", "drush:run_makefile"
+after "deploy:cold", "drush:install_site"
 
 # Let's run these immediately after the deployment is finalised.
-after "deploy:finalize_update", :run_makefile
-after "deploy:finalize_update", :create_symlinks
-after "deploy:finalize_update", :install_site
-after "deploy:finalize_update", :run_updates
+after "deploy:finalize_update", "drush:run_makefile"
+after "deploy:finalize_update", "drupal:create_symlinks"
+after "deploy:finalize_update", "drush:install_site"
+after "deploy:finalize_update", "drush:run_updates"
 
 # Cap the number of checked-out revisions.
 after "deploy", "deploy:cacheclear"
