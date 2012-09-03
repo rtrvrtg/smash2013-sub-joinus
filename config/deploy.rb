@@ -106,7 +106,7 @@ end
 namespace :compass do
   # Build a fresh copy of theme stylesheets if compass is installed
   task :make_styles, :roles => :web do
-    if app_exists('compass')
+    if app_exists? 'compass'
       run "cd #{current_release}/sites/all/themes/smash_joinus && compass compile"
     end
   end
