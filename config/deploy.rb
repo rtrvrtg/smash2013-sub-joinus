@@ -27,7 +27,11 @@ def remote_file_exists?(full_path)
 end
 
 def app_exists?(app_name)
-  false == capture("which #{app_name}").strip.empty?
+  begin
+    false == capture("which #{app_name}").strip.empty?
+  rescue Exception => e
+    false
+  end
 end
 
 def is_drupal_installed?
