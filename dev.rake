@@ -80,9 +80,9 @@ namespace :drush do
     db_su = "--db-su=#{site_cfg['db_su']} --db-su-pw=#{site_cfg['db_su_pw']}"
     
     if site_cfg[:db_sqlite_scheme] then
-      sh "#{cmd} #{db_switch} #{account_setup}"
+      sh "#{cmd} #{db_switch} #{account_setup} -y"
     else
-      sh "#{cmd} #{db_switch} #{db_su} #{account_setup}"
+      sh "#{cmd} #{db_switch} #{db_su} #{account_setup} -y"
     end
   end
   
