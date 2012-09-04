@@ -312,23 +312,25 @@ body.page-select-role {
 }
 
 body.page-position-list {
-  .panel-panel {
-    float: none;
-    display: block;
-    width: auto;
-  }
-
-  /* Overrides for threecol */
-  .panel-3col-33 .panel-col .inside,
-  .panel-3col-33 .panel-col-first .inside {
-    margin: 0 1em 1em;
-  }
-  .panel-3col-33 .panel-col-last .inside {
-    margin: 0 0 1em 1em;
+  .panel-3col-33 {
+    .panel-panel {
+      float: none;
+      display: block;
+      width: auto;
+    }
+    
+    /* Overrides for threecol */
+    .panel-col .inside,
+    .panel-col-first .inside {
+      margin: 0 1em 1em;
+    }
+    .panel-col-last .inside {
+      margin: 0 0 1em 1em;
+    }
   }
 
   @media all and (min-width: 640px) {
-    .panel-panel {
+    .panel-3col-33 .panel-panel {
       float: left;
       width: 33%;
     }

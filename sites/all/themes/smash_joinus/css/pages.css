@@ -317,13 +317,10 @@ body.page-select-role .panel-panel {
   }
 }
 
-<<<<<<< HEAD
-body.page-position-list {
+body.page-position-list .panel-3col-33 {
   /* Overrides for threecol */
 }
-=======
->>>>>>> 6d1bd34... Turns off and removes debugging line comments; keep this on, and each of these lines will change every time somebody different compiles the CSS with Sass.
-body.page-position-list .panel-panel {
+body.page-position-list .panel-3col-33 .panel-panel {
   float: none;
   display: block;
   width: auto;
@@ -336,7 +333,7 @@ body.page-position-list .panel-3col-33 .panel-col-last .inside {
   margin: 0 0 1em 1em;
 }
 @media all and (min-width: 640px) {
-  body.page-position-list .panel-panel {
+  body.page-position-list .panel-3col-33 .panel-panel {
     float: left;
     width: 33%;
   }
