@@ -8,9 +8,24 @@ Required Environment / Minimum Setup
 ----------------------------------------------
 
 PHP: See the [system requirements for Drupal 7](http://drupal.org/requirements)  
-Ruby: 1.8+
+Ruby: 1.9+
 
 We recommend a minimum of 64mb RAM allocated to PHP.
+
+You need [Drush](http://drupal.org/project/drush) to install the site.
+
+1. Grab the tar.gz file from drupal.org (linked above) and place it on your machine wherever you want it.  
+   I just put it in /usr/local/lib.
+2. Extract it.  
+   tar -xvzf drush-7.x-5.7.tar.gz
+   (The version number above may be different.)
+3. Symlink the drush executable in the new directory to one of the directories specified in your $PATH.
+   eg. cd /usr/local/bin && ln -s /usr/local/lib/drush/drush .
+4. Drush may ask you to download a PEAR extension to make it work.
+   To do so, you'll need to download it into Drush's lib directory and extract it.  
+   cd usr/local/lib/drush/lib  
+   wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz  
+   tar -xvzf Console_Table-1.1.3.tgz
 
 
 Notable Deviations
