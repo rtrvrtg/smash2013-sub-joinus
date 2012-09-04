@@ -310,7 +310,7 @@ body.page-select-role .panel-panel {
   display: block;
   width: auto;
 }
-@media all and (min-width: 640px) {
+@media all and (min-width: 800px) {
   body.page-select-role .panel-panel {
     float: left;
     width: 50%;
@@ -332,7 +332,7 @@ body.page-position-list .panel-3col-33 .panel-col-first .inside {
 body.page-position-list .panel-3col-33 .panel-col-last .inside {
   margin: 0 0 1em 1em;
 }
-@media all and (min-width: 640px) {
+@media all and (min-width: 800px) {
   body.page-position-list .panel-3col-33 .panel-panel {
     float: left;
     width: 33%;
