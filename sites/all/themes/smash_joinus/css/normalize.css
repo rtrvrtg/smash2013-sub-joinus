@@ -214,21 +214,12 @@ h2 {
 }
 
 h3 {
-<<<<<<< HEAD
   font-size: 1.03em;
   line-height: 1.456em;
   margin-top: 2.913em;
   margin-bottom: 1.456em;
   color: white;
   font-weight: bold;
-=======
-  font-size: 1.17em;
-  line-height: 1.28205em;
-  margin-top: 1.28205em;
-  margin-bottom: 1.28205em;
-  font-family: "ChunkFiveRegular", serif;
-  font-weight: normal;
->>>>>>> 6d1bd34... Turns off and removes debugging line comments; keep this on, and each of these lines will change every time somebody different compiles the CSS with Sass.
 }
 
 h4 {
@@ -242,9 +233,9 @@ h4 {
 
 h5 {
   font-size: 0.83em;
-  line-height: 1.80723em;
-  margin-top: 1.80723em;
-  margin-bottom: 1.80723em;
+  line-height: 1.807em;
+  margin-top: 1.807em;
+  margin-bottom: 1.807em;
   font-family: "ChunkFiveRegular", serif;
   font-weight: normal;
 }
@@ -484,17 +475,17 @@ fieldset {
   margin: 0 2px;
   /* Apply borders and padding that keep the vertical rhythm. */
   border-top-style: solid;
-  border-top-width: 0.0625em;
-  padding-top: 0.4625em;
+  border-top-width: 0.063em;
+  padding-top: 0.462em;
   border-bottom-style: solid;
-  border-bottom-width: 0.0625em;
-  padding-bottom: 0.9125em;
+  border-bottom-width: 0.063em;
+  padding-bottom: 0.913em;
   border-left-style: solid;
-  border-left-width: 0.0625em;
-  padding-left: 0.9125em;
+  border-left-width: 0.063em;
+  padding-left: 0.913em;
   border-right-style: solid;
-  border-right-width: 0.0625em;
-  padding-right: 0.9125em;
+  border-right-width: 0.063em;
+  padding-right: 0.913em;
 }
 
 /*
@@ -627,8 +618,7 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  /* width: 100%; */
-  /* Prevent cramped-looking tables */
+  width: 100%;
   /* Add vertical rhythm margins. */
   margin-top: 1.5em;
   margin-bottom: 1.5em;
