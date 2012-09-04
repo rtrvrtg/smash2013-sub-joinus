@@ -17,7 +17,7 @@ $(document).ready(function(){
 // Place your code here.
 
   $('.pane-departments, .pane-positions').delegate('.view-content a', 'mouseup', function(e){
-    $(this).siblings('.active').removeClass('active');
+    $(this).parents('.views-row').siblings('.views-row').find('.active').removeClass('active');
     $(this).addClass('active');
   });
   
