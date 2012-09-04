@@ -383,7 +383,7 @@ function smash_position_types_field_default_fields() {
             'open' => '',
           ),
           'settings' => array(
-            'from_address' => 'g.roberts@blackicemedia.com',
+            'from_address' => 'apply@smash.org.au',
             'multiple_registrations' => 0,
           ),
           'status' => 1,
