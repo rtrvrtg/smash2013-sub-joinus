@@ -19,23 +19,25 @@ It needs to be either version 5.0 or better, or else have the drush make extensi
 
 You should be able to install Drush using PEAR like this:
 
-sudo pear channel-discover pear.drush.org && sudo pear install drush/drush
+`sudo pear channel-discover pear.drush.org && sudo pear install drush/drush`
 
 If you want to install Drush manually:
 
 1. Grab the tar.gz file from drupal.org (linked above) and place it on your machine wherever you want it.  
    I just put it in /usr/local/lib.
 2. Extract it.  
-   tar -xvzf drush-7.x-5.7.tar.gz
+   `tar -xvzf drush-7.x-5.7.tar.gz`
    (The version number above may be different.)
 3. Symlink the drush executable in the new directory to one of the directories specified in your $PATH.
-   eg. cd /usr/local/bin && ln -s /usr/local/lib/drush/drush .
+   eg. `cd /usr/local/bin && ln -s /usr/local/lib/drush/drush .`
 4. Drush may ask you to download a PEAR extension to make it work.
    To do so, you'll need to download it into Drush's lib directory and extract it.
    (In the list of commands below, change the URL and filename below to whatever Drush asks for.)  
+   ```
    cd /usr/local/lib/drush/lib  
    wget http://download.pear.php.net/package/Console_Table-1.1.3.tgz  
    tar -xvzf Console_Table-1.1.3.tgz
+   ```
 
 
 Notable Deviations
@@ -106,13 +108,13 @@ How do I deploy to it?
 Production Environment
 ----------------------------------------------
 
-Where is it?  
-How do I access it?  
-Who do I speak with to get access?  
-Is there a CDN? How does it work?  
-Is there a particular release process?  
-How do I deploy to it?  
-How is it monitored?
+We use Capistrano to deploy the site.
+
+To deploy the site, run
+`cap deploy`
+
+If you want to pull down the remote site's database for local development, run
+`cap drush:db_fetch`
 
 
 Design
@@ -134,9 +136,9 @@ Colour palette is in
 Known Issues / Gotchas
 ----------------------------------------------
 
-
+TBA
 
 Extended Resources
 ----------------------------------------------
 
-Links to extended resources.
+TBA

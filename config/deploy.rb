@@ -130,11 +130,13 @@ END
   
   # Grab remote database
   task :fetch_db, :roles => :web do
-    filename = Time.new.strftime("%Y-%m-%d-%H-%M-%S") + '.dump'
-    set_ownership "#{shared_path}/db-dumps"
-    run "drush sql-dump --root=#{current_release} > #{shared_path}/db-dumps/#{filename}"
-    get "#{shared_path}/db-dumps/#{filename}", "#{filename}"
-    run "rm #{shared_path}/db-dumps/#{filename}"
+    if is_drupal_installed?
+      filename = Time.new.strftime("%Y-%m-%d-%H-%M-%S") + '.dump'
+      set_ownership "#{shared_path}/db-dumps"
+      run "drush sql-dump --root=#{current_release} > #{shared_path}/db-dumps/#{filename}"
+      get "#{shared_path}/db-dumps/#{filename}", "#{filename}"
+      run "rm #{shared_path}/db-dumps/#{filename}"
+    end
   end
 
 end
