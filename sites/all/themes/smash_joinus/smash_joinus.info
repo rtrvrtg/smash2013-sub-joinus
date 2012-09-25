@@ -78,6 +78,7 @@ stylesheets[all][] = css/print.css
 ; Optionally add some JavaScripts to your theme.
 
 scripts[] = js/jquery.elastic.source.js
+scripts[] = js/jquery.history.js
 scripts[] = js/script.js
 
 

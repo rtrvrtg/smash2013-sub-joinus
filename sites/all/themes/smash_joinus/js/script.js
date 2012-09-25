@@ -16,9 +16,23 @@ $(document).ready(function(){
 
 // Place your code here.
 
+  var History = window.History, // Note: We are using a capital H instead of a lower h
+	State = History.getState();
+	
+	// Bind to State Change
+	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+	  // Log the State
+		var State = History.getState(); // Note: We are using History.getState() instead of event.state
+		History.log('statechange:', State.data, State.title, State.url);
+	});
+
   $('.pane-departments, .pane-positions').delegate('.view-content a', 'mouseup', function(e){
     $(this).parents('.views-row').siblings('.views-row').find('.active').removeClass('active');
     $(this).addClass('active');
+    
+    var uri = this.href.replace(/^[a-z]*:\/\/[^\/]*\//, '').replace(/^request\//, '').replace(/\/(nojs)$/, '');
+    
+    History.pushState({ state: uri }, $(this).text(), '/' + uri);
   });
   
   $('#content form textarea').elastic();

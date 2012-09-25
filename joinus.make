@@ -85,6 +85,7 @@ projects[strongarm][version] = "2.0"
 projects[unique_field][version] = "1.0-rc1"
 
 projects[views][version] = "3.5"
+projects[views][patch][] = "http://drupal.org/files/views_ajax_submit_back_2.patch"
 
 ; Themes
 projects[zen][version] = "5.1"
