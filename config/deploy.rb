@@ -4,7 +4,7 @@ set :ssh_options, { :forward_agent => true }
 set :user,        "smash"
 set :application, "SMASH! Joinus"
 set :domain,      "linode.smash.org.au"
-set :repository,  "git@github.com:rtrvrtg/smash2013-sub-joinus.git"
+set :repository,  "git@github.com:smashcon/smash2013-sub-joinus.git"
 set :deploy_to,   "/var/www/staging.smash.org.au/joinus"
 set :shared_path, "#{deploy_to}/shared"
 set :use_sudo, false

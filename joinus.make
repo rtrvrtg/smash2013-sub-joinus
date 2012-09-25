@@ -3,6 +3,7 @@ core = 7.x
 
 api = 2
 projects[drupal][version] = "7.15"
+projects[drupal][patch][] = http://drupal.org/files/core-js-drupal-log-1232416-100-D7.patch
 
 ; Modules
 projects[ctools][version] = "1.2"
