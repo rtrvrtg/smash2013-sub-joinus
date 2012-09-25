@@ -15,25 +15,40 @@
 $(document).ready(function(){
 
 // Place your code here.
+  
+  var assignActivity = function(button) {
+    var isDepartment = button.parents('.pane-departments').length > 0;
+    if (isDepartment) {
+      $('.pane-positions').find('.view-content .active').removeClass('active');
+    }
+    button.closest('.pane-departments, .pane-positions').find('.view-content .active').removeClass('active');
+    button.addClass('active');
+  };
 
   var History = window.History, // Note: We are using a capital H instead of a lower h
 	State = History.getState();
 	
 	// Bind to State Change
 	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-	  // Log the State
-		var State = History.getState(); // Note: We are using History.getState() instead of event.state
-		History.log('statechange:', State.data, State.title, State.url);
+		var State = History.getState();
+		if (!!State.data.state) {
+      var button = $('.view-content a[href$="request/' + State.data.state + '/nojs"]', '.pane-departments, .pane-positions');
+      if (button.length > 0 && !button.hasClass('active')) {
+        // @TODO: refine back behaviour
+        button.click();
+        assignActivity(button);
+      }
+		}
 	});
 
   $('.pane-departments, .pane-positions').delegate('.view-content a', 'mouseup', function(e){
-    $(this).parents('.views-row').siblings('.views-row').find('.active').removeClass('active');
-    $(this).addClass('active');
-    
+    assignActivity($(this));
     var uri = this.href.replace(/^[a-z]*:\/\/[^\/]*\//, '').replace(/^request\//, '').replace(/\/(nojs)$/, '');
-    
     History.pushState({ state: uri }, $(this).text(), '/' + uri);
   });
+  
+  var uri = window.location.href.replace(/^[a-z]*:\/\/[^\/]*\//, '');
+  History.pushState({ state: uri }, document.title, '/' + uri);
   
   $('#content form textarea').elastic();
 
