@@ -449,3 +449,10 @@ function smash2013_joinus_install() {
   
   variable_set('site_name', 'SMASH! 2013 - Join us!');
 }
+
+/**
+ * Screw it, ditch overlay
+ */
+function smash2013_joinus_update_7000() {
+  module_disable(array('overlay'));
+}

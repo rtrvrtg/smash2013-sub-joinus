@@ -18,7 +18,7 @@ projects[email][version] = "1.2"
 
 projects[entity][version] = "1.0-rc3"
 
-projects[entityreference][version] = "1.0-rc3"
+projects[entityreference][version] = "1.0-rc5"
 
 projects[features][version] = "1.0"
 
