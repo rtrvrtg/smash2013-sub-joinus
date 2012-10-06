@@ -302,6 +302,15 @@ body.page-select-role .pane-content {
 }
 body.page-select-role .pane-content a {
   display: block;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -ms-border-radius: 3px 3px 3px 3px;
+  -o-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+}
+body.page-select-role .pane-content a:hover, body.page-select-role .pane-content a:focus, body.page-select-role .pane-content a:active {
+  background-color: #4a4a4a;
+  text-decoration: none;
 }
 body.page-select-role .panel-panel {
   float: none;

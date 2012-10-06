@@ -294,6 +294,12 @@ body.page-select-role {
     
     a {
       display: block;
+      @include border-radius($radiusSharp $radiusSharp $radiusSharp $radiusSharp);
+      
+      &:hover, &:focus, &:active {
+        background-color: lighten($colorBodyBG, 15%);
+        text-decoration: none;
+      }
     }
   }
   
