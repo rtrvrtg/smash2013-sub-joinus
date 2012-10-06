@@ -114,6 +114,9 @@
   border: 0px none;
   font-weight: bold;
 }
+.form-submit:hover, .form-submit:focus, .form-submit:active {
+  background-color: #8456cb;
+}
 
 .container-inline div,
 .container-inline label {

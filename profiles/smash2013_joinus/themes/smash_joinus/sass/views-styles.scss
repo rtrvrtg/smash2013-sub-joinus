@@ -58,7 +58,12 @@
       margin: 0 0 10px 0;
       font-weight: bold;
       color: $colorText;
+      
+      &:hover, &:focus, &:active {
+        background-color: lighten($colorBodyBG, 15%);
+      }
     }
+    
     a.active {
       background-color: $colorHighlightDarkBG;
     }
@@ -79,5 +84,9 @@
     background-color: $colorHighlightDarkBG;
     @include border-radius($radiusSharp $radiusSharp $radiusSharp $radiusSharp);
     font-weight: bold;
+    
+    &:hover, &:focus, &:active {
+      background-color: lighten($colorHighlightDarkBG, 15%);
+    }
   }
 }
