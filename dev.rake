@@ -76,6 +76,8 @@ namespace :drush do
     site_cfg = config[ENV["DRUPAL_ENV"]]
     puts site_cfg
     
+    sh "git submodule update --init"
+    
     cmd = "drush site-install smash2013_joinus"
     account_setup = "--account-name=#{site_cfg['account_name']} --account-mail=#{site_cfg['account_mail']} --site-mail=#{site_cfg['site_mail']}"
     db_switch = "--db-url=#{site_cfg['db_url']}"
