@@ -73,6 +73,8 @@ namespace :drush do
   
   # Installs site
   task :install_site, :roles => :web do
+    run "git submodule update --init"
+    
     if !is_drupal_installed?
       set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
       set(:db_pass, Capistrano::CLI.password_prompt("DB Pass: ") )
