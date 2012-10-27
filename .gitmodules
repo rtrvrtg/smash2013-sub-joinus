@@ -1,0 +1,3 @@
+[submodule "profiles/smash2013_joinus/themes/smash_minisite_theme"]
+	path = profiles/smash2013_joinus/themes/smash_minisite_theme
+	url = git@github.com:rtrvrtg/smash2013-minisite-theme.git
