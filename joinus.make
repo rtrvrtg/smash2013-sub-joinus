@@ -2,7 +2,7 @@
 core = 7.x
 
 api = 2
-projects[drupal][version] = "7.15"
+projects[drupal][version] = "7.17"
 projects[drupal][patch][] = http://drupal.org/files/core-js-drupal-log-1232416-100-D7.patch
 
 ; Modules
@@ -18,11 +18,11 @@ projects[email][version] = "1.2"
 
 projects[entity][version] = "1.0-rc3"
 
-projects[entityreference][version] = "1.0-rc5"
+projects[entityreference][version] = "1.0"
 
 projects[features][version] = "1.0"
 
-projects[field_validation][version] = "2.1"
+projects[field_validation][version] = "2.2"
 
 projects[filecache][version] = "1.0-beta2"
 
