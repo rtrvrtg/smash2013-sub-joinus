@@ -9,7 +9,6 @@ set :application, "SMASH! Joinus"
 set :user,        "smash"
 set :domain,      "linode.smash.org.au"
 set :repository,  "git@github.com:smashcon/smash2013-sub-joinus.git"
-set :deploy_to,   "/var/www/staging.smash.org.au/joinus"
 set :shared_path, "#{deploy_to}/shared"
 set :use_sudo, false
  
