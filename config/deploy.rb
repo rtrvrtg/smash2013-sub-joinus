@@ -5,7 +5,7 @@ require 'capistrano/ext/multistage'
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 set :ssh_options, { :forward_agent => true }
 
-set :application, "SMASH! Joinus"
+set :application, "smash-joinus"
 set :user,        "smash"
 set :domain,      "linode.smash.org.au"
 set :repository,  "git@github.com:smashcon/smash2013-sub-joinus.git"
