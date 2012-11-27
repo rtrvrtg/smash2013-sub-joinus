@@ -1,1 +1,2 @@
-deploy_to '/var/www/smash.org.au/joinus', :app, :web, :primary => true
+server 'linode.smash.org.au', :app, :web, :primary => true
+set :deploy_to, '/var/www/smash.org.au/joinus'

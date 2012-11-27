@@ -73,7 +73,7 @@ task :uname do
 end
 
 task :pwd do
-  run "pwd"
+  run "echo #{deploy_to}"
 end
 
 namespace :drush do
