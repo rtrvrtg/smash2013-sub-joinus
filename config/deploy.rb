@@ -1,8 +1,12 @@
+set :stages, %w(production staging)
+set :default_stage, "staging"
+require 'capistrano/ext/multistage'
+
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 set :ssh_options, { :forward_agent => true }
 
-set :user,        "smash"
 set :application, "SMASH! Joinus"
+set :user,        "smash"
 set :domain,      "linode.smash.org.au"
 set :repository,  "git@github.com:smashcon/smash2013-sub-joinus.git"
 set :deploy_to,   "/var/www/staging.smash.org.au/joinus"
@@ -62,6 +66,14 @@ namespace :deploy do
   task :cacheclear, :roles => :web do
     run "drush cc all --root=#{current_release}"
   end
+end
+
+task :uname do
+  run "uname -a"
+end
+
+task :pwd do
+  run "pwd"
 end
 
 namespace :drush do

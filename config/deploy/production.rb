@@ -1,0 +1,1 @@
+deploy_to '/var/www/smash.org.au/joinus', :app, :web, :primary => true
