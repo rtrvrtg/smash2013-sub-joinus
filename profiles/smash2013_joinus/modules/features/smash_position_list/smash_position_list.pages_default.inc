@@ -359,7 +359,7 @@ Fill out the form, submit your details and we\'ll be in touch!',
     $pane->configuration = array(
       'admin_title' => 'Crew member disabled',
       'title' => '',
-      'body' => '<h2>Become a Crew Member</h2><p>Sorry, SMASH! Crew applications have closed for SMASH! 2012.</p>',
+      'body' => '<h2>Become a Crew Member</h2><p>Sorry, SMASH! Crew applications aren\'t open yet for SMASH! 2013.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
