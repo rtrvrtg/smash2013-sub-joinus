@@ -7,42 +7,61 @@ projects[drupal][patch][] = http://drupal.org/files/core-js-drupal-log-1232416-1
 
 ; Modules
 projects[ctools][version] = "1.2"
+projects[ctools][subdir] = "contrib"
 
 projects[bundle_copy][version] = "1.1"
+projects[bundle_copy][subdir] = "contrib"
 
 projects[compass][version] = "1.0-beta1"
+projects[compass][subdir] = "contrib"
 
 projects[devel][version] = "1.3"
+projects[devel][subdir] = "contrib"
 
 projects[email][version] = "1.2"
+projects[email][subdir] = "contrib"
 
-projects[entity][version] = "1.0-rc3"
+projects[entity][version] = "1.0"
+projects[entity][subdir] = "contrib"
 
 projects[entityreference][version] = "1.0"
+projects[entityreference][subdir] = "contrib"
 
 projects[features][version] = "1.0"
+projects[features][subdir] = "contrib"
 
 projects[field_validation][version] = "2.2"
+projects[field_validation][subdir] = "contrib"
 
 projects[filecache][version] = "1.0-beta2"
+projects[filecache][subdir] = "contrib"
 
 projects[jquery_update][version] = "2.2"
+projects[jquery_update][subdir] = "contrib"
 
 projects[link][version] = "1.0"
+projects[link][subdir] = "contrib"
 
 projects[markdown][version] = "1.0"
+projects[markdown][subdir] = "contrib"
 
 projects[panels][version] = "3.3"
+projects[panels][subdir] = "contrib"
 
 projects[registration][version] = "1.0-beta3"
+projects[registration][subdir] = "contrib"
 
 projects[rules][version] = "2.2"
+projects[rules][subdir] = "contrib"
 
 projects[stringoverrides][version] = "1.8"
+projects[stringoverrides][subdir] = "contrib"
 
 projects[strongarm][version] = "2.0"
+projects[strongarm][subdir] = "contrib"
 
 projects[unique_field][version] = "1.0-rc1"
+projects[unique_field][subdir] = "contrib"
 
 projects[views][version] = "3.5"
 projects[views][patch][] = "http://drupal.org/files/views_ajax_submit_back_2.patch"
