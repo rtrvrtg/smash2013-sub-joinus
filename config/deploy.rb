@@ -6,6 +6,7 @@ set :user,        "smash"
 set :domain,      "linode.smash.org.au"
 set :repository,  "git@github.com:smashcon/joinus-drupal.git"
 set :deploy_to,   "/var/www/smash.org.au/joinus"
+set :url,         "http://joinus.smash.org.au"
 
 set :stages, %w(production staging)
 set :default_stage, "staging"
