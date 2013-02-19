@@ -1,13 +1,12 @@
 name = SMASH! joinus Permissions
 core = 7.x
 package = SMASH!
+php = 5.2.4
 version = 7.x-1.0
 project = smash_joinus_permissions
 dependencies[] = entity
 dependencies[] = features
-dependencies[] = node
 dependencies[] = rules
-dependencies[] = user
 features[features_api][] = api:1
 features[rules_config][] = rules_not_smash_user
 features[rules_config][] = rules_user_is_smash_management

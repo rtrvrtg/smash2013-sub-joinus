@@ -332,7 +332,7 @@ Fill out the form, submit your details and we\'ll be in touch!',
     $pane->configuration = array(
       'admin_title' => 'Staff member enabled',
       'title' => '',
-      'body' => '<a href="position-list"><h2>Become a Staff Member</h2><p>SMASH! Staff work on the preparation and planning for the convention, They come up with all the brilliant plans for the event.</p></a>',
+      'body' => '<a href="position-list"><h2>Become a Staff Member</h2><p>SMASH! Staff are the awesome volunteers who work on the preparation and planning for the convention. They come up with all the brilliant plans for the event.</p></a>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

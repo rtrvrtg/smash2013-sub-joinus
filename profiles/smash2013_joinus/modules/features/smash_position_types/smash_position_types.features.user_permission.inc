@@ -60,6 +60,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -295,6 +296,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view it_ticketing_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -304,6 +306,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view own it_ticketing_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -313,6 +316,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view own programming_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -322,6 +326,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view own sponsorship_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -331,6 +336,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view programming_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -340,6 +346,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view sponsorship_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );

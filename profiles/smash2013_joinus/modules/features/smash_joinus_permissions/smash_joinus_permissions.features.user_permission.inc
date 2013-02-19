@@ -33,6 +33,7 @@ function smash_joinus_permissions_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'node',
   );
@@ -153,6 +154,7 @@ function smash_joinus_permissions_user_default_permissions() {
     'name' => 'edit any position content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'node',
   );

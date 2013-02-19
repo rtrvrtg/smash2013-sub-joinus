@@ -36,6 +36,7 @@ function smash_joinus_permissions_default_rules_configuration() {
   $items['rules_user_is_smash_management'] = entity_import('rules_config', '{ "rules_user_is_smash_management" : {
       "LABEL" : "YOU ARE THE SUPERIOR DANCER",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "REQUIRES" : [ "rules" ],
       "ON" : [ "user_insert" ],
       "IF" : [
@@ -48,7 +49,8 @@ function smash_joinus_permissions_default_rules_configuration() {
       ],
       "DO" : [
         { "user_add_role" : { "account" : [ "account" ], "roles" : { "value" : { "4" : "4" } } } },
-        { "drupal_message" : { "message" : "BOOYEAH" } }
+        { "drupal_message" : { "message" : "BOOYEAH" } },
+        { "user_unblock" : { "account" : [ "account" ] } }
       ]
     }
   }');

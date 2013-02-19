@@ -5,7 +5,7 @@ set :application, "smash-joinus"
 set :user,        "smash"
 set :domain,      "linode.smash.org.au"
 set :repository,  "git@github.com:smashcon/joinus-drupal.git"
-set :deploy_to,   "/var/www/staging.smash.org.au/joinus"
+set :deploy_to,   "/var/www/smash.org.au/joinus"
 
 set :stages, %w(production staging)
 set :default_stage, "staging"
@@ -39,23 +39,41 @@ def app_exists?(app_name)
   end
 end
 
-def set_ownership(full_path)
+def drush_do(task)
+  run "drush #{task} --root=#{current_release} -l #{url}"
+end
+
+def set_ownership(full_path, is_file = false, failure_ok = false)
+  suffix = failure_ok == true ? '; true' : ''
   if !remote_file_exists? full_path
     run "#{try_sudo} mkdir #{full_path}"
   end
-  run "#{try_sudo} chown smash:www-data #{full_path}"
+  if is_file
+    run "#{try_sudo} chown smash:www-data #{full_path} #{suffix}"
+  else
+    run "#{try_sudo} chown -R smash:www-data #{full_path} #{suffix}"
+  end
   set_chmod(full_path)
 end
 
-def set_chmod(full_path, perm = "2775")
-  run "#{try_sudo} chmod #{perm} #{full_path}"
+def symlink_me(full_path, short_path)
+  run "cd #{current_release} && #{try_sudo} ln -s #{full_path} #{short_path}"
+end
+
+def set_chmod(full_path, perm = "2775", failure_ok = false)
+  suffix = failure_ok == true ? '; true' : ''
+  run "#{try_sudo} chmod #{perm} #{full_path} #{suffix}"
 end
 
 def is_drupal_installed?
-  data = capture("drush status --root=#{current_release}").strip
-  db_ok = /Database\s*:\s*([^\s]+)/.match(data)
-  d7_ok = /Drupal bootstrap\s*:\s*([^\s]+)/.match(data)
-  db_ok[1] == 'Connected' and d7_ok[1] == 'Successful'
+  begin
+    data = capture("drush status --root=#{current_release}").strip
+    db_ok = /Database\s*:\s*([^\s]+)/.match(data)
+    d7_ok = /Drupal bootstrap\s*:\s*([^\s]+)/.match(data)
+    (!db_ok.nil? && !d7_ok?) && (db_ok[1] == 'Connected' and d7_ok[1] == 'Successful')
+  rescue
+    true
+  end
 end
 
 namespace :deploy do
@@ -64,8 +82,8 @@ namespace :deploy do
   task :restart do ; end
   
   desc "Flush the Drupal cache system."
-  task :cacheclear, :roles => :web do
-    run "drush cc all --root=#{current_release}"
+  task :cacheclear, :roles => :web, :on_error => :continue do
+    drush_do("cc all")
   end
 end
 
@@ -114,7 +132,7 @@ END
 
     settings_path = "#{shared_path}/sites-default/settings.php"
     if is_drupal_installed? and !remote_file_exists?(settings_path)
-      set_chmod("#{shared_path}/sites-default", "2775")
+      set_chmod("#{shared_path}/sites-default", "2775", true)
       set_chmod(settings_path, "644")
       File.open(settings_path, 'a+') do |f|
         current = File.read(f)
@@ -123,23 +141,24 @@ END
         end
       end
       set_chmod(settings_path, "444")
-      set_chmod("#{shared_path}/sites-default", "2555")
     end
   end
   
   # Append caching stuff
   task :setup_files, :roles => :web do
     if is_drupal_installed?
-      set_ownership "#{shared_path}/sites-default/private"
-      set_ownership "#{shared_path}/sites-default/files"
+      set_ownership("#{shared_path}/sites-default/private", true, true)
+      set_ownership("#{shared_path}/sites-default/files", true, true)
     end
   end
   
   # Run drush updates
   task :run_updates, :roles => :web do
     if is_drupal_installed?
-      run "drush -y features-revert-all --root=#{current_release}"
-      run "drush -y updb --root=#{current_release}"
+      drush_do("registry-rebuild -y")
+      drush_do("features-revert-all -y")
+      drush_do("updb -y")
+      drush_do("cron -y")
     end
   end
   
