@@ -48,7 +48,7 @@ projects[markdown][subdir] = "contrib"
 projects[panels][version] = "3.3"
 projects[panels][subdir] = "contrib"
 
-projects[registration][version] = "1.0-beta3"
+projects[registration][version] = "1.0"
 projects[registration][subdir] = "contrib"
 
 projects[rules][version] = "2.2"
