@@ -73,8 +73,8 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[unique_field][version] = "1.0-rc1"
 projects[unique_field][subdir] = "contrib"
 
-;projects[zen][version] = "5.1"
-;projects[zen][subdir] = "contrib"
+projects[zen][version] = "5.1"
+projects[zen][subdir] = "contrib"
 
 projects[date][version] = "2.6"
 projects[date][subdir] = "contrib"
