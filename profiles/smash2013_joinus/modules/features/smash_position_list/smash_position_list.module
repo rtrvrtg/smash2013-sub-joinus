@@ -106,10 +106,16 @@ function smash_position_list_register_form($dept_slug, $pos_slug) {
  * Alter rego form
  */
 function smash_position_list_form_registration_form_alter(&$form, &$form_state, $form_id) {
+  $form['warning'] = array(
+    '#markup' => '<p>' . t('All items marked with a red asterisk !ast are compulsory.', array(
+      '!ast' => '<span class="form-item"><span class="form-required">*</span></span>'
+    )) . '</p>',
+  );
+  
   if (count($form['who_is_registering']['#options']) == 1) {
     $keys = array_keys($form['who_is_registering']['#options']);
     $form['who_is_registering']['#type']  = 'value';
-    $form['who_is_registering']['#value'] = $keys[0];
+    $form['who_is_registering']['#value'] = 'registration_registrant_type_anon';
   }
   
   $form['actions']['submit']['#value'] = t('Submit Registration');
