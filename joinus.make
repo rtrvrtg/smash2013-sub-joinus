@@ -67,6 +67,9 @@ projects[views][version] = "3.5"
 projects[views][subdir] = "contrib"
 projects[views][patch][] = "http://drupal.org/files/views_ajax_submit_back_2.patch"
 
+projects[views_data_export][version] = "3.0-beta6"
+projects[views_data_export][subdir] = "contrib"
+
 projects[views_bulk_operations][version] = "3.1"
 projects[views_bulk_operations][subdir] = "contrib"
 
