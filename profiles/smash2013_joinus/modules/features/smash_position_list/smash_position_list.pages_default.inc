@@ -357,9 +357,9 @@ Fill out the form, submit your details and we\'ll be in touch!',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Crew member disabled',
+      'admin_title' => 'Crew member enabled',
       'title' => '',
-      'body' => '<h2>Become a Crew Member</h2><p>Sorry, SMASH! Crew applications aren\'t open yet for SMASH! 2013.</p>',
+      'body' => '<a href="/join-the-crew"><h2>Become a Crew Member</h2><p>SMASH! Crew applications are now open for SMASH! 2013!</p></a>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
