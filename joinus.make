@@ -9,6 +9,9 @@ projects[drupal][patch][] = http://drupal.org/files/core-js-drupal-log-1232416-1
 projects[ctools][version] = "1.2"
 projects[ctools][subdir] = "contrib"
 
+projects[backup_migrate][version] = "2.4"
+projects[backup_migrate][subdir] = "contrib"
+
 projects[bundle_copy][version] = "1.1"
 projects[bundle_copy][subdir] = "contrib"
 
