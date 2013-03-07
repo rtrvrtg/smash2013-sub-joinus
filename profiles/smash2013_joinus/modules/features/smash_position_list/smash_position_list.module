@@ -125,6 +125,13 @@ function smash_position_list_form_registration_form_alter(&$form, &$form_state, 
   $form['anon_mail']['#required'] = TRUE;
   
   $form['#submit'][] = 'smash_position_list_registration_form_postsubmit';
+  
+  if ($form['#bundle'] == 'crew') {
+    // Disable prep field
+    unset($form['field_preparation']);
+    unset($form['field_preferred_breaks']);
+    unset($form['field_address']);
+  }
 }
 
 function smash_position_list_registration_form_postsubmit($form, &$form_state) {
