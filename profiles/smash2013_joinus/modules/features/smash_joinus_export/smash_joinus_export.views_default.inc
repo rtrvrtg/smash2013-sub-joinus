@@ -104,6 +104,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'registration_related_node';
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Registration: Registration ID */
   $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
   $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
