@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SMASH! Joinus Export feature.
+ */
+
+include_once 'smash_joinus_export.features.inc';

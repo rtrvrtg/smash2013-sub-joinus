@@ -468,3 +468,10 @@ function smash2013_joinus_update_7001() {
     ->execute();
   variable_set('theme_default', 'smash_minisite_theme');
 }
+
+/**
+ * Screw it, ditch overlay
+ */
+function smash2013_joinus_update_7002() {
+  module_enable(array('smash_joinus_export'));
+}

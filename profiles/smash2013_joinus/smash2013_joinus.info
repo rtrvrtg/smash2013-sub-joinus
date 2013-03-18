@@ -54,4 +54,5 @@ dependencies[] = smash_position_types
 dependencies[] = smash_joinus_permissions
 dependencies[] = smash_joinus_theme
 dependencies[] = smash_joinus_modifications
+dependencies[] = smash_joinus_export
 

@@ -353,7 +353,9 @@ function smash_position_types_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'registration',
-          'settings' => array(),
+          'settings' => array(
+            'label' => ' ',
+          ),
           'type' => 'registration_default',
           'weight' => 1,
         ),
@@ -853,7 +855,7 @@ function smash_position_types_field_default_fields() {
       'settings' => array(
         'description_field' => 0,
         'file_directory' => '',
-        'file_extensions' => 'txt pdf doc docx',
+        'file_extensions' => 'txt doc docx pdf rtf',
         'max_filesize' => '',
         'user_register_form' => FALSE,
       ),
@@ -1184,7 +1186,7 @@ function smash_position_types_field_default_fields() {
       'settings' => array(
         'description_field' => 0,
         'file_directory' => '',
-        'file_extensions' => 'txt pdf doc docx',
+        'file_extensions' => 'txt doc docx pdf rtf',
         'max_filesize' => '',
         'user_register_form' => FALSE,
       ),
@@ -1515,7 +1517,7 @@ function smash_position_types_field_default_fields() {
       'settings' => array(
         'description_field' => 0,
         'file_directory' => '',
-        'file_extensions' => 'txt pdf doc docx',
+        'file_extensions' => 'txt doc docx pdf rtf',
         'max_filesize' => '',
         'user_register_form' => FALSE,
       ),

@@ -1,0 +1,12 @@
+name = SMASH! Joinus Export
+description = Exports signups!
+core = 7.x
+package = SMASH!
+version = 7.x-0.1
+project = smash_joinus_export
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[views_view][] = all_registrations
+features[views_view][] = registration_list
