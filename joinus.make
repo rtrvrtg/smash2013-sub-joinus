@@ -51,7 +51,7 @@ projects[markdown][subdir] = "contrib"
 projects[panels][version] = "3.3"
 projects[panels][subdir] = "contrib"
 
-projects[registration][version] = "1.0"
+projects[registration][version] = "1.1"
 projects[registration][subdir] = "contrib"
 
 projects[rules][version] = "2.2"
@@ -66,7 +66,7 @@ projects[strongarm][subdir] = "contrib"
 projects[unique_field][version] = "1.0-rc1"
 projects[unique_field][subdir] = "contrib"
 
-projects[views][version] = "3.5"
+projects[views][version] = "3.6"
 projects[views][subdir] = "contrib"
 projects[views][patch][] = "http://drupal.org/files/views_ajax_submit_back_2.patch"
 
