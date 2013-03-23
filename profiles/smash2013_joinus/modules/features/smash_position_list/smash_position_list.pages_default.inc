@@ -16,7 +16,10 @@ function smash_position_list_default_page_manager_pages() {
   $page->admin_title = 'Position List';
   $page->admin_description = '';
   $page->path = 'position-list/!department/!position';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'department' => array(
@@ -282,7 +285,10 @@ Fill out the form, submit your details and we\'ll be in touch!',
   $page->admin_title = 'Role Selector';
   $page->admin_description = '';
   $page->path = 'select-role';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
