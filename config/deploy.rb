@@ -1,19 +1,17 @@
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 set :ssh_options, { :forward_agent => true }
 
-set :application, "smash-joinus"
 set :user,        "smash"
+set :application, "smash-joinus"
 set :domain,      "linode.smash.org.au"
 set :repository,  "git@github.com:smashcon/joinus-drupal.git"
-set :deploy_to,   "/var/www/smash.org.au/joinus"
-set :url,         "http://joinus.smash.org.au"
+set :shared_path, "#{deploy_to}/shared"
+set :install_profile, "smash2013_joinus"
+set :use_sudo, false
 
 set :stages, %w(production staging)
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
-
-set :shared_path, "#{deploy_to}/shared"
-set :use_sudo, false
  
 set :scm,        :git
 set :branch,     'master'
@@ -106,6 +104,9 @@ namespace :drush do
   # Installs site
   task :install_site, :roles => :web do
     run "cd #{current_release} && git submodule update --init"
+    run "mkdir #{current_release}/cache"
+    set_ownership("#{current_release}/cache");
+    set_chmod("#{current_release}/cache");
     
     if !is_drupal_installed?
       set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
@@ -113,20 +114,20 @@ namespace :drush do
       set(:account_name, Capistrano::CLI.ui.ask("Account name: ") )
       set(:account_mail, Capistrano::CLI.ui.ask("Account email: ") )
       
-      db_url = "mysql://#{db_user}:#{db_pass}@localhost/joinus_staging"
+      db_url = "mysql://#{db_user}:#{db_pass}@localhost/#{db_name}"
       
       account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{account_mail}"
       db_switch = "--db-url=#{db_url}"
       db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
       
-      run "drush site-install smash2013_joinus --root=#{current_release} #{db_switch} #{db_su} #{account_setup} -y"
+      drush_do("site-install #{install_profile} #{db_switch} #{db_su} #{account_setup} -y")
     end
   end
   
   # Append caching stuff
-  task :setup_filecache, :roles => :web do
+  task :setup_filecache, :roles => :web, :on_error => :continue do
     cache_cfg = <<END
-$conf['cache_backends'] = array('sites/all/modules/filecache/filecache.inc');
+$conf['cache_backends'] = array('sites/all/modules/contrib/filecache/filecache.inc');
 $conf['cache_default_class'] = 'DrupalFileCache';
 $conf['filecache_directory'] = '/tmp/filecache-' . substr(conf_path(), 6);
 END
@@ -157,8 +158,8 @@ END
   task :run_updates, :roles => :web do
     if is_drupal_installed?
       drush_do("registry-rebuild -y")
-      drush_do("features-revert-all -y")
       drush_do("updb -y")
+      drush_do("features-revert-all -y")
       drush_do("cron -y")
     end
   end
