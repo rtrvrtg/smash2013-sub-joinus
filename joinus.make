@@ -9,7 +9,7 @@ projects[drupal][patch][] = http://drupal.org/files/core-js-drupal-log-1232416-1
 projects[ctools][version] = "1.3"
 projects[ctools][subdir] = "contrib"
 
-projects[backup_migrate][version] = "2.4"
+projects[backup_migrate][version] = "2.5"
 projects[backup_migrate][subdir] = "contrib"
 
 projects[bundle_copy][version] = "1.1"
@@ -66,7 +66,7 @@ projects[strongarm][subdir] = "contrib"
 projects[unique_field][version] = "1.0-rc1"
 projects[unique_field][subdir] = "contrib"
 
-projects[views][version] = "3.6"
+projects[views][version] = "3.7"
 projects[views][subdir] = "contrib"
 projects[views][patch][] = "http://drupal.org/files/views_ajax_submit_back_2.patch"
 
