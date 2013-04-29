@@ -49,7 +49,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_full_name']['id'] = 'field_full_name';
   $handler->display->display_options['fields']['field_full_name']['table'] = 'field_data_field_full_name';
   $handler->display->display_options['fields']['field_full_name']['field'] = 'field_full_name';
-  /* Field: Registration: Anon_mail */
+  /* Field: Registration: Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
@@ -114,16 +114,14 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['url']['table'] = 'views_entity_registration';
   $handler->display->display_options['fields']['url']['field'] = 'url';
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  /* Field: Registration: Anon_mail */
+  /* Field: Registration: Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
-  $handler->display->display_options['fields']['anon_mail']['label'] = 'Anonymous e-mail';
-  /* Field: Registration: Created */
+  /* Field: Registration: Date created */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Date created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
   /* Field: Registration: Full Name */
   $handler->display->display_options['fields']['field_full_name']['id'] = 'field_full_name';
