@@ -27,7 +27,7 @@ projects[email][subdir] = "contrib"
 projects[entity][version] = "1.1"
 projects[entity][subdir] = "contrib"
 
-projects[entityreference][version] = "1.1"
+projects[entityreference][version] = "1.0"
 projects[entityreference][subdir] = "contrib"
 
 projects[features][version] = "1.0"
@@ -87,3 +87,4 @@ projects[date][subdir] = "contrib"
 
 projects[webform][version] = "3.19"
 projects[webform][subdir] = "contrib"
+
