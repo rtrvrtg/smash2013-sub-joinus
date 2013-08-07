@@ -85,3 +85,5 @@ projects[zen][subdir] = "contrib"
 projects[date][version] = "2.6"
 projects[date][subdir] = "contrib"
 
+projects[webform][version] = "3.19"
+projects[webform][subdir] = "contrib"
