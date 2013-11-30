@@ -12,8 +12,9 @@ function smash_joinus_permissions_default_rules_configuration() {
   $items['rules_not_smash_user'] = entity_import('rules_config', '{ "rules_not_smash_user" : {
       "LABEL" : "Not SMASH! user",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
-      "ON" : [ "user_insert" ],
+      "ON" : { "user_insert" : [] },
       "IF" : [
         { "NOT text_matches" : {
             "text" : [ "account:mail" ],
@@ -37,8 +38,9 @@ function smash_joinus_permissions_default_rules_configuration() {
       "LABEL" : "YOU ARE THE SUPERIOR DANCER",
       "PLUGIN" : "reaction rule",
       "ACTIVE" : false,
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
-      "ON" : [ "user_insert" ],
+      "ON" : { "user_insert" : [] },
       "IF" : [
         { "text_matches" : {
             "text" : [ "account:mail" ],

@@ -71,6 +71,84 @@ function smash_joinus_export_views_default_views() {
   $export['all_registrations'] = $view;
 
   $view = new view();
+  $view->name = 'positions_with_manifests';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Positions with Manifests';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'position' => 'position',
+  );
+  /* Filter criterion: Content: Position Owners (field_position_owners) */
+  $handler->display->display_options['filters']['field_position_owners_email']['id'] = 'field_position_owners_email';
+  $handler->display->display_options['filters']['field_position_owners_email']['table'] = 'field_data_field_position_owners';
+  $handler->display->display_options['filters']['field_position_owners_email']['field'] = 'field_position_owners_email';
+  $handler->display->display_options['filters']['field_position_owners_email']['operator'] = 'not empty';
+
+  /* Display: Rules */
+  $handler = $view->new_display('views_rules', 'Rules', 'views_rules_1');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['rules_variables'] = array(
+    'title' => array(
+      'enabled' => 0,
+      'rendered' => 0,
+      'type' => '',
+      'label' => 'Content: Title',
+      'name' => 'title',
+    ),
+    'nid' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'node',
+      'label' => 'Nid',
+      'name' => 'nid',
+    ),
+  );
+  $export['positions_with_manifests'] = $view;
+
+  $view = new view();
   $view->name = 'registration_list';
   $view->description = '';
   $view->tag = 'default';
@@ -131,6 +209,26 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_gender']['id'] = 'field_gender';
   $handler->display->display_options['fields']['field_gender']['table'] = 'field_data_field_gender';
   $handler->display->display_options['fields']['field_gender']['field'] = 'field_gender';
+  /* Field: Registration: Position of Interest */
+  $handler->display->display_options['fields']['field_position_of_interest']['id'] = 'field_position_of_interest';
+  $handler->display->display_options['fields']['field_position_of_interest']['table'] = 'field_data_field_position_of_interest';
+  $handler->display->display_options['fields']['field_position_of_interest']['field'] = 'field_position_of_interest';
+  /* Field: Registration: Tell us about yourself */
+  $handler->display->display_options['fields']['field_about_yourself']['id'] = 'field_about_yourself';
+  $handler->display->display_options['fields']['field_about_yourself']['table'] = 'field_data_field_about_yourself';
+  $handler->display->display_options['fields']['field_about_yourself']['field'] = 'field_about_yourself';
+  /* Field: Registration: What do you want to help with? */
+  $handler->display->display_options['fields']['field_want_to_help_with']['id'] = 'field_want_to_help_with';
+  $handler->display->display_options['fields']['field_want_to_help_with']['table'] = 'field_data_field_want_to_help_with';
+  $handler->display->display_options['fields']['field_want_to_help_with']['field'] = 'field_want_to_help_with';
+  /* Field: Registration: How will you be able to help? */
+  $handler->display->display_options['fields']['field_how_able_to_help']['id'] = 'field_how_able_to_help';
+  $handler->display->display_options['fields']['field_how_able_to_help']['table'] = 'field_data_field_how_able_to_help';
+  $handler->display->display_options['fields']['field_how_able_to_help']['field'] = 'field_how_able_to_help';
+  /* Field: Registration: Do you have prior experience in this area? */
+  $handler->display->display_options['fields']['field_prior_experience']['id'] = 'field_prior_experience';
+  $handler->display->display_options['fields']['field_prior_experience']['table'] = 'field_data_field_prior_experience';
+  $handler->display->display_options['fields']['field_prior_experience']['field'] = 'field_prior_experience';
   /* Field: Registration: Areas of Interest */
   $handler->display->display_options['fields']['field_areas_of_interest']['id'] = 'field_areas_of_interest';
   $handler->display->display_options['fields']['field_areas_of_interest']['table'] = 'field_data_field_areas_of_interest';

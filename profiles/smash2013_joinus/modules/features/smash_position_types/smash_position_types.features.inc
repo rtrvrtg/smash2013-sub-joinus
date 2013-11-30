@@ -96,9 +96,41 @@ function smash_position_types_default_registration_state() {
  */
 function smash_position_types_default_registration_type() {
   $items = array();
+  $items['crew'] = entity_import('registration_type', '{
+    "name" : "crew",
+    "label" : "Crew",
+    "locked" : "0",
+    "weight" : "0",
+    "data" : null,
+    "rdf_mapping" : []
+  }');
+  $items['crew_simplified_'] = entity_import('registration_type', '{
+    "name" : "crew_simplified_",
+    "label" : "Crew (simplified)",
+    "locked" : "0",
+    "weight" : "0",
+    "data" : null,
+    "rdf_mapping" : []
+  }');
   $items['it_ticketing_registration'] = entity_import('registration_type', '{
     "name" : "it_ticketing_registration",
     "label" : "IT \\u0026 Ticketing Registration",
+    "locked" : "0",
+    "weight" : "0",
+    "data" : null,
+    "rdf_mapping" : []
+  }');
+  $items['logistics'] = entity_import('registration_type', '{
+    "name" : "logistics",
+    "label" : "Logistics",
+    "locked" : "0",
+    "weight" : "0",
+    "data" : null,
+    "rdf_mapping" : []
+  }');
+  $items['maid'] = entity_import('registration_type', '{
+    "name" : "maid",
+    "label" : "Maid",
     "locked" : "0",
     "weight" : "0",
     "data" : null,
