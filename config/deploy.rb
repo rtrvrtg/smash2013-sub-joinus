@@ -183,7 +183,8 @@ namespace :drupal do
   task :create_symlinks, :roles => :web do
     if !remote_file_exists? "#{shared_path}/sites-default"
       set_ownership "#{shared_path}/sites-default"
-      run "mv #{current_release}/sites/default/* #{shared_path}/sites-default"
+      put File.read("config/default.settings.php"), "#{shared_path}/sites-default/default.settings.php"
+      # run "mv #{current_release}/sites/default/* #{shared_path}/sites-default"
     end
     run "rm -rf #{current_release}/sites/default"
     run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
