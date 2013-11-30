@@ -74,7 +74,7 @@ projects[render_view_to_title][download][url] = "git://github.com/rtrvrtg/render
 
 projects[rules][version] = "2.6"
 projects[rules][subdir] = "contrib"
-projects[rules][patch][] = "https://drupal.org/files/rules-fix-schema-defaults-1309144-8.patch"
+projects[rules][patch][] = "http://drupal.org/files/rules-fix-schema-defaults-1309144-8.patch"
 
 projects[stringoverrides][version] = "1.8"
 projects[stringoverrides][subdir] = "contrib"
