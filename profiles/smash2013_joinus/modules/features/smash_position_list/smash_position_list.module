@@ -118,6 +118,8 @@ function smash_position_list_form_registration_form_alter(&$form, &$form_state, 
     $form['who_is_registering']['#type']  = 'value';
     $form['who_is_registering']['#value'] = 'registration_registrant_type_anon';
   }
+
+  $form['count']['#type'] = 'value';
   
   $form['actions']['submit']['#value'] = t('Submit Registration');
   $form['actions']['cancel']['#href'] = 'position-list';

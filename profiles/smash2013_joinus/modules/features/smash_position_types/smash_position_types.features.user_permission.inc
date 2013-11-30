@@ -22,7 +22,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: administer crew_simplified_ registration.
   $permissions['administer crew_simplified_ registration'] = array(
     'name' => 'administer crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -38,7 +40,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: administer logistics registration.
   $permissions['administer logistics registration'] = array(
     'name' => 'administer logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -63,7 +67,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: administer own crew_simplified_ registration.
   $permissions['administer own crew_simplified_ registration'] = array(
     'name' => 'administer own crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -79,7 +85,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: administer own logistics registration.
   $permissions['administer own logistics registration'] = array(
     'name' => 'administer own logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -190,21 +198,32 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: create crew_simplified_ registration.
   $permissions['create crew_simplified_ registration'] = array(
     'name' => 'create crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
     'module' => 'registration',
   );
 
   // Exported permission: create crew_simplified_ registration other anonymous.
   $permissions['create crew_simplified_ registration other anonymous'] = array(
     'name' => 'create crew_simplified_ registration other anonymous',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
     'module' => 'registration',
   );
 
   // Exported permission: create crew_simplified_ registration other users.
   $permissions['create crew_simplified_ registration other users'] = array(
     'name' => 'create crew_simplified_ registration other users',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
     'module' => 'registration',
   );
 
@@ -242,21 +261,33 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: create logistics registration.
   $permissions['create logistics registration'] = array(
     'name' => 'create logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+      3 => 'management',
+    ),
     'module' => 'registration',
   );
 
   // Exported permission: create logistics registration other anonymous.
   $permissions['create logistics registration other anonymous'] = array(
     'name' => 'create logistics registration other anonymous',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
     'module' => 'registration',
   );
 
   // Exported permission: create logistics registration other users.
   $permissions['create logistics registration other users'] = array(
     'name' => 'create logistics registration other users',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
     'module' => 'registration',
   );
 
@@ -361,7 +392,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: delete any crew_simplified_ registration.
   $permissions['delete any crew_simplified_ registration'] = array(
     'name' => 'delete any crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -377,7 +410,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: delete any logistics registration.
   $permissions['delete any logistics registration'] = array(
     'name' => 'delete any logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -420,7 +455,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: delete own crew_simplified_ registration.
   $permissions['delete own crew_simplified_ registration'] = array(
     'name' => 'delete own crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -436,7 +473,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: delete own logistics registration.
   $permissions['delete own logistics registration'] = array(
     'name' => 'delete own logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -479,7 +518,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: edit crew_simplified_ registration state.
   $permissions['edit crew_simplified_ registration state'] = array(
     'name' => 'edit crew_simplified_ registration state',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -495,7 +536,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: edit logistics registration state.
   $permissions['edit logistics registration state'] = array(
     'name' => 'edit logistics registration state',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -538,7 +581,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: update any crew_simplified_ registration.
   $permissions['update any crew_simplified_ registration'] = array(
     'name' => 'update any crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -554,7 +599,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: update any logistics registration.
   $permissions['update any logistics registration'] = array(
     'name' => 'update any logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -597,7 +644,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: update own crew_simplified_ registration.
   $permissions['update own crew_simplified_ registration'] = array(
     'name' => 'update own crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -613,7 +662,9 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: update own logistics registration.
   $permissions['update own logistics registration'] = array(
     'name' => 'update own logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'registration',
   );
 
@@ -656,7 +707,10 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: view crew_simplified_ registration.
   $permissions['view crew_simplified_ registration'] = array(
     'name' => 'view crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
     'module' => 'registration',
   );
 
@@ -673,7 +727,10 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: view logistics registration.
   $permissions['view logistics registration'] = array(
     'name' => 'view logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
     'module' => 'registration',
   );
 
@@ -698,7 +755,10 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: view own crew_simplified_ registration.
   $permissions['view own crew_simplified_ registration'] = array(
     'name' => 'view own crew_simplified_ registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
     'module' => 'registration',
   );
 
@@ -715,7 +775,10 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: view own logistics registration.
   $permissions['view own logistics registration'] = array(
     'name' => 'view own logistics registration',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
     'module' => 'registration',
   );
 

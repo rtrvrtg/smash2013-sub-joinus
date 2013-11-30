@@ -21,6 +21,7 @@ dependencies[] = file
 dependencies[] = rdf
 
 dependencies[] = openid
+dependencies[] = libraries
 
 dependencies[] = ctools
 dependencies[] = ctools_custom_content

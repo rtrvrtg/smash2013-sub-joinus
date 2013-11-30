@@ -123,6 +123,24 @@ namespace :drush do
       drush_do("site-install #{install_profile} #{db_switch} #{db_su} #{account_setup} -y")
     end
   end
+
+  # Rip up the settings.php file so we can start again.
+  task :reset_install, :roles => :web, do
+    run "rm #{current_release}/sites/default/settings.php"
+  end
+
+  # User password
+  task :upwd, :roles => :web, do
+    set(:ch_user, Capistrano::CLI.ui.ask("Username: ") )
+    set(:ch_pass, Capistrano::CLI.password_prompt("New Password: ") )
+    drush_do("upwd #{ch_user} --password='#{ch_pass}'")
+  end
+
+  # Enable modules
+  task :en, :roles => :web, do
+    set(:module_prompted, Capistrano::CLI.ui.ask("Module names: ") )
+    drush_do("en #{module_prompted} -y")
+  end
   
   # Append caching stuff
   task :setup_filecache, :roles => :web, :on_error => :continue do
@@ -187,7 +205,12 @@ namespace :drupal do
 
     if !remote_file_exists? shared_sites_default
       set_ownership shared_sites_default
-      put File.read("config/default.settings.php"), "#{shared_sites_default}/default.settings.php"
+      default_settings = []
+      ["config/default.settings.php", "filecache.php"].each do |f|
+        default_settings.push(File.read(f))
+      end
+
+      put default_settings.join("\n"), "#{shared_sites_default}/default.settings.php"
     end
     run "ls #{current_release}"
     run "ls #{current_release}/sites"
