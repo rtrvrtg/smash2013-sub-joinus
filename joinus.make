@@ -66,7 +66,10 @@ projects[panels][subdir] = "contrib"
 projects[registration][version] = "1.2"
 projects[registration][subdir] = "contrib"
 
+projects[render_view_to_title][type] = "module"
 projects[render_view_to_title][subdir] = "contrib"
+projects[render_view_to_title][branch] = "master"
+projects[render_view_to_title][download][type] = "git"
 projects[render_view_to_title][download][url] = "git://github.com/rtrvrtg/render-view-to-file.git"
 
 projects[rules][version] = "2.6"
