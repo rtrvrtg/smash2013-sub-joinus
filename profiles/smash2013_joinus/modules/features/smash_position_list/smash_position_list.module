@@ -125,6 +125,8 @@ function smash_position_list_form_registration_form_alter(&$form, &$form_state, 
   $form['actions']['cancel']['#href'] = 'position-list';
   
   $form['anon_mail']['#required'] = TRUE;
+  $form['anon_mail']['#title'] = "Your email address";
+  $form['anon_mail']['#description'] = NULL;
   
   $form['#submit'][] = 'smash_position_list_registration_form_postsubmit';
   

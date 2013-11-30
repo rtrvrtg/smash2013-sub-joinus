@@ -55,6 +55,7 @@ features[field][] = registration-it_ticketing_registration-field_other
 features[field][] = registration-it_ticketing_registration-field_portfolio
 features[field][] = registration-it_ticketing_registration-field_resume
 features[field][] = registration-logistics-field_about_yourself
+features[field][] = registration-logistics-field_full_name
 features[field][] = registration-logistics-field_position_of_interest
 features[field][] = registration-logistics-field_prior_experience
 features[field][] = registration-maid-field_16_up
