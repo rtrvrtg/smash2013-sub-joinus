@@ -149,8 +149,9 @@ END
   # Append caching stuff
   task :setup_files, :roles => :web do
     if is_drupal_installed?
-      set_ownership("#{shared_path}/sites-default/private", true, true)
-      set_ownership("#{shared_path}/sites-default/files", true, true)
+      ["private", "files"].each do |dir|
+        set_ownership("#{shared_path}/sites-default/#{dir}", true, true)
+      end
     end
   end
   
@@ -181,13 +182,18 @@ namespace :drupal do
   # The task below serves the purpose of creating symlinks for asset files.
   # User uploaded content and logs should not be checked into the repository; move them to a shared location.
   task :create_symlinks, :roles => :web do
-    if !remote_file_exists? "#{shared_path}/sites-default"
-      set_ownership "#{shared_path}/sites-default"
-      put File.read("config/default.settings.php"), "#{shared_path}/sites-default/default.settings.php"
-      # run "mv #{current_release}/sites/default/* #{shared_path}/sites-default"
+    shared_sites_default = "#{shared_path}/sites-default"
+    current_sites_default = "#{current_release}/sites/default"
+
+    if !remote_file_exists? shared_sites_default
+      set_ownership shared_sites_default
+      put File.read("config/default.settings.php"), "#{shared_sites_default}/default.settings.php"
     end
-    run "rm -rf #{current_release}/sites/default"
-    run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
+    run "ls #{current_release}"
+    run "ls #{current_release}/sites"
+    run "ls #{current_sites_default}"
+    run "rm -rf #{current_sites_default}"
+    run "ln -s #{shared_sites_default} #{current_sites_default}"
   end
 end
 
