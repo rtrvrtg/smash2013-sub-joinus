@@ -40,6 +40,13 @@ function smash_position_list_menu() {
 }
 
 /**
+ * Implementation of hook_menu_alter().
+ */
+function smash_position_list_menu_alter(&$items) {
+  unset($items['node/%entity_object/register']);
+}
+
+/**
  * JS callback for job list
  */
 function smash_position_list_get_view() {
@@ -135,17 +142,6 @@ function smash_position_list_form_registration_form_alter(&$form, &$form_state, 
     unset($form['field_preparation']);
     unset($form['field_preferred_breaks']);
     unset($form['field_address']);
-  }
-
-  if ($form['#entity']->entity_type == 'node') {
-    $node = node_load($form['#entity']->entity_id);
-    if (!empty($node) && isset($node->field_registration_intro)) {
-      node_view($node);
-      $form['intro'] = array(
-        '#markup' => $node->field_registration_intro[LANGUAGE_NONE][0]['safe_value'],
-        '#weight' => -1000,
-      );
-    }
   }
 }
 

@@ -186,43 +186,28 @@ function smash_position_types_field_default_fields() {
       'bundle' => 'position',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Enter a short description of this position. Should just be an introductory paragraph, does not need to be the entire job description.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'jquery_expander',
-          'settings' => array(
-            'collapseTimer' => '',
-            'expandPrefix' => '...',
-            'expandText' => 'Show more »',
-            'slicePoint' => '250',
-            'userCollapsePrefix' => '',
-            'userCollapseText' => 'Show less',
-          ),
-          'type' => 'jquery_expander',
-          'weight' => '0',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'jquery_expander',
-          'settings' => array(
-            'collapseTimer' => '',
-            'expandPrefix' => '...',
-            'expandText' => 'Show more »',
-            'slicePoint' => '250',
-            'userCollapsePrefix' => '',
-            'userCollapseText' => 'Show less',
-          ),
-          'type' => 'jquery_expander',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
           'weight' => '0',
         ),
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Position Description',
+      'label' => 'Short Position Description',
       'required' => 1,
       'settings' => array(
-        'display_summary' => 1,
+        'display_summary' => 0,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -230,7 +215,7 @@ function smash_position_types_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '20',
+          'rows' => '5',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -348,7 +333,7 @@ function smash_position_types_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -416,10 +401,8 @@ function smash_position_types_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'registration',
-          'settings' => array(
-            'label' => ' Apply Now',
-          ),
-          'type' => 'registration_link',
+          'settings' => array(),
+          'type' => 'registration_form',
           'weight' => '1',
         ),
         'teaser' => array(
@@ -464,7 +447,7 @@ function smash_position_types_field_default_fields() {
         'module' => 'registration',
         'settings' => array(),
         'type' => 'registration_select',
-        'weight' => '4',
+        'weight' => '6',
       ),
     ),
   );
@@ -500,25 +483,26 @@ function smash_position_types_field_default_fields() {
       'bundle' => 'position',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Some text at the beginning of the registration form.',
+      'description' => 'Enter the full position description. Should be long and detailed.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '3',
+          'type' => 'text_default',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'node',
       'field_name' => 'field_registration_intro',
-      'label' => 'Registration Intro',
-      'required' => 0,
+      'label' => 'Extended Position Description',
+      'required' => 1,
       'settings' => array(
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -527,10 +511,10 @@ function smash_position_types_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '5',
+          'rows' => '10',
         ),
         'type' => 'text_textarea',
-        'weight' => '6',
+        'weight' => '4',
       ),
     ),
   );
@@ -3703,8 +3687,11 @@ function smash_position_types_field_default_fields() {
   t('Dietary Requirements');
   t('Do you have prior experience in this area?');
   t('Emergency Contact');
+  t('Enter a short description of this position. Should just be an introductory paragraph, does not need to be the entire job description.');
+  t('Enter the full position description. Should be long and detailed.');
   t('Experience');
   t('Experience is not required but will be considered a bonus.');
+  t('Extended Position Description');
   t('Full Name');
   t('Gender');
   t('Got any previous experience, crazy ideas, or anything else you want to tell us?');
@@ -3724,18 +3711,16 @@ function smash_position_types_field_default_fields() {
   t('Please describe why you would make an awesome volunteer for SMASH!');
   t('Please tick only THREE preferences.');
   t('Portfolio');
-  t('Position Description');
   t('Position Owners');
   t('Position of Interest');
   t('Preferred Breaks');
   t('Preferred Sections to Volunteer');
   t('Provide a link to an online portfolio if you have one.');
   t('Registration');
-  t('Registration Intro');
   t('Registration manifests for this Position are sent to this address every day.');
   t('Résumé');
   t('Scenario: please answer in 50 words or less');
-  t('Some text at the beginning of the registration form.');
+  t('Short Position Description');
   t('State the section you were in alongside the year you volunteered in.');
   t('State their name, relationship to you and their best contact number.');
   t('Tell us a bit about yourself and why you\'re interested in joining SMASH!');
