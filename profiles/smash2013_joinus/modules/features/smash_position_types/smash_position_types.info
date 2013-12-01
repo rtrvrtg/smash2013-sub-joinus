@@ -26,6 +26,7 @@ features[field][] = node-position-body
 features[field][] = node-position-field_department
 features[field][] = node-position-field_position_owners
 features[field][] = node-position-field_registration
+features[field][] = node-position-field_registration_intro
 features[field][] = node-position-field_url_slug
 features[field][] = registration-crew-field_address
 features[field][] = registration-crew-field_conditions

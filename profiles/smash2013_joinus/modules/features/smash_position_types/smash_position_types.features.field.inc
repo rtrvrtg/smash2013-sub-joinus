@@ -296,7 +296,7 @@ function smash_position_types_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -469,6 +469,72 @@ function smash_position_types_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-position-field_registration_intro'.
+  $fields['node-position-field_registration_intro'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_registration_intro',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'position',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Some text at the beginning of the registration form.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_registration_intro',
+      'label' => 'Registration Intro',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'node-position-field_url_slug'.
   $fields['node-position-field_url_slug'] = array(
     'field_config' => array(
@@ -508,7 +574,7 @@ function smash_position_types_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -3665,9 +3731,11 @@ function smash_position_types_field_default_fields() {
   t('Preferred Sections to Volunteer');
   t('Provide a link to an online portfolio if you have one.');
   t('Registration');
+  t('Registration Intro');
   t('Registration manifests for this Position are sent to this address every day.');
   t('Résumé');
   t('Scenario: please answer in 50 words or less');
+  t('Some text at the beginning of the registration form.');
   t('State the section you were in alongside the year you volunteered in.');
   t('State their name, relationship to you and their best contact number.');
   t('Tell us a bit about yourself and why you\'re interested in joining SMASH!');
