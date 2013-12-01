@@ -1,6 +1,7 @@
 <?php
 
 function smash_joinus_modifications_form_user_login_alter(&$form, $form_state) {
+  /*
   $form['openid_links']['#items'][0]['data'] = l(
     t('Log in with Google'),
     '',
@@ -15,5 +16,6 @@ function smash_joinus_modifications_form_user_login_alter(&$form, $form_state) {
   $form['openid_identifier']['#default_value'] = 'https://www.google.com/accounts/o8/id';
   $form['openid_identifier']['#title'] = t('Log in with Google');
   $form['openid_identifier']['#description'] = t('Use your smash.org.au email address to log in.');
+  */
 }
 

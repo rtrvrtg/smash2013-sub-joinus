@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Disable openid, too fiddly to use.
+ */
+function smash_joinus_modifications_update_7000() {
+	module_disable(array('openid'));	
+}
