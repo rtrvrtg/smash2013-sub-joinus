@@ -209,7 +209,7 @@ namespace :drupal do
 
     if !remote_file_exists? "#{shared_sites_default}/default.settings.php"
       default_settings = []
-      ["config/default.settings.php", "filecache.php"].each do |f|
+      ["config/default.settings.php", "config/filecache.php"].each do |f|
         default_settings.push(File.read(f))
       end
       put default_settings.join("\n"), "#{shared_sites_default}/default.settings.php"
