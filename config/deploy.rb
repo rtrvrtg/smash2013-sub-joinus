@@ -160,18 +160,18 @@ END
           f.write(cache_cfg)
         end
       end
-      set_chmod(settings_path, "555")
+      #set_chmod(settings_path, "555")
     end
   end
   
   # Append caching stuff
   task :setup_files, :roles => :web do
     if is_drupal_installed?
-      set_chmod("#{shared_path}/sites-default", "2775", true)
+      set_chmod("#{shared_path}/sites-default", "2755", true)
       ["private", "files"].each do |dir|
         set_ownership("#{shared_path}/sites-default/#{dir}", true, true)
       end
-      set_chmod("#{shared_path}/sites-default", "555")
+      #set_chmod("#{shared_path}/sites-default", "555")
     end
   end
   
