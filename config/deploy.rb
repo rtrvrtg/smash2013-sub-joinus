@@ -171,7 +171,7 @@ END
       ["private", "files"].each do |dir|
         set_ownership("#{shared_path}/sites-default/#{dir}", true, true)
       end
-      set_chmod(settings_path, "444")
+      set_chmod("#{shared_path}/sites-default", "444")
     end
   end
   
