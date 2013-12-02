@@ -90,6 +90,7 @@ function smash_joinus_permissions_user_default_permissions() {
     'name' => 'create department content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'node',
   );
@@ -145,6 +146,7 @@ function smash_joinus_permissions_user_default_permissions() {
     'name' => 'edit any department content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'node',
   );
@@ -164,6 +166,7 @@ function smash_joinus_permissions_user_default_permissions() {
     'name' => 'edit own department content',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'node',
   );

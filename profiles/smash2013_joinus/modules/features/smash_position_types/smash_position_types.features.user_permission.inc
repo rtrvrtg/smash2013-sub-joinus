@@ -15,6 +15,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer crew registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -24,6 +25,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer crew_simplified_ registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -33,6 +35,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer it_ticketing_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -42,6 +45,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer logistics registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -51,6 +55,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer maid registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -60,6 +65,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer own crew registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -69,6 +75,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer own crew_simplified_ registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -78,6 +85,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer own it_ticketing_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -87,6 +95,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer own logistics registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -96,6 +105,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer own maid registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -105,6 +115,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer own programming_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -114,6 +125,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer own sponsorship_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -123,6 +135,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer programming_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -160,6 +173,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'administer sponsorship_registration registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -700,6 +714,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view crew registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -739,6 +754,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view maid registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -748,6 +764,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view own crew registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -787,6 +804,7 @@ function smash_position_types_user_default_permissions() {
     'name' => 'view own maid registration',
     'roles' => array(
       0 => 'administrator',
+      1 => 'management',
     ),
     'module' => 'registration',
   );
