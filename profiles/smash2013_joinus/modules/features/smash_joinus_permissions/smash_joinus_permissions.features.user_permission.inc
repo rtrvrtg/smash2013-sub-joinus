@@ -10,6 +10,26 @@
 function smash_joinus_permissions_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access administration pages.
+  $permissions['access administration pages'] = array(
+    'name' => 'access administration pages',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'system',
+  );
+
+  // Exported permission: access site in maintenance mode.
+  $permissions['access site in maintenance mode'] = array(
+    'name' => 'access site in maintenance mode',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'system',
+  );
+
   // Exported permission: access user profiles.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
@@ -188,6 +208,48 @@ function smash_joinus_permissions_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: use text format filtered_html.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+      3 => 'management',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: use text format full_html.
+  $permissions['use text format full_html'] = array(
+    'name' => 'use text format full_html',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: use text format markdown.
+  $permissions['use text format markdown'] = array(
+    'name' => 'use text format markdown',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: view the administration theme.
+  $permissions['view the administration theme'] = array(
+    'name' => 'view the administration theme',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'system',
   );
 
   return $permissions;
