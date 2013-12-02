@@ -205,13 +205,16 @@ namespace :drupal do
 
     if !remote_file_exists? shared_sites_default
       set_ownership shared_sites_default
+    end
+
+    if !remote_file_exists? "#{shared_sites_default}/default.settings.php"
       default_settings = []
       ["config/default.settings.php", "filecache.php"].each do |f|
         default_settings.push(File.read(f))
       end
-
       put default_settings.join("\n"), "#{shared_sites_default}/default.settings.php"
     end
+
     run "ls #{current_release}"
     run "ls #{current_release}/sites"
     run "ls #{current_sites_default}"
