@@ -160,7 +160,7 @@ END
           f.write(cache_cfg)
         end
       end
-      set_chmod(settings_path, "444")
+      set_chmod(settings_path, "555")
     end
   end
   
@@ -171,7 +171,7 @@ END
       ["private", "files"].each do |dir|
         set_ownership("#{shared_path}/sites-default/#{dir}", true, true)
       end
-      set_chmod("#{shared_path}/sites-default", "444")
+      set_chmod("#{shared_path}/sites-default", "555")
     end
   end
   

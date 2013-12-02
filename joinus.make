@@ -110,7 +110,7 @@ projects[date][subdir] = "contrib"
 projects[webform][version] = "3.19"
 projects[webform][subdir] = "contrib"
 
-projects[token][version] = "1.2"
+projects[token][version] = "1.5"
 projects[token][subdir] = "contrib"
 
 projects[pathauto][version] = "1.2"
