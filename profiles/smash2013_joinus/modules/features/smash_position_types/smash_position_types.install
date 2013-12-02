@@ -1,0 +1,6 @@
+<?php
+
+function smash_position_list_update_7000() {
+	module_enable(array('token', 'pathauto'));
+}
+

@@ -110,6 +110,12 @@ projects[date][subdir] = "contrib"
 projects[webform][version] = "3.19"
 projects[webform][subdir] = "contrib"
 
+projects[token][version] = "1.2"
+projects[token][subdir] = "contrib"
+
+projects[pathauto][version] = "1.2"
+projects[pathauto][subdir] = "contrib"
+
 libraries[jquery.expander][directory_name] = "jquery.expander"
 libraries[jquery.expander][type] = "library"
 libraries[jquery.expander][destination] = "libraries"
