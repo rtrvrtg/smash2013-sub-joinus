@@ -14,6 +14,7 @@ function smash_joinus_export_default_rules_configuration() {
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
       "REQUIRES" : [
+        "cron_roles",
         "views_rules",
         "rules",
         "render_view_to_file",
@@ -23,6 +24,7 @@ function smash_joinus_export_default_rules_configuration() {
       "RULES" : [
         { "RULE" : {
             "DO" : [
+              { "temp_add_roles" : { "roles" : { "value" : { "3" : "3" } } } },
               { "VIEW LOOP" : {
                   "VIEW" : "positions_with_manifests",
                   "DISPLAY" : "views_rules_1",
@@ -59,7 +61,8 @@ function smash_joinus_export_default_rules_configuration() {
                     }
                   ]
                 }
-              }
+              },
+              { "pop_temp_roles" : [] }
             ],
             "LABEL" : "Build and send manifest"
           }

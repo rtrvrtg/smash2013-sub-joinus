@@ -72,6 +72,12 @@ projects[render_view_to_title][branch] = "master"
 projects[render_view_to_title][download][type] = "git"
 projects[render_view_to_title][download][url] = "git://github.com/rtrvrtg/render-view-to-file.git"
 
+projects[cron_roles][type] = "module"
+projects[cron_roles][subdir] = "contrib"
+projects[cron_roles][branch] = "master"
+projects[cron_roles][download][type] = "git"
+projects[cron_roles][download][url] = "http://git.drupal.org/sandbox/ctrahey/1797568.git"
+
 projects[rules][version] = "2.6"
 projects[rules][subdir] = "contrib"
 projects[rules][patch][] = "http://drupal.org/files/rules-fix-schema-defaults-1309144-8.patch"
