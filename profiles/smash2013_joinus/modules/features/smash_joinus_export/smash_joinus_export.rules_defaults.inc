@@ -38,7 +38,7 @@ function smash_joinus_export_default_rules_configuration() {
                     { "render_view_to_file_action_render" : {
                         "USING" : {
                           "view" : "registration_list|views_data_export_1",
-                          "args" : "[node:title]",
+                          "args" : "[node:nid]",
                           "filename" : "private:\\/\\/[node:title].csv"
                         },
                         "PROVIDE" : { "file_uri" : { "file_uri" : "A file URI" } }
