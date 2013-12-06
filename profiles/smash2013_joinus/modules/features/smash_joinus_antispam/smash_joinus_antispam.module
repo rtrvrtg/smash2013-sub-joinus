@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SMASH! Joinus Antispam feature.
+ */
+
+include_once 'smash_joinus_antispam.features.inc';

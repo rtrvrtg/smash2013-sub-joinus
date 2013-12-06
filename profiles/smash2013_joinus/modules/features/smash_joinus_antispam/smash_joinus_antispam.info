@@ -1,0 +1,17 @@
+name = SMASH! Joinus Antispam
+core = 7.x
+package = SMASH!
+version = 7.x-0.1
+project = smash_joinus_antispam
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = spamicide
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[user_permission][] = administer spamicide
+features[variable][] = spamicide_administration_mode
+features[variable][] = spamicide_attempt_counter
+features[variable][] = spamicide_description
+features[variable][] = spamicide_dir
+features[variable][] = spamicide_log_attempts
