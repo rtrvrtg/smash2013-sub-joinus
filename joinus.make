@@ -6,7 +6,7 @@ projects[drupal][version] = "7.32"
 projects[drupal][patch][] = http://drupal.org/files/core-js-drupal-log-1232416-100-D7.patch
 
 ; Modules
-projects[ctools][version] = "1.3"
+projects[ctools][version] = "1.4"
 projects[ctools][subdir] = "contrib"
 
 projects[backup_migrate][version] = "2.8"
@@ -24,7 +24,7 @@ projects[devel][subdir] = "contrib"
 projects[email][version] = "1.2"
 projects[email][subdir] = "contrib"
 
-projects[entity][version] = "1.2"
+projects[entity][version] = "1.5"
 projects[entity][subdir] = "contrib"
 
 projects[entityreference][version] = "1.1"
@@ -57,7 +57,7 @@ projects[markdown][subdir] = "contrib"
 projects[mailsystem][version] = "2.34"
 projects[mailsystem][subdir] = "contrib"
 
-projects[mimemail][version] = "1.0-beta1"
+projects[mimemail][version] = "1.0-beta3"
 projects[mimemail][subdir] = "contrib"
 
 projects[panels][version] = "3.3"
@@ -91,7 +91,7 @@ projects[strongarm][subdir] = "contrib"
 projects[unique_field][version] = "1.0-rc1"
 projects[unique_field][subdir] = "contrib"
 
-projects[views][version] = "3.7"
+projects[views][version] = "3.8"
 projects[views][subdir] = "contrib"
 projects[views][patch][] = "http://drupal.org/files/views_ajax_submit_back_2.patch"
 
@@ -107,7 +107,7 @@ projects[views_rules][subdir] = "contrib"
 projects[unique_field][version] = "1.0-rc1"
 projects[unique_field][subdir] = "contrib"
 
-projects[zen][version] = "5.4"
+projects[zen][version] = "5.5"
 projects[zen][subdir] = "contrib"
 
 projects[date][version] = "2.6"
