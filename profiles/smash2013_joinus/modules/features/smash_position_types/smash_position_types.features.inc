@@ -54,7 +54,7 @@ function smash_position_types_default_registration_state() {
     "description" : "Registration was cancelled.",
     "default_state" : "0",
     "active" : "1",
-    "show_on_form" : "0",
+    "show_on_form" : "1",
     "weight" : "-12",
     "rdf_mapping" : []
   }');
@@ -64,7 +64,7 @@ function smash_position_types_default_registration_state() {
     "description" : "Registration was accepted.",
     "default_state" : "0",
     "active" : "1",
-    "show_on_form" : "0",
+    "show_on_form" : "1",
     "weight" : "-14",
     "rdf_mapping" : []
   }');
@@ -84,7 +84,7 @@ function smash_position_types_default_registration_state() {
     "description" : "Registration was rejected.",
     "default_state" : "0",
     "active" : "1",
-    "show_on_form" : "0",
+    "show_on_form" : "1",
     "weight" : "-13",
     "rdf_mapping" : []
   }');

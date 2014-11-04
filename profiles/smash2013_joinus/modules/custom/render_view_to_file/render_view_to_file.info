@@ -1,0 +1,6 @@
+name = Render View to File
+description = Renders a view out to a file in the Drupal filesystem.
+dependencies[] = views
+core = 7.x
+
+files[] = ViewRenderer.php

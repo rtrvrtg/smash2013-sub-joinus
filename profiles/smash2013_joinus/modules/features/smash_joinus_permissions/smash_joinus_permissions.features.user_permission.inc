@@ -15,7 +15,6 @@ function smash_joinus_permissions_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       0 => 'administrator',
-      1 => 'management',
     ),
     'module' => 'system',
   );
@@ -25,7 +24,6 @@ function smash_joinus_permissions_user_default_permissions() {
     'name' => 'access site in maintenance mode',
     'roles' => array(
       0 => 'administrator',
-      1 => 'management',
     ),
     'module' => 'system',
   );
@@ -247,7 +245,6 @@ function smash_joinus_permissions_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       0 => 'administrator',
-      1 => 'management',
     ),
     'module' => 'system',
   );

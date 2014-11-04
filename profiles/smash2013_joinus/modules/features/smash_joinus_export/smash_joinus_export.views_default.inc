@@ -45,7 +45,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'registration_related_node';
   $handler->display->display_options['fields']['title']['label'] = 'Position';
-  /* Field: Registration: Full Name */
+  /* Field: Registration: Your Name */
   $handler->display->display_options['fields']['field_full_name']['id'] = 'field_full_name';
   $handler->display->display_options['fields']['field_full_name']['table'] = 'field_data_field_full_name';
   $handler->display->display_options['fields']['field_full_name']['field'] = 'field_full_name';
@@ -121,7 +121,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'position' => 'position',
   );
-  /* Filter criterion: Content: Position Owners (field_position_owners) */
+  /* Filter criterion: Field: Email (field_position_owners) */
   $handler->display->display_options['filters']['field_position_owners_email']['id'] = 'field_position_owners_email';
   $handler->display->display_options['filters']['field_position_owners_email']['table'] = 'field_data_field_position_owners';
   $handler->display->display_options['filters']['field_position_owners_email']['field'] = 'field_position_owners_email';
@@ -202,7 +202,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
-  /* Field: Registration: Full Name */
+  /* Field: Registration: Your Name */
   $handler->display->display_options['fields']['field_full_name']['id'] = 'field_full_name';
   $handler->display->display_options['fields']['field_full_name']['table'] = 'field_data_field_full_name';
   $handler->display->display_options['fields']['field_full_name']['field'] = 'field_full_name';
@@ -214,6 +214,19 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_position_of_interest']['id'] = 'field_position_of_interest';
   $handler->display->display_options['fields']['field_position_of_interest']['table'] = 'field_data_field_position_of_interest';
   $handler->display->display_options['fields']['field_position_of_interest']['field'] = 'field_position_of_interest';
+  /* Field: Registration: Position of Interest */
+  $handler->display->display_options['fields']['field_pos_interest_marketing']['id'] = 'field_pos_interest_marketing';
+  $handler->display->display_options['fields']['field_pos_interest_marketing']['table'] = 'field_data_field_pos_interest_marketing';
+  $handler->display->display_options['fields']['field_pos_interest_marketing']['field'] = 'field_pos_interest_marketing';
+  /* Field: Registration: Position of Interest */
+  $handler->display->display_options['fields']['field_pos_interest_ticketing']['id'] = 'field_pos_interest_ticketing';
+  $handler->display->display_options['fields']['field_pos_interest_ticketing']['table'] = 'field_data_field_pos_interest_ticketing';
+  $handler->display->display_options['fields']['field_pos_interest_ticketing']['field'] = 'field_pos_interest_ticketing';
+  /* Field: Registration: Position of Interest */
+  $handler->display->display_options['fields']['field_pos_es']['id'] = 'field_pos_es';
+  $handler->display->display_options['fields']['field_pos_es']['table'] = 'field_data_field_pos_es';
+  $handler->display->display_options['fields']['field_pos_es']['field'] = 'field_pos_es';
+  $handler->display->display_options['fields']['field_pos_es']['label'] = 'Position of Interest (E&S)';
   /* Field: Registration: Tell us about yourself */
   $handler->display->display_options['fields']['field_about_yourself']['id'] = 'field_about_yourself';
   $handler->display->display_options['fields']['field_about_yourself']['table'] = 'field_data_field_about_yourself';
@@ -239,7 +252,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_contact_phone']['id'] = 'field_contact_phone';
   $handler->display->display_options['fields']['field_contact_phone']['table'] = 'field_data_field_contact_phone';
   $handler->display->display_options['fields']['field_contact_phone']['field'] = 'field_contact_phone';
-  /* Field: Registration: Current Address */
+  /* Field: Registration: Address */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
@@ -247,7 +260,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_dietary_requirements']['id'] = 'field_dietary_requirements';
   $handler->display->display_options['fields']['field_dietary_requirements']['table'] = 'field_data_field_dietary_requirements';
   $handler->display->display_options['fields']['field_dietary_requirements']['field'] = 'field_dietary_requirements';
-  /* Field: Registration: Emergency Contact */
+  /* Field: Registration: Emergency Contact Details: */
   $handler->display->display_options['fields']['field_emergency_contact']['id'] = 'field_emergency_contact';
   $handler->display->display_options['fields']['field_emergency_contact']['table'] = 'field_data_field_emergency_contact';
   $handler->display->display_options['fields']['field_emergency_contact']['field'] = 'field_emergency_contact';
@@ -264,7 +277,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_smash_past_volunteer']['id'] = 'field_smash_past_volunteer';
   $handler->display->display_options['fields']['field_smash_past_volunteer']['table'] = 'field_data_field_smash_past_volunteer';
   $handler->display->display_options['fields']['field_smash_past_volunteer']['field'] = 'field_smash_past_volunteer';
-  /* Field: Registration: Which year(s) did you volunteer for SMASH! */
+  /* Field: Registration: Volunteer info */
   $handler->display->display_options['fields']['field_smash_years_volunteered']['id'] = 'field_smash_years_volunteered';
   $handler->display->display_options['fields']['field_smash_years_volunteered']['table'] = 'field_data_field_smash_years_volunteered';
   $handler->display->display_options['fields']['field_smash_years_volunteered']['field'] = 'field_smash_years_volunteered';
@@ -277,19 +290,6 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_training_sessions']['id'] = 'field_training_sessions';
   $handler->display->display_options['fields']['field_training_sessions']['table'] = 'field_data_field_training_sessions';
   $handler->display->display_options['fields']['field_training_sessions']['field'] = 'field_training_sessions';
-  /* Field: Registration: Are you available to help out on Set-Up Day, Friday 9th August, 2013? */
-  $handler->display->display_options['fields']['field_setup_day']['id'] = 'field_setup_day';
-  $handler->display->display_options['fields']['field_setup_day']['table'] = 'field_data_field_setup_day';
-  $handler->display->display_options['fields']['field_setup_day']['field'] = 'field_setup_day';
-  /* Field: Registration: List any Medical or Physical Conditions you have */
-  $handler->display->display_options['fields']['field_conditions']['id'] = 'field_conditions';
-  $handler->display->display_options['fields']['field_conditions']['table'] = 'field_data_field_conditions';
-  $handler->display->display_options['fields']['field_conditions']['field'] = 'field_conditions';
-  $handler->display->display_options['fields']['field_conditions']['hide_empty'] = TRUE;
-  /* Field: Registration: Please describe why you would make an awesome volunteer for SMASH! */
-  $handler->display->display_options['fields']['field_why_are_you_awesome']['id'] = 'field_why_are_you_awesome';
-  $handler->display->display_options['fields']['field_why_are_you_awesome']['table'] = 'field_data_field_why_are_you_awesome';
-  $handler->display->display_options['fields']['field_why_are_you_awesome']['field'] = 'field_why_are_you_awesome';
   /* Field: Registration: Portfolio */
   $handler->display->display_options['fields']['field_portfolio']['id'] = 'field_portfolio';
   $handler->display->display_options['fields']['field_portfolio']['table'] = 'field_data_field_portfolio';
@@ -300,15 +300,6 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_resume']['table'] = 'field_data_field_resume';
   $handler->display->display_options['fields']['field_resume']['field'] = 'field_resume';
   $handler->display->display_options['fields']['field_resume']['click_sort_column'] = 'fid';
-  /* Field: Registration: Please answer this to the best of your ability */
-  $handler->display->display_options['fields']['field_preparation']['id'] = 'field_preparation';
-  $handler->display->display_options['fields']['field_preparation']['table'] = 'field_data_field_preparation';
-  $handler->display->display_options['fields']['field_preparation']['field'] = 'field_preparation';
-  $handler->display->display_options['fields']['field_preparation']['hide_empty'] = TRUE;
-  /* Field: Registration: Scenario: please answer in 50 words or less */
-  $handler->display->display_options['fields']['field_scenario']['id'] = 'field_scenario';
-  $handler->display->display_options['fields']['field_scenario']['table'] = 'field_data_field_scenario';
-  $handler->display->display_options['fields']['field_scenario']['field'] = 'field_scenario';
   /* Field: Registration: Other Notes */
   $handler->display->display_options['fields']['field_other_notes']['id'] = 'field_other_notes';
   $handler->display->display_options['fields']['field_other_notes']['table'] = 'field_data_field_other_notes';
@@ -335,6 +326,12 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 0;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['path'] = 'registration-export';
   $export['registration_list'] = $view;
 

@@ -418,7 +418,7 @@ function smash_position_types_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_registration',
       'label' => 'Registration',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'default_registration_settings' => array(
           'capacity' => '0',
@@ -435,7 +435,7 @@ function smash_position_types_field_default_fields() {
           ),
           'settings' => array(
             'from_address' => 'apply@smash.org.au',
-            'maximum_capacity' => 1,
+            'maximum_spaces' => '1',
             'multiple_registrations' => 0,
           ),
           'status' => 1,
@@ -1426,7 +1426,7 @@ function smash_position_types_field_default_fields() {
       ),
       'entity_type' => 'registration',
       'field_name' => 'field_setup_day',
-      'label' => 'Are you available to help out on Set-Up Day, Friday 9th August, 2013?',
+      'label' => 'Are you available to help out on Set-Up Day, Friday 9th August, 2014?',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1799,6 +1799,73 @@ function smash_position_types_field_default_fields() {
         ),
         'type' => 'text_textarea',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-crew_simplified_-field_resume'.
+  $fields['registration-crew_simplified_-field_resume'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_resume',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'file',
+      'settings' => array(
+        'display_default' => 0,
+        'display_field' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'file',
+    ),
+    'field_instance' => array(
+      'bundle' => 'crew_simplified_',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'file',
+          'settings' => array(),
+          'type' => 'file_default',
+          'weight' => 3,
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_resume',
+      'label' => 'Resume',
+      'required' => 1,
+      'settings' => array(
+        'description_field' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'txt pdf doc docx rtf',
+        'max_filesize' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'file',
+        'settings' => array(
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'file_generic',
+        'weight' => '6',
       ),
     ),
   );
@@ -2302,7 +2369,7 @@ function smash_position_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '7',
         ),
       ),
       'entity_type' => 'registration',
@@ -2365,7 +2432,7 @@ function smash_position_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 3,
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'registration',
@@ -2383,7 +2450,7 @@ function smash_position_types_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -2426,7 +2493,7 @@ function smash_position_types_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 0,
+          'weight' => '5',
         ),
       ),
       'entity_type' => 'registration',
@@ -2484,7 +2551,7 @@ function smash_position_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 2,
+          'weight' => '8',
         ),
       ),
       'entity_type' => 'registration',
@@ -2507,14 +2574,81 @@ function smash_position_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'registration-maid-field_16_up'.
-  $fields['registration-maid-field_16_up'] = array(
+  // Exported field: 'registration-logistics-field_resume2'.
+  $fields['registration-logistics-field_resume2'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_16_up',
+      'field_name' => 'field_resume2',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'file',
+      'settings' => array(
+        'display_default' => 0,
+        'display_field' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'file',
+    ),
+    'field_instance' => array(
+      'bundle' => 'logistics',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'file',
+          'settings' => array(),
+          'type' => 'file_default',
+          'weight' => '9',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_resume2',
+      'label' => 'Resume',
+      'required' => 1,
+      'settings' => array(
+        'description_field' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'txt pdf doc docx rtf',
+        'max_filesize' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'file',
+        'settings' => array(
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'file_generic',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_accom'.
+  $fields['registration-maid-field_accom'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_accom',
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -2525,31 +2659,31 @@ function smash_position_types_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          0 => 'yes',
+          1 => 'no',
         ),
         'allowed_values_function' => '',
       ),
       'translatable' => '0',
-      'type' => 'list_boolean',
+      'type' => 'list_float',
     ),
     'field_instance' => array(
       'bundle' => 'maid',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'That is, before Saturday 10th of August, 2013. We need to know for legal and duty of care reasons.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 2,
+          'weight' => '21',
         ),
       ),
       'entity_type' => 'registration',
-      'field_name' => 'field_16_up',
-      'label' => 'Will you be 16 or over before SMASH!',
+      'field_name' => 'field_accom',
+      'label' => 'Would you be interested in budget accommodation organised by SMASH! for the nights of Friday 8th August and Saturday 9th August?',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -2559,7 +2693,194 @@ function smash_position_types_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '3',
+        'weight' => '16',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_address'.
+  $fields['registration-maid-field_address'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_address',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'including suburb, state, and postcode',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '13',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_address',
+      'label' => 'Address',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_allergies'.
+  $fields['registration-maid-field_allergies'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_allergies',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 26,
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_allergies',
+      'label' => 'Please specify other dietary requirements here',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '11',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_conditions'.
+  $fields['registration-maid-field_conditions'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_conditions',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'If YES, please explain what tasks you are unable to, or will have difficulty in performing, if not then just put N/A.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '15',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_conditions',
+      'label' => 'Do you have a disability, illness or medical condition, which would affect your ability to perform as a volunteer at SMASH! ?',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '9',
       ),
     ),
   );
@@ -2604,13 +2925,196 @@ function smash_position_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 5,
+          'weight' => '9',
         ),
       ),
       'entity_type' => 'registration',
       'field_name' => 'field_contact_phone',
       'label' => 'Contact Phone',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_criminal'.
+  $fields['registration-maid-field_criminal'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_criminal',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'yes',
+          1 => 'no',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_float',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '22',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_criminal',
+      'label' => 'In the last 5 years, have you been charged with any offence which has not been fully determined before a court or otherwise with',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '17',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_dietary_requirements'.
+  $fields['registration-maid-field_dietary_requirements'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dietary_requirements',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'None' => 'None',
+          'Vegetarian' => 'Vegetarian',
+          'Vegan' => 'Vegan',
+          'Kosher' => 'Kosher',
+          'Halal' => 'Halal',
+          'Gluten-Free' => 'Gluten-Free',
+          'Diabetic' => 'Diabetic',
+          'Other (please note in the Other Notes field)' => 'Other (please note in the Other Notes field)',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Select any food allergies, special food/dietary requirements you have',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '16',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_dietary_requirements',
+      'label' => 'Dietary Requirements',
       'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_dob'.
+  $fields['registration-maid-field_dob'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dob',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '20',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'DD/MM/YYYY',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '11',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_dob',
+      'label' => 'Date of Birth',
+      'required' => 1,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -2627,14 +3131,14 @@ function smash_position_types_field_default_fields() {
     ),
   );
 
-  // Exported field: 'registration-maid-field_experience'.
-  $fields['registration-maid-field_experience'] = array(
+  // Exported field: 'registration-maid-field_emergency_contact'.
+  $fields['registration-maid-field_emergency_contact'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_experience',
+      'field_name' => 'field_emergency_contact',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -2658,20 +3162,20 @@ function smash_position_types_field_default_fields() {
       'bundle' => 'maid',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'No work experience is required for this role, but any customer service experience will help!',
+      'description' => 'Please put in the nominated emergency contact person\'s detail here. We will need their full name, relation, and contact number.',
       'display' => array(
         'default' => array(
           'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 4,
+          'weight' => '14',
         ),
       ),
       'entity_type' => 'registration',
-      'field_name' => 'field_experience',
-      'label' => 'Experience',
-      'required' => 0,
+      'field_name' => 'field_emergency_contact',
+      'label' => 'Emergency Contact Details:',
+      'required' => 1,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -2683,7 +3187,7 @@ function smash_position_types_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '5',
+        'weight' => '8',
       ),
     ),
   );
@@ -2728,7 +3232,7 @@ function smash_position_types_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '8',
         ),
       ),
       'entity_type' => 'registration',
@@ -2746,19 +3250,19 @@ function smash_position_types_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '0',
+        'weight' => '1',
       ),
     ),
   );
 
-  // Exported field: 'registration-maid-field_interview_training'.
-  $fields['registration-maid-field_interview_training'] = array(
+  // Exported field: 'registration-maid-field_gender'.
+  $fields['registration-maid-field_gender'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_interview_training',
+      'field_name' => 'field_gender',
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -2769,31 +3273,31 @@ function smash_position_types_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'No',
-          1 => 'Yes',
+          'm' => 'Male',
+          'f' => 'Female',
         ),
         'allowed_values_function' => '',
       ),
       'translatable' => '0',
-      'type' => 'list_boolean',
+      'type' => 'list_text',
     ),
     'field_instance' => array(
       'bundle' => 'maid',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Date is TBA, but will most likely fall on a Saturday or Sunday afternoon between 2pm-6pm.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 3,
+          'weight' => '12',
         ),
       ),
       'entity_type' => 'registration',
-      'field_name' => 'field_interview_training',
-      'label' => 'Will you be able to attend interview and training on weekends?',
+      'field_name' => 'field_gender',
+      'label' => 'Gender',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -2803,68 +3307,64 @@ function smash_position_types_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '4',
+        'weight' => '3',
       ),
     ),
   );
 
-  // Exported field: 'registration-maid-field_other'.
-  $fields['registration-maid-field_other'] = array(
+  // Exported field: 'registration-maid-field_imprisonment'.
+  $fields['registration-maid-field_imprisonment'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_other',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
+      'field_name' => 'field_imprisonment',
+      'foreign keys' => array(),
       'indexes' => array(
-        'format' => array(
-          0 => 'format',
+        'value' => array(
+          0 => 'value',
         ),
       ),
       'locked' => '0',
-      'module' => 'text',
-      'settings' => array(),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'yes',
+          1 => 'no',
+        ),
+        'allowed_values_function' => '',
+      ),
       'translatable' => '0',
-      'type' => 'text_long',
+      'type' => 'list_float',
     ),
     'field_instance' => array(
       'bundle' => 'maid',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Is there anything else you\'d like to tell us?',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
+          'module' => 'list',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 6,
+          'type' => 'list_default',
+          'weight' => '23',
         ),
       ),
       'entity_type' => 'registration',
-      'field_name' => 'field_other',
-      'label' => 'Anything else?',
-      'required' => 0,
+      'field_name' => 'field_imprisonment',
+      'label' => 'In the last 5 years, have you served any part of a sentence of imprisonment, or been charged with any offence that has been prov',
+      'required' => 1,
       'settings' => array(
-        'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'rows' => '5',
-        ),
-        'type' => 'text_textarea',
-        'weight' => '8',
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '18',
       ),
     ),
   );
@@ -2902,7 +3402,7 @@ function smash_position_types_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'maid',
       'deleted' => '0',
-      'description' => 'Upload a photo of yourself!',
+      'description' => 'Please provide of photo of yourself, UNEDITED and minimal to no makeup!!!',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2912,7 +3412,7 @@ function smash_position_types_field_default_fields() {
             'image_style' => '',
           ),
           'type' => 'image',
-          'weight' => 1,
+          'weight' => '24',
         ),
       ),
       'entity_type' => 'registration',
@@ -2938,7 +3438,7 @@ function smash_position_types_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '6',
+        'weight' => '19',
       ),
     ),
   );
@@ -2984,13 +3484,13 @@ function smash_position_types_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 7,
+          'weight' => '25',
         ),
       ),
       'entity_type' => 'registration',
       'field_name' => 'field_resume',
       'label' => 'Résumé',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'description_field' => 0,
         'file_directory' => '',
@@ -3005,7 +3505,185 @@ function smash_position_types_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '7',
+        'weight' => '20',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_setup_day'.
+  $fields['registration-maid-field_setup_day'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_setup_day',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'No',
+          1 => 'Yes',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Attendance on set-up day is NOT compulsory',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '20',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_setup_day',
+      'label' => 'Are you available to help set-up at the venue on the Friday 8th August?',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '15',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_smash_years_volunteered'.
+  $fields['registration-maid-field_smash_years_volunteered'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '6',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_smash_years_volunteered',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Have you volunteered with SMASH! (Either as a Crew or with the Maid Cafe) before? If yes, in which year(s)?',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '17',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_smash_years_volunteered',
+      'label' => 'Volunteer info',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '12',
+      ),
+    ),
+  );
+
+  // Exported field: 'registration-maid-field_which_days_are_you_availab'.
+  $fields['registration-maid-field_which_days_are_you_availab'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_which_days_are_you_availab',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Both Saturday 9th and Sunday 10th August',
+          1 => 'Saturday 9th August',
+          2 => 'Sunday 10th August',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_float',
+    ),
+    'field_instance' => array(
+      'bundle' => 'maid',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '19',
+        ),
+      ),
+      'entity_type' => 'registration',
+      'field_name' => 'field_which_days_are_you_availab',
+      'label' => 'Which days are you available to volunteer for Maid Cafe?',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '14',
       ),
     ),
   );
@@ -3674,22 +4352,27 @@ function smash_position_types_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Address');
   t('Anything else?');
-  t('Are you available to help out on Set-Up Day, Friday 9th August, 2013?');
+  t('Are you available to help out on Set-Up Day, Friday 9th August, 2014?');
+  t('Are you available to help set-up at the venue on the Friday 8th August?');
   t('Areas of Interest');
+  t('Attendance on set-up day is NOT compulsory');
   t('Both training dates will take place closer to SMASH! 2013, dates to be confirmed.');
   t('Contact Phone');
   t('Current Address');
-  t('Date is TBA, but will most likely fall on a Saturday or Sunday afternoon between 2pm-6pm.');
+  t('DD/MM/YYYY');
+  t('Date of Birth');
   t('Department');
   t('Description');
   t('Details of your previous work experience. If you don\'t have a résumé now, please bring one to your first interview.');
   t('Dietary Requirements');
+  t('Do you have a disability, illness or medical condition, which would affect your ability to perform as a volunteer at SMASH! ?');
   t('Do you have prior experience in this area?');
   t('Emergency Contact');
+  t('Emergency Contact Details:');
   t('Enter a short description of this position. Should just be an introductory paragraph, does not need to be the entire job description.');
   t('Enter the full position description. Should be long and detailed.');
-  t('Experience');
   t('Experience is not required but will be considered a bonus.');
   t('Extended Position Description');
   t('Full Name');
@@ -3697,18 +4380,23 @@ function smash_position_types_field_default_fields() {
   t('Got any previous experience, crazy ideas, or anything else you want to tell us?');
   t('Have you volunteered for SMASH! before?');
   t('Have you volunteered for any other organisations?');
+  t('Have you volunteered with SMASH! (Either as a Crew or with the Maid Cafe) before? If yes, in which year(s)?');
   t('How will you be able to help?');
+  t('If YES, please explain what tasks you are unable to, or will have difficulty in performing, if not then just put N/A.');
+  t('In the last 5 years, have you been charged with any offence which has not been fully determined before a court or otherwise with');
+  t('In the last 5 years, have you served any part of a sentence of imprisonment, or been charged with any offence that has been prov');
   t('Is there anything else you\'d like to tell us about yourself?');
-  t('Is there anything else you\'d like to tell us?');
   t('It is the night before SMASH! 2013. How do you prepare yourself?');
   t('Just in case we can\'t contact you via email.');
   t('List any Medical or Physical Conditions you have');
   t('List those organsations and describe the duties you performed.');
-  t('No work experience is required for this role, but any customer service experience will help!');
   t('Other Notes');
   t('Photo');
   t('Please answer this to the best of your ability');
   t('Please describe why you would make an awesome volunteer for SMASH!');
+  t('Please provide of photo of yourself, UNEDITED and minimal to no makeup!!!');
+  t('Please put in the nominated emergency contact person\'s detail here. We will need their full name, relation, and contact number.');
+  t('Please specify other dietary requirements here');
   t('Please tick only THREE preferences.');
   t('Portfolio');
   t('Position Owners');
@@ -3718,25 +4406,27 @@ function smash_position_types_field_default_fields() {
   t('Provide a link to an online portfolio if you have one.');
   t('Registration');
   t('Registration manifests for this Position are sent to this address every day.');
+  t('Resume');
   t('Résumé');
   t('Scenario: please answer in 50 words or less');
+  t('Select any food allergies, special food/dietary requirements you have');
   t('Short Position Description');
   t('State the section you were in alongside the year you volunteered in.');
   t('State their name, relationship to you and their best contact number.');
   t('Tell us a bit about yourself and why you\'re interested in joining SMASH!');
   t('Tell us about yourself');
-  t('That is, before Saturday 10th of August, 2013. We need to know for legal and duty of care reasons.');
   t('Two friends are walking around the main vendor hall and one of them has a 1.5m tall prop sword strapped to their back. You approach them by yourself and politely inform him that SMASH! does not allow attendees to carry any object over a meter in length around the convention as it is an OH & S issue. The attendee angrily states that he paid for his ticket and he should be allowed to do what he wants with his own property. What do you do next?');
   t('URL Slug');
-  t('Upload a photo of yourself!');
   t('Use 50 words or less');
+  t('Volunteer info');
   t('We will be having two training sessions and it is important that you make every effort to attend both');
   t('We will need all the help we can get!');
   t('What do you want to help with?');
+  t('Which days are you available to volunteer for Maid Cafe?');
   t('Which year(s) did you volunteer for SMASH!');
-  t('Will you be 16 or over before SMASH!');
-  t('Will you be able to attend interview and training on weekends?');
+  t('Would you be interested in budget accommodation organised by SMASH! for the nights of Friday 8th August and Saturday 9th August?');
   t('Your Name');
+  t('including suburb, state, and postcode');
 
   return $fields;
 }

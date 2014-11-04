@@ -185,7 +185,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'anonymous user',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -197,7 +196,6 @@ function smash_position_types_user_default_permissions() {
       0 => 'administrator',
       1 => 'anonymous user',
       2 => 'authenticated user',
-      3 => 'management',
     ),
     'module' => 'registration',
   );
@@ -208,7 +206,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -231,7 +228,6 @@ function smash_position_types_user_default_permissions() {
       0 => 'administrator',
       1 => 'anonymous user',
       2 => 'authenticated user',
-      3 => 'management',
     ),
     'module' => 'registration',
   );
@@ -242,7 +238,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -253,7 +248,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'anonymous user',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -265,7 +259,6 @@ function smash_position_types_user_default_permissions() {
       0 => 'administrator',
       1 => 'anonymous user',
       2 => 'authenticated user',
-      3 => 'management',
     ),
     'module' => 'registration',
   );
@@ -276,7 +269,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -300,7 +292,6 @@ function smash_position_types_user_default_permissions() {
       0 => 'administrator',
       1 => 'anonymous user',
       2 => 'authenticated user',
-      3 => 'management',
     ),
     'module' => 'registration',
   );
@@ -311,7 +302,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -322,7 +312,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'anonymous user',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -333,7 +322,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'anonymous user',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -343,7 +331,6 @@ function smash_position_types_user_default_permissions() {
     'name' => 'create maid registration other users',
     'roles' => array(
       0 => 'authenticated user',
-      1 => 'management',
     ),
     'module' => 'registration',
   );
@@ -354,7 +341,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'anonymous user',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -366,7 +352,6 @@ function smash_position_types_user_default_permissions() {
       0 => 'administrator',
       1 => 'anonymous user',
       2 => 'authenticated user',
-      3 => 'management',
     ),
     'module' => 'registration',
   );
@@ -377,7 +362,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -388,7 +372,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'anonymous user',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -399,7 +382,6 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'anonymous user',
       1 => 'authenticated user',
-      2 => 'management',
     ),
     'module' => 'registration',
   );
@@ -409,7 +391,6 @@ function smash_position_types_user_default_permissions() {
     'name' => 'create sponsorship_registration registration other users',
     'roles' => array(
       0 => 'authenticated user',
-      1 => 'management',
     ),
     'module' => 'registration',
   );

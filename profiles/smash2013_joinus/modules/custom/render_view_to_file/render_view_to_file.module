@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Lists all available Views and their displays.
+ * This function more or less derived from Views Bulk Operations' 
+ * views_bulk_operations_views_list.
+ *
+ * @return array
+ *   An array of all views and their displays on the form 'view|display',
+ *   formatted to be used as an select list.
+ */
+function render_view_to_file_views_list() {
+  $selectable_displays = array();
+  foreach (views_get_enabled_views() as $name => $view) {
+    foreach ($view->display as $display_name => $display) {
+      $view->build($display_name);
+      $selectable_displays[$view->name . '|' . $display_name] = check_plain($view->human_name) . ' | ' . check_plain($display->display_title);
+    }
+  }
+  return $selectable_displays;
+}

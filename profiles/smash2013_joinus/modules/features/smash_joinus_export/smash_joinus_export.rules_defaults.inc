@@ -62,21 +62,15 @@ function smash_joinus_export_default_rules_configuration() {
                   ]
                 }
               },
-              { "pop_temp_roles" : [] }
-            ],
-            "LABEL" : "Build and send manifest"
-          }
-        },
-        { "RULE" : {
-            "DO" : [
+              { "pop_temp_roles" : [] },
               { "schedule" : {
                   "component" : "rules_nightly_manifest_mailout",
-                  "date" : "tomorrow 03:00",
-                  "identifier" : "nightly1"
+                  "date" : "+1 day",
+                  "identifier" : "nightly_manifest"
                 }
               }
             ],
-            "LABEL" : "Requeue for execution tomorrow"
+            "LABEL" : "Build and send manifest"
           }
         }
       ]
