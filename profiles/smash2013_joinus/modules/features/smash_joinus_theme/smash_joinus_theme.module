@@ -22,7 +22,7 @@ function smash_joinus_theme_block_view($delta = '') {
   switch ($delta) {
     case 'copyright_links':
       
-      $content = '© 2014 SMASH Inc
+      $content = '© ' . date('Y') . ' SMASH Inc
 
 * [Contact Us](http://www.smash.org.au/contact-us)
 * [Privacy](http://www.smash.org.au/privacy-policy)';

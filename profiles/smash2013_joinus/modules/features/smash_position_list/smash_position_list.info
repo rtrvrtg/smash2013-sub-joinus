@@ -16,6 +16,7 @@ features[features_api][] = api:1
 features[page_manager_pages][] = position_list
 features[page_manager_pages][] = role_selector
 features[variable][] = file_private_path
+features[views_view][] = department_filter
 features[views_view][] = departments
 features[views_view][] = position_display
 features[views_view][] = positions

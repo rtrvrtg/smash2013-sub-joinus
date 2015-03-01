@@ -284,13 +284,22 @@ Fill out the form, submit your details and we\'ll be in touch!',
   $page->task = 'page';
   $page->admin_title = 'Role Selector';
   $page->admin_description = '';
-  $page->path = 'select-role';
+  $page->path = 'select-role/!dept';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
   );
   $page->menu = array();
-  $page->arguments = array();
+  $page->arguments = array(
+    'dept' => array(
+      'id' => 1,
+      'identifier' => 'Dept String',
+      'name' => 'string',
+      'settings' => array(
+        'use_tail' => 0,
+      ),
+    ),
+  );
   $page->conf = array(
     'admin_paths' => FALSE,
   );
@@ -388,7 +397,7 @@ Fill out the form, submit your details and we\'ll be in touch!',
     $pane->pid = 'new-9';
     $pane->panel = 'top';
     $pane->type = 'views';
-    $pane->subtype = 'promoted_positions';
+    $pane->subtype = 'department_filter';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -403,7 +412,7 @@ Fill out the form, submit your details and we\'ll be in touch!',
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'block',
+      'display' => 'ctools_context_1',
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -417,6 +426,42 @@ Fill out the form, submit your details and we\'ll be in touch!',
     $pane->locks = array();
     $display->content['new-9'] = $pane;
     $display->panels['top'][0] = 'new-9';
+    $pane = new stdClass();
+    $pane->pid = 'new-10';
+    $pane->panel = 'top';
+    $pane->type = 'views';
+    $pane->subtype = 'promoted_positions';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 1,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'context' => array(
+        0 => 'argument_string_1.raw',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-10'] = $pane;
+    $display->panels['top'][1] = 'new-10';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-7';
   $handler->conf['display'] = $display;

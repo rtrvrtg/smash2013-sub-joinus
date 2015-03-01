@@ -30,6 +30,24 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: administer exhibitors_and_sponsorship registration.
+  $permissions['administer exhibitors_and_sponsorship registration'] = array(
+    'name' => 'administer exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer guest_relations registration.
+  $permissions['administer guest_relations registration'] = array(
+    'name' => 'administer guest_relations registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: administer it_ticketing_registration registration.
   $permissions['administer it_ticketing_registration registration'] = array(
     'name' => 'administer it_ticketing_registration registration',
@@ -60,6 +78,43 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: administer marketing registration.
+  $permissions['administer marketing registration'] = array(
+    'name' => 'administer marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer marketing_visual_graphics registration.
+  $permissions['administer marketing_visual_graphics registration'] = array(
+    'name' => 'administer marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer marketing_website_co_ordinator registration.
+  $permissions['administer marketing_website_co_ordinator registration'] = array(
+    'name' => 'administer marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer mc registration.
+  $permissions['administer mc registration'] = array(
+    'name' => 'administer mc registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: administer own crew registration.
   $permissions['administer own crew registration'] = array(
     'name' => 'administer own crew registration',
@@ -76,6 +131,24 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer own exhibitors_and_sponsorship registration.
+  $permissions['administer own exhibitors_and_sponsorship registration'] = array(
+    'name' => 'administer own exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer own guest_relations registration.
+  $permissions['administer own guest_relations registration'] = array(
+    'name' => 'administer own guest_relations registration',
+    'roles' => array(
+      0 => 'administrator',
     ),
     'module' => 'registration',
   );
@@ -110,6 +183,42 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: administer own marketing registration.
+  $permissions['administer own marketing registration'] = array(
+    'name' => 'administer own marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer own marketing_visual_graphics registration.
+  $permissions['administer own marketing_visual_graphics registration'] = array(
+    'name' => 'administer own marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer own marketing_website_co_ordinator registration.
+  $permissions['administer own marketing_website_co_ordinator registration'] = array(
+    'name' => 'administer own marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer own mc registration.
+  $permissions['administer own mc registration'] = array(
+    'name' => 'administer own mc registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: administer own programming_registration registration.
   $permissions['administer own programming_registration registration'] = array(
     'name' => 'administer own programming_registration registration',
@@ -126,6 +235,15 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer own ticketing_positions registration.
+  $permissions['administer own ticketing_positions registration'] = array(
+    'name' => 'administer own ticketing_positions registration',
+    'roles' => array(
+      0 => 'administrator',
     ),
     'module' => 'registration',
   );
@@ -172,6 +290,16 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: administer sponsorship_registration registration.
   $permissions['administer sponsorship_registration registration'] = array(
     'name' => 'administer sponsorship_registration registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: administer ticketing_positions registration.
+  $permissions['administer ticketing_positions registration'] = array(
+    'name' => 'administer ticketing_positions registration',
     'roles' => array(
       0 => 'administrator',
       1 => 'management',
@@ -238,6 +366,67 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create exhibitors_and_sponsorship registration.
+  $permissions['create exhibitors_and_sponsorship registration'] = array(
+    'name' => 'create exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create exhibitors_and_sponsorship registration other anonymous.
+  $permissions['create exhibitors_and_sponsorship registration other anonymous'] = array(
+    'name' => 'create exhibitors_and_sponsorship registration other anonymous',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create exhibitors_and_sponsorship registration other users.
+  $permissions['create exhibitors_and_sponsorship registration other users'] = array(
+    'name' => 'create exhibitors_and_sponsorship registration other users',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create guest_relations registration.
+  $permissions['create guest_relations registration'] = array(
+    'name' => 'create guest_relations registration',
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create guest_relations registration other anonymous.
+  $permissions['create guest_relations registration other anonymous'] = array(
+    'name' => 'create guest_relations registration other anonymous',
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create guest_relations registration other users.
+  $permissions['create guest_relations registration other users'] = array(
+    'name' => 'create guest_relations registration other users',
+    'roles' => array(
+      0 => 'administrator',
     ),
     'module' => 'registration',
   );
@@ -335,6 +524,129 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: create marketing registration.
+  $permissions['create marketing registration'] = array(
+    'name' => 'create marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create marketing registration other anonymous.
+  $permissions['create marketing registration other anonymous'] = array(
+    'name' => 'create marketing registration other anonymous',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create marketing registration other users.
+  $permissions['create marketing registration other users'] = array(
+    'name' => 'create marketing registration other users',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create marketing_visual_graphics registration.
+  $permissions['create marketing_visual_graphics registration'] = array(
+    'name' => 'create marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create marketing_visual_graphics registration other anonymous.
+  $permissions['create marketing_visual_graphics registration other anonymous'] = array(
+    'name' => 'create marketing_visual_graphics registration other anonymous',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create marketing_visual_graphics registration other users.
+  $permissions['create marketing_visual_graphics registration other users'] = array(
+    'name' => 'create marketing_visual_graphics registration other users',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create marketing_website_co_ordinator registration.
+  $permissions['create marketing_website_co_ordinator registration'] = array(
+    'name' => 'create marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create marketing_website_co_ordinator registration other anonymous.
+  $permissions['create marketing_website_co_ordinator registration other anonymous'] = array(
+    'name' => 'create marketing_website_co_ordinator registration other anonymous',
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create marketing_website_co_ordinator registration other users.
+  $permissions['create marketing_website_co_ordinator registration other users'] = array(
+    'name' => 'create marketing_website_co_ordinator registration other users',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create mc registration.
+  $permissions['create mc registration'] = array(
+    'name' => 'create mc registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create mc registration other anonymous.
+  $permissions['create mc registration other anonymous'] = array(
+    'name' => 'create mc registration other anonymous',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create mc registration other users.
+  $permissions['create mc registration other users'] = array(
+    'name' => 'create mc registration other users',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: create programming_registration registration.
   $permissions['create programming_registration registration'] = array(
     'name' => 'create programming_registration registration',
@@ -395,6 +707,38 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: create ticketing_positions registration.
+  $permissions['create ticketing_positions registration'] = array(
+    'name' => 'create ticketing_positions registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create ticketing_positions registration other anonymous.
+  $permissions['create ticketing_positions registration other anonymous'] = array(
+    'name' => 'create ticketing_positions registration other anonymous',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: create ticketing_positions registration other users.
+  $permissions['create ticketing_positions registration other users'] = array(
+    'name' => 'create ticketing_positions registration other users',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: delete any crew registration.
   $permissions['delete any crew registration'] = array(
     'name' => 'delete any crew registration',
@@ -407,6 +751,24 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: delete any crew_simplified_ registration.
   $permissions['delete any crew_simplified_ registration'] = array(
     'name' => 'delete any crew_simplified_ registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete any exhibitors_and_sponsorship registration.
+  $permissions['delete any exhibitors_and_sponsorship registration'] = array(
+    'name' => 'delete any exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete any guest_relations registration.
+  $permissions['delete any guest_relations registration'] = array(
+    'name' => 'delete any guest_relations registration',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -440,6 +802,42 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: delete any marketing registration.
+  $permissions['delete any marketing registration'] = array(
+    'name' => 'delete any marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete any marketing_visual_graphics registration.
+  $permissions['delete any marketing_visual_graphics registration'] = array(
+    'name' => 'delete any marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete any marketing_website_co_ordinator registration.
+  $permissions['delete any marketing_website_co_ordinator registration'] = array(
+    'name' => 'delete any marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete any mc registration.
+  $permissions['delete any mc registration'] = array(
+    'name' => 'delete any mc registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: delete any programming_registration registration.
   $permissions['delete any programming_registration registration'] = array(
     'name' => 'delete any programming_registration registration',
@@ -458,6 +856,15 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: delete any ticketing_positions registration.
+  $permissions['delete any ticketing_positions registration'] = array(
+    'name' => 'delete any ticketing_positions registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: delete own crew registration.
   $permissions['delete own crew registration'] = array(
     'name' => 'delete own crew registration',
@@ -470,6 +877,24 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: delete own crew_simplified_ registration.
   $permissions['delete own crew_simplified_ registration'] = array(
     'name' => 'delete own crew_simplified_ registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete own exhibitors_and_sponsorship registration.
+  $permissions['delete own exhibitors_and_sponsorship registration'] = array(
+    'name' => 'delete own exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete own guest_relations registration.
+  $permissions['delete own guest_relations registration'] = array(
+    'name' => 'delete own guest_relations registration',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -503,6 +928,42 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: delete own marketing registration.
+  $permissions['delete own marketing registration'] = array(
+    'name' => 'delete own marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete own marketing_visual_graphics registration.
+  $permissions['delete own marketing_visual_graphics registration'] = array(
+    'name' => 'delete own marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete own marketing_website_co_ordinator registration.
+  $permissions['delete own marketing_website_co_ordinator registration'] = array(
+    'name' => 'delete own marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: delete own mc registration.
+  $permissions['delete own mc registration'] = array(
+    'name' => 'delete own mc registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: delete own programming_registration registration.
   $permissions['delete own programming_registration registration'] = array(
     'name' => 'delete own programming_registration registration',
@@ -521,6 +982,15 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: delete own ticketing_positions registration.
+  $permissions['delete own ticketing_positions registration'] = array(
+    'name' => 'delete own ticketing_positions registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: edit crew registration state.
   $permissions['edit crew registration state'] = array(
     'name' => 'edit crew registration state',
@@ -533,6 +1003,24 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: edit crew_simplified_ registration state.
   $permissions['edit crew_simplified_ registration state'] = array(
     'name' => 'edit crew_simplified_ registration state',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: edit exhibitors_and_sponsorship registration state.
+  $permissions['edit exhibitors_and_sponsorship registration state'] = array(
+    'name' => 'edit exhibitors_and_sponsorship registration state',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: edit guest_relations registration state.
+  $permissions['edit guest_relations registration state'] = array(
+    'name' => 'edit guest_relations registration state',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -566,6 +1054,42 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: edit marketing registration state.
+  $permissions['edit marketing registration state'] = array(
+    'name' => 'edit marketing registration state',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: edit marketing_visual_graphics registration state.
+  $permissions['edit marketing_visual_graphics registration state'] = array(
+    'name' => 'edit marketing_visual_graphics registration state',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: edit marketing_website_co_ordinator registration state.
+  $permissions['edit marketing_website_co_ordinator registration state'] = array(
+    'name' => 'edit marketing_website_co_ordinator registration state',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: edit mc registration state.
+  $permissions['edit mc registration state'] = array(
+    'name' => 'edit mc registration state',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: edit programming_registration registration state.
   $permissions['edit programming_registration registration state'] = array(
     'name' => 'edit programming_registration registration state',
@@ -584,6 +1108,15 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: edit ticketing_positions registration state.
+  $permissions['edit ticketing_positions registration state'] = array(
+    'name' => 'edit ticketing_positions registration state',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: update any crew registration.
   $permissions['update any crew registration'] = array(
     'name' => 'update any crew registration',
@@ -596,6 +1129,24 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: update any crew_simplified_ registration.
   $permissions['update any crew_simplified_ registration'] = array(
     'name' => 'update any crew_simplified_ registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update any exhibitors_and_sponsorship registration.
+  $permissions['update any exhibitors_and_sponsorship registration'] = array(
+    'name' => 'update any exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update any guest_relations registration.
+  $permissions['update any guest_relations registration'] = array(
+    'name' => 'update any guest_relations registration',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -629,6 +1180,42 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: update any marketing registration.
+  $permissions['update any marketing registration'] = array(
+    'name' => 'update any marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update any marketing_visual_graphics registration.
+  $permissions['update any marketing_visual_graphics registration'] = array(
+    'name' => 'update any marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update any marketing_website_co_ordinator registration.
+  $permissions['update any marketing_website_co_ordinator registration'] = array(
+    'name' => 'update any marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update any mc registration.
+  $permissions['update any mc registration'] = array(
+    'name' => 'update any mc registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: update any programming_registration registration.
   $permissions['update any programming_registration registration'] = array(
     'name' => 'update any programming_registration registration',
@@ -647,6 +1234,15 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: update any ticketing_positions registration.
+  $permissions['update any ticketing_positions registration'] = array(
+    'name' => 'update any ticketing_positions registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: update own crew registration.
   $permissions['update own crew registration'] = array(
     'name' => 'update own crew registration',
@@ -659,6 +1255,24 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: update own crew_simplified_ registration.
   $permissions['update own crew_simplified_ registration'] = array(
     'name' => 'update own crew_simplified_ registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update own exhibitors_and_sponsorship registration.
+  $permissions['update own exhibitors_and_sponsorship registration'] = array(
+    'name' => 'update own exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update own guest_relations registration.
+  $permissions['update own guest_relations registration'] = array(
+    'name' => 'update own guest_relations registration',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -692,6 +1306,42 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: update own marketing registration.
+  $permissions['update own marketing registration'] = array(
+    'name' => 'update own marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update own marketing_visual_graphics registration.
+  $permissions['update own marketing_visual_graphics registration'] = array(
+    'name' => 'update own marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update own marketing_website_co_ordinator registration.
+  $permissions['update own marketing_website_co_ordinator registration'] = array(
+    'name' => 'update own marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update own mc registration.
+  $permissions['update own mc registration'] = array(
+    'name' => 'update own mc registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: update own programming_registration registration.
   $permissions['update own programming_registration registration'] = array(
     'name' => 'update own programming_registration registration',
@@ -704,6 +1354,15 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: update own sponsorship_registration registration.
   $permissions['update own sponsorship_registration registration'] = array(
     'name' => 'update own sponsorship_registration registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: update own ticketing_positions registration.
+  $permissions['update own ticketing_positions registration'] = array(
+    'name' => 'update own ticketing_positions registration',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -726,6 +1385,25 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view exhibitors_and_sponsorship registration.
+  $permissions['view exhibitors_and_sponsorship registration'] = array(
+    'name' => 'view exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view guest_relations registration.
+  $permissions['view guest_relations registration'] = array(
+    'name' => 'view guest_relations registration',
+    'roles' => array(
+      0 => 'administrator',
     ),
     'module' => 'registration',
   );
@@ -760,6 +1438,43 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: view marketing registration.
+  $permissions['view marketing registration'] = array(
+    'name' => 'view marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view marketing_visual_graphics registration.
+  $permissions['view marketing_visual_graphics registration'] = array(
+    'name' => 'view marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view marketing_website_co_ordinator registration.
+  $permissions['view marketing_website_co_ordinator registration'] = array(
+    'name' => 'view marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view mc registration.
+  $permissions['view mc registration'] = array(
+    'name' => 'view mc registration',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: view own crew registration.
   $permissions['view own crew registration'] = array(
     'name' => 'view own crew registration',
@@ -776,6 +1491,25 @@ function smash_position_types_user_default_permissions() {
     'roles' => array(
       0 => 'administrator',
       1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view own exhibitors_and_sponsorship registration.
+  $permissions['view own exhibitors_and_sponsorship registration'] = array(
+    'name' => 'view own exhibitors_and_sponsorship registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view own guest_relations registration.
+  $permissions['view own guest_relations registration'] = array(
+    'name' => 'view own guest_relations registration',
+    'roles' => array(
+      0 => 'authenticated user',
     ),
     'module' => 'registration',
   );
@@ -810,6 +1544,46 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: view own marketing registration.
+  $permissions['view own marketing registration'] = array(
+    'name' => 'view own marketing registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view own marketing_visual_graphics registration.
+  $permissions['view own marketing_visual_graphics registration'] = array(
+    'name' => 'view own marketing_visual_graphics registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view own marketing_website_co_ordinator registration.
+  $permissions['view own marketing_website_co_ordinator registration'] = array(
+    'name' => 'view own marketing_website_co_ordinator registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view own mc registration.
+  $permissions['view own mc registration'] = array(
+    'name' => 'view own mc registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'authenticated user',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: view own programming_registration registration.
   $permissions['view own programming_registration registration'] = array(
     'name' => 'view own programming_registration registration',
@@ -830,6 +1604,16 @@ function smash_position_types_user_default_permissions() {
     'module' => 'registration',
   );
 
+  // Exported permission: view own ticketing_positions registration.
+  $permissions['view own ticketing_positions registration'] = array(
+    'name' => 'view own ticketing_positions registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
   // Exported permission: view programming_registration registration.
   $permissions['view programming_registration registration'] = array(
     'name' => 'view programming_registration registration',
@@ -843,6 +1627,16 @@ function smash_position_types_user_default_permissions() {
   // Exported permission: view sponsorship_registration registration.
   $permissions['view sponsorship_registration registration'] = array(
     'name' => 'view sponsorship_registration registration',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'management',
+    ),
+    'module' => 'registration',
+  );
+
+  // Exported permission: view ticketing_positions registration.
+  $permissions['view ticketing_positions registration'] = array(
+    'name' => 'view ticketing_positions registration',
     'roles' => array(
       0 => 'administrator',
       1 => 'management',

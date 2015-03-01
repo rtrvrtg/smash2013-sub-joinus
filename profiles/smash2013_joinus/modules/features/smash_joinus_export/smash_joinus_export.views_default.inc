@@ -45,7 +45,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'registration_related_node';
   $handler->display->display_options['fields']['title']['label'] = 'Position';
-  /* Field: Registration: Your Name */
+  /* Field: Registration: Full Name */
   $handler->display->display_options['fields']['field_full_name']['id'] = 'field_full_name';
   $handler->display->display_options['fields']['field_full_name']['table'] = 'field_data_field_full_name';
   $handler->display->display_options['fields']['field_full_name']['field'] = 'field_full_name';
@@ -202,7 +202,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
-  /* Field: Registration: Your Name */
+  /* Field: Registration: Full Name */
   $handler->display->display_options['fields']['field_full_name']['id'] = 'field_full_name';
   $handler->display->display_options['fields']['field_full_name']['table'] = 'field_data_field_full_name';
   $handler->display->display_options['fields']['field_full_name']['field'] = 'field_full_name';
@@ -214,15 +214,17 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_position_of_interest']['id'] = 'field_position_of_interest';
   $handler->display->display_options['fields']['field_position_of_interest']['table'] = 'field_data_field_position_of_interest';
   $handler->display->display_options['fields']['field_position_of_interest']['field'] = 'field_position_of_interest';
-  /* Field: Registration: Position of Interest */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_pos_interest_marketing']['id'] = 'field_pos_interest_marketing';
   $handler->display->display_options['fields']['field_pos_interest_marketing']['table'] = 'field_data_field_pos_interest_marketing';
   $handler->display->display_options['fields']['field_pos_interest_marketing']['field'] = 'field_pos_interest_marketing';
-  /* Field: Registration: Position of Interest */
+  $handler->display->display_options['fields']['field_pos_interest_marketing']['label'] = 'Position of Interest';
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_pos_interest_ticketing']['id'] = 'field_pos_interest_ticketing';
   $handler->display->display_options['fields']['field_pos_interest_ticketing']['table'] = 'field_data_field_pos_interest_ticketing';
   $handler->display->display_options['fields']['field_pos_interest_ticketing']['field'] = 'field_pos_interest_ticketing';
-  /* Field: Registration: Position of Interest */
+  $handler->display->display_options['fields']['field_pos_interest_ticketing']['label'] = 'Position of Interest';
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_pos_es']['id'] = 'field_pos_es';
   $handler->display->display_options['fields']['field_pos_es']['table'] = 'field_data_field_pos_es';
   $handler->display->display_options['fields']['field_pos_es']['field'] = 'field_pos_es';
@@ -239,7 +241,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_how_able_to_help']['id'] = 'field_how_able_to_help';
   $handler->display->display_options['fields']['field_how_able_to_help']['table'] = 'field_data_field_how_able_to_help';
   $handler->display->display_options['fields']['field_how_able_to_help']['field'] = 'field_how_able_to_help';
-  /* Field: Registration: Do you have prior experience in this area? */
+  /* Field: Registration: Please detail any skills and attributes you may bring to this role and the organisation. */
   $handler->display->display_options['fields']['field_prior_experience']['id'] = 'field_prior_experience';
   $handler->display->display_options['fields']['field_prior_experience']['table'] = 'field_data_field_prior_experience';
   $handler->display->display_options['fields']['field_prior_experience']['field'] = 'field_prior_experience';
