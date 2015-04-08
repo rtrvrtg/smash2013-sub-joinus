@@ -125,19 +125,19 @@ namespace :drush do
   end
 
   # Rip up the settings.php file so we can start again.
-  task :reset_install, :roles => :web, do
+  task :reset_install, :roles => :web do
     run "rm #{current_release}/sites/default/settings.php"
   end
 
   # User password
-  task :upwd, :roles => :web, do
+  task :upwd, :roles => :web do
     set(:ch_user, Capistrano::CLI.ui.ask("Username: ") )
     set(:ch_pass, Capistrano::CLI.password_prompt("New Password: ") )
     drush_do("upwd #{ch_user} --password='#{ch_pass}'")
   end
 
   # Enable modules
-  task :en, :roles => :web, do
+  task :en, :roles => :web do
     set(:module_prompted, Capistrano::CLI.ui.ask("Module names: ") )
     drush_do("en #{module_prompted} -y")
   end
