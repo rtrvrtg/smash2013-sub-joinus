@@ -1,8 +1,6 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.8'
 gem 'rake'
-gem 'mysql2'
 gem 'railsless-deploy'
 gem 'capistrano', '< 3.0'
 gem 'compass'
