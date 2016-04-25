@@ -1,7 +1,7 @@
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 set :ssh_options, { :forward_agent => true }
 
-set :user,        "smash"
+set :user,        "joinus"
 set :application, "smash-joinus"
 set :domain,      "publicweb.smash.org.au"
 set :repository,  "git@bitbucket.org:smashcon-it/joinus-drupal.git"
