@@ -108,20 +108,20 @@ namespace :drush do
     # set_ownership("#{current_release}/cache");
     # set_chmod("#{current_release}/cache");
     
-    if !is_drupal_installed?
-      set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
-      set(:db_pass, Capistrano::CLI.password_prompt("DB Pass: ") )
-      set(:account_name, Capistrano::CLI.ui.ask("Account name: ") )
-      set(:account_mail, Capistrano::CLI.ui.ask("Account email: ") )
-      
-      db_url = "mysql://#{db_user}:#{db_pass}@localhost/#{db_name}"
-      
-      account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{account_mail}"
-      db_switch = "--db-url=#{db_url}"
-      db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
-      
-      drush_do("site-install #{install_profile} #{db_switch} #{db_su} #{account_setup} -y")
-    end
+    # if !is_drupal_installed?
+    #   set(:db_user, Capistrano::CLI.ui.ask("DB User: ") )
+    #   set(:db_pass, Capistrano::CLI.password_prompt("DB Pass: ") )
+    #   set(:account_name, Capistrano::CLI.ui.ask("Account name: ") )
+    #   set(:account_mail, Capistrano::CLI.ui.ask("Account email: ") )
+    #   
+    #   db_url = "mysql://#{db_user}:#{db_pass}@localhost/#{db_name}"
+    #   
+    #   account_setup = "--account-name=#{account_name} --account-mail=#{account_mail} --site-mail=#{account_mail}"
+    #   db_switch = "--db-url=#{db_url}"
+    #   db_su = "--db-su=#{db_user} --db-su-pw=#{db_pass}"
+    #  
+    #   drush_do("site-install #{install_profile} #{db_switch} #{db_su} #{account_setup} -y")
+    # end
   end
 
   # Rip up the settings.php file so we can start again.
@@ -246,7 +246,7 @@ after "deploy:finalize_update", "drupal:create_symlinks"
 after "deploy:finalize_update", "drush:install_site"
 after "deploy:finalize_update", "drush:run_updates"
 after "deploy:finalize_update", "drush:setup_files"
-after "deploy:finalize_update", "drush:setup_filecache"
+# after "deploy:finalize_update", "drush:setup_filecache"
 after "deploy:finalize_update", "compass:make_styles"
 
 # Cap the number of checked-out revisions.
