@@ -39,6 +39,9 @@ projects[field_validation][subdir] = "contrib"
 projects[filecache][version] = "1.0-beta2"
 projects[filecache][subdir] = "contrib"
 
+projects[memcache][version] = "1.x-dev"
+projects[memcache][subdir] = "contrib"
+
 projects[jquery_expander][version] = "1.0"
 projects[jquery_expander][subdir] = "contrib"
 
