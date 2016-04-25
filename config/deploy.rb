@@ -3,8 +3,8 @@ set :ssh_options, { :forward_agent => true }
 
 set :user,        "smash"
 set :application, "smash-joinus"
-set :domain,      "linode.smash.org.au"
-set :repository,  "git@github.com:smashcon/joinus-drupal.git"
+set :domain,      "publicweb.smash.org.au"
+set :repository,  "git@bitbucket.org:smashcon-it/joinus-drupal.git"
 set :shared_path, "#{deploy_to}/shared"
 set :install_profile, "smash2013_joinus"
 set :use_sudo, false
