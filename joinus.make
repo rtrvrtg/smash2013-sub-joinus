@@ -128,6 +128,9 @@ projects[pathauto][subdir] = "contrib"
 projects[spamicide][version] = "1.2"
 projects[spamicide][subdir] = "contrib"
 
+projects[smtp][version] = "1.4"
+projects[smtp][subdir] = "contrib"
+
 libraries[jquery.expander][directory_name] = "jquery.expander"
 libraries[jquery.expander][type] = "library"
 libraries[jquery.expander][destination] = "libraries"
