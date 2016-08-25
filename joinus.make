@@ -6,7 +6,7 @@ projects[drupal][version] = "7.50"
 projects[drupal][patch][] = https://www.drupal.org/files/issues/1232416-253_0.patch
 
 ; Modules
-projects[ctools][version] = "1.9"
+projects[ctools][version] = "1.10"
 projects[ctools][subdir] = "contrib"
 
 projects[backup_migrate][version] = "2.8"
@@ -63,7 +63,7 @@ projects[mailsystem][subdir] = "contrib"
 projects[mimemail][version] = "1.0-beta4"
 projects[mimemail][subdir] = "contrib"
 
-projects[panels][version] = "3.5"
+projects[panels][version] = "3.7"
 projects[panels][subdir] = "contrib"
 
 projects[registration][version] = "1.6"
