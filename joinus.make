@@ -27,7 +27,7 @@ projects[email][subdir] = "contrib"
 projects[entity][version] = "1.7"
 projects[entity][subdir] = "contrib"
 
-projects[entityreference][version] = "1.1"
+projects[entityreference][version] = "1.2"
 projects[entityreference][subdir] = "contrib"
 
 projects[features][version] = "2.10"
@@ -98,7 +98,7 @@ projects[views][version] = "3.14"
 projects[views][subdir] = "contrib"
 projects[views][patch][] = "http://drupal.org/files/views_ajax_submit_back_2.patch"
 
-projects[views_data_export][version] = "3.0-beta9"
+projects[views_data_export][version] = "3.1"
 projects[views_data_export][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = "3.1"
