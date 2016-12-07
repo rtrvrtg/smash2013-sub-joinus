@@ -131,6 +131,9 @@ projects[spamicide][subdir] = "contrib"
 projects[smtp][version] = "1.4"
 projects[smtp][subdir] = "contrib"
 
+projects[r4032login][version] = "1.8"
+projects[r4032login][subdir] = "contrib"
+
 libraries[jquery.expander][directory_name] = "jquery.expander"
 libraries[jquery.expander][type] = "library"
 libraries[jquery.expander][destination] = "libraries"
