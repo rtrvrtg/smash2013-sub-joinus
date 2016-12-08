@@ -480,6 +480,6 @@ function smash2013_joinus_update_7002() {
  * Enable smash_joinus_mail.
  */
 function smash2013_joinus_update_7003() {
-  module_enable(array('smash_joinus_mail'));
+  module_enable(array('smash_joinus_mail', 'r4032login'));
 }
 
