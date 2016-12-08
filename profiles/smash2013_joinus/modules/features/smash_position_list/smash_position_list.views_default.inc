@@ -35,8 +35,7 @@ function smash_position_list_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '[Show all positions](/)';
+  $handler->display->display_options['header']['area']['content'] = '[Show all Positions](/)';
   $handler->display->display_options['header']['area']['format'] = 'markdown';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -90,6 +89,49 @@ function smash_position_list_views_default_views() {
   $handler->display->display_options['row_options']['inline'] = array(
     'nothing' => 'nothing',
   );
+
+  /* Display: Registrations Filter */
+  $handler = $view->new_display('ctools_context', 'Registrations Filter', 'ctools_context_2');
+  $handler->display->display_options['style_plugin'] = 'ctools_context';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '[Show all Registrations](/all-registrations)';
+  $handler->display->display_options['header']['area']['format'] = 'markdown';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: URL Slug */
+  $handler->display->display_options['fields']['field_url_slug']['id'] = 'field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['table'] = 'field_data_field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['field'] = 'field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['label'] = '';
+  $handler->display->display_options['fields']['field_url_slug']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_url_slug']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_url_slug']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_url_slug']['type'] = 'text_plain';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[title]';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'all-registrations/[field_url_slug]';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $export['department_filter'] = $view;
 
   $view = new view();

@@ -10,11 +10,11 @@
 function smash_joinus_antispam_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: administer spamicide.
+  // Exported permission: 'administer spamicide'.
   $permissions['administer spamicide'] = array(
     'name' => 'administer spamicide',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'spamicide',
   );

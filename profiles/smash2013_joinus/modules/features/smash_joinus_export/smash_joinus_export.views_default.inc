@@ -22,7 +22,7 @@ function smash_joinus_export_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'All registrations';
+  $handler->display->display_options['title'] = 'All Registrations';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -35,38 +35,213 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_url_slug' => 'field_url_slug',
+    'field_department' => 'field_department',
+    'title' => 'title',
+    'field_full_name' => 'field_full_name',
+    'anon_mail' => 'anon_mail',
+    'url' => 'url',
+    'created' => 'created',
+    'updated' => 'updated',
+    'state_edit' => 'state_edit',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_url_slug' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_department' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_full_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'anon_mail' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'url' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'updated' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'state_edit' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: View area */
+  $handler->display->display_options['header']['view']['id'] = 'view';
+  $handler->display->display_options['header']['view']['table'] = 'views';
+  $handler->display->display_options['header']['view']['field'] = 'view';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'department_filter:ctools_context_2';
   /* Relationship: Registration: Registration to Node */
   $handler->display->display_options['relationships']['registration_related_node']['id'] = 'registration_related_node';
   $handler->display->display_options['relationships']['registration_related_node']['table'] = 'registration';
   $handler->display->display_options['relationships']['registration_related_node']['field'] = 'registration_related_node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_department_target_id']['id'] = 'field_department_target_id';
+  $handler->display->display_options['relationships']['field_department_target_id']['table'] = 'field_data_field_department';
+  $handler->display->display_options['relationships']['field_department_target_id']['field'] = 'field_department_target_id';
+  $handler->display->display_options['relationships']['field_department_target_id']['relationship'] = 'registration_related_node';
+  /* Field: Department Slug */
+  $handler->display->display_options['fields']['field_url_slug']['id'] = 'field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['table'] = 'field_data_field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['field'] = 'field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['relationship'] = 'field_department_target_id';
+  $handler->display->display_options['fields']['field_url_slug']['ui_name'] = 'Department Slug';
+  $handler->display->display_options['fields']['field_url_slug']['label'] = 'Department Slug';
+  $handler->display->display_options['fields']['field_url_slug']['exclude'] = TRUE;
+  /* Field: Content: Department */
+  $handler->display->display_options['fields']['field_department']['id'] = 'field_department';
+  $handler->display->display_options['fields']['field_department']['table'] = 'field_data_field_department';
+  $handler->display->display_options['fields']['field_department']['field'] = 'field_department';
+  $handler->display->display_options['fields']['field_department']['relationship'] = 'registration_related_node';
+  $handler->display->display_options['fields']['field_department']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_department']['alter']['path'] = 'all-registrations/[field_url_slug]';
+  $handler->display->display_options['fields']['field_department']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['field_department']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['field_department']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'registration_related_node';
   $handler->display->display_options['fields']['title']['label'] = 'Position';
-  /* Field: Registration: Full Name */
+  /* Field: Registration: First Name */
   $handler->display->display_options['fields']['field_full_name']['id'] = 'field_full_name';
   $handler->display->display_options['fields']['field_full_name']['table'] = 'field_data_field_full_name';
   $handler->display->display_options['fields']['field_full_name']['field'] = 'field_full_name';
+  $handler->display->display_options['fields']['field_full_name']['label'] = 'Name';
   /* Field: Registration: Anonymous e-mail */
   $handler->display->display_options['fields']['anon_mail']['id'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['table'] = 'registration';
   $handler->display->display_options['fields']['anon_mail']['field'] = 'anon_mail';
   $handler->display->display_options['fields']['anon_mail']['label'] = 'Mail';
-  /* Field: Registration: Contact Phone */
-  $handler->display->display_options['fields']['field_contact_phone']['id'] = 'field_contact_phone';
-  $handler->display->display_options['fields']['field_contact_phone']['table'] = 'field_data_field_contact_phone';
-  $handler->display->display_options['fields']['field_contact_phone']['field'] = 'field_contact_phone';
   /* Field: Registration: URL */
   $handler->display->display_options['fields']['url']['id'] = 'url';
   $handler->display->display_options['fields']['url']['table'] = 'views_entity_registration';
   $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['alter']['max_length'] = '13';
+  $handler->display->display_options['fields']['url']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['url']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
+  /* Field: Registration: Date created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'registration';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'Y-m-d';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Registration: Date updated */
+  $handler->display->display_options['fields']['updated']['id'] = 'updated';
+  $handler->display->display_options['fields']['updated']['table'] = 'registration';
+  $handler->display->display_options['fields']['updated']['field'] = 'updated';
+  $handler->display->display_options['fields']['updated']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['updated']['custom_date_format'] = 'Y-m-d';
+  $handler->display->display_options['fields']['updated']['second_date_format'] = 'long';
+  /* Field: Registration: State form field */
+  $handler->display->display_options['fields']['state_edit']['id'] = 'state_edit';
+  $handler->display->display_options['fields']['state_edit']['table'] = 'registration';
+  $handler->display->display_options['fields']['state_edit']['field'] = 'state_edit';
+  $handler->display->display_options['fields']['state_edit']['label'] = 'Status';
+  $handler->display->display_options['fields']['state_edit']['element_label_colon'] = FALSE;
+  /* Contextual filter: Content: URL Slug (field_url_slug) */
+  $handler->display->display_options['arguments']['field_url_slug_value']['id'] = 'field_url_slug_value';
+  $handler->display->display_options['arguments']['field_url_slug_value']['table'] = 'field_data_field_url_slug';
+  $handler->display->display_options['arguments']['field_url_slug_value']['field'] = 'field_url_slug_value';
+  $handler->display->display_options['arguments']['field_url_slug_value']['relationship'] = 'field_department_target_id';
+  $handler->display->display_options['arguments']['field_url_slug_value']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_url_slug_value']['title'] = 'Registrations for %1';
+  $handler->display->display_options['arguments']['field_url_slug_value']['breadcrumb_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_url_slug_value']['breadcrumb'] = '%1';
+  $handler->display->display_options['arguments']['field_url_slug_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_url_slug_value']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['field_url_slug_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_url_slug_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_url_slug_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_url_slug_value']['limit'] = '0';
+  $handler->display->display_options['arguments']['field_url_slug_value']['path_case'] = 'lower';
+  $handler->display->display_options['arguments']['field_url_slug_value']['transform_dash'] = TRUE;
+  $handler->display->display_options['arguments']['field_url_slug_value']['break_phrase'] = TRUE;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Registration: State entity */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'registration';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['operator'] = 'not in';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    'canceled' => 'canceled',
+    'old' => 'old',
+  );
+  $handler->display->display_options['filters']['state']['group'] = 1;
+  $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['label'] = 'State';
+  $handler->display->display_options['filters']['state']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+  $handler->display->display_options['filters']['state']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['state']['group_info']['label'] = 'State entity';
+  $handler->display->display_options['filters']['state']['group_info']['identifier'] = 'state';
+  $handler->display->display_options['filters']['state']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['state']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
   $handler->display->display_options['path'] = 'all-registrations';
   $export['all_registrations'] = $view;
 
@@ -202,7 +377,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['created']['table'] = 'registration';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
-  /* Field: Registration: Full Name */
+  /* Field: Registration: First Name */
   $handler->display->display_options['fields']['field_full_name']['id'] = 'field_full_name';
   $handler->display->display_options['fields']['field_full_name']['table'] = 'field_data_field_full_name';
   $handler->display->display_options['fields']['field_full_name']['field'] = 'field_full_name';
@@ -292,7 +467,7 @@ function smash_joinus_export_views_default_views() {
   $handler->display->display_options['fields']['field_training_sessions']['id'] = 'field_training_sessions';
   $handler->display->display_options['fields']['field_training_sessions']['table'] = 'field_data_field_training_sessions';
   $handler->display->display_options['fields']['field_training_sessions']['field'] = 'field_training_sessions';
-  /* Field: Registration: Portfolio */
+  /* Field: Registration: Portfolio (URL) */
   $handler->display->display_options['fields']['field_portfolio']['id'] = 'field_portfolio';
   $handler->display->display_options['fields']['field_portfolio']['table'] = 'field_data_field_portfolio';
   $handler->display->display_options['fields']['field_portfolio']['field'] = 'field_portfolio';

@@ -13,13 +13,13 @@ function smash_joinus_permissions_user_default_roles() {
   // Exported role: administrator.
   $roles['administrator'] = array(
     'name' => 'administrator',
-    'weight' => '2',
+    'weight' => 2,
   );
 
   // Exported role: management.
   $roles['management'] = array(
     'name' => 'management',
-    'weight' => '3',
+    'weight' => 3,
   );
 
   return $roles;

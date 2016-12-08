@@ -14,13 +14,13 @@ function smash_position_types_filter_default_formats() {
   $formats['markdown'] = array(
     'format' => 'markdown',
     'name' => 'Markdown',
-    'cache' => '1',
-    'status' => '1',
-    'weight' => '-10',
+    'cache' => 1,
+    'status' => 1,
+    'weight' => -10,
     'filters' => array(
       'filter_markdown' => array(
-        'weight' => '0',
-        'status' => '1',
+        'weight' => 0,
+        'status' => 1,
         'settings' => array(),
       ),
     ),
