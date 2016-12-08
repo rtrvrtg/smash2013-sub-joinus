@@ -475,3 +475,11 @@ function smash2013_joinus_update_7001() {
 function smash2013_joinus_update_7002() {
   module_enable(array('smash_joinus_export'));
 }
+
+/**
+ * Enable smash_joinus_mail.
+ */
+function smash2013_joinus_update_7003() {
+  module_enable(array('smash_joinus_mail'));
+}
+
