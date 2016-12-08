@@ -9,6 +9,23 @@
  */
 function smash_joinus_permissions_default_rules_configuration() {
   $items = array();
+  $items['rules_manager_login'] = entity_import('rules_config', '{ "rules_manager_login" : {
+      "LABEL" : "Manager Login",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_login" : [] },
+      "IF" : [
+        { "user_has_role" : {
+            "account" : [ "account" ],
+            "roles" : { "value" : { "3" : "3", "4" : "4" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [ { "redirect" : { "url" : "admin\\/dashboard", "force" : "0" } } ]
+    }
+  }');
   $items['rules_not_smash_user'] = entity_import('rules_config', '{ "rules_not_smash_user" : {
       "LABEL" : "Not SMASH! user",
       "PLUGIN" : "reaction rule",

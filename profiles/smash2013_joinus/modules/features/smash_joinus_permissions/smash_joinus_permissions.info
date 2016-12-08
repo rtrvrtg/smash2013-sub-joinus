@@ -9,6 +9,7 @@ dependencies[] = filter
 dependencies[] = rules
 dependencies[] = system
 features[features_api][] = api:2
+features[rules_config][] = rules_manager_login
 features[rules_config][] = rules_not_smash_user
 features[rules_config][] = rules_user_is_smash_management
 features[user_permission][] = access administration pages

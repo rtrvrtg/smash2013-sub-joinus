@@ -10,6 +10,143 @@
 function smash_position_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-article-body'.
+  $field_instances['node-article-body'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => -4,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_image'.
+  $field_instances['node-article-field_image'] = array(
+    'bundle' => 'article',
+    'deleted' => 0,
+    'description' => 'Upload an image to go with this article.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'large',
+        ),
+        'type' => 'image',
+        'weight' => -1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => -1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => FALSE,
+    'settings' => array(
+      'alt_field' => TRUE,
+      'default_image' => 0,
+      'file_directory' => 'field/image',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => -1,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_tags'.
+  $field_instances['node-article-field_tags'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a comma-separated list of words to describe your content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => -4,
+    ),
+  );
+
   // Exported field_instance: 'node-department-body'.
   $field_instances['node-department-body'] = array(
     'bundle' => 'department',
@@ -92,6 +229,50 @@ function smash_position_types_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-body'.
+  $field_instances['node-page-body'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => -4,
     ),
   );
 
@@ -1086,6 +1267,820 @@ function smash_position_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'registration-design_graphic_assistant-field_date_of_birth_dd_mm_yyyy_'.
+  $field_instances['registration-design_graphic_assistant-field_date_of_birth_dd_mm_yyyy_'] = array(
+    'bundle' => 'design_graphic_assistant',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_date_of_birth_dd_mm_yyyy_',
+    'label' => 'Date of Birth (dd/mm/yyyy)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant-field_first_name'.
+  $field_instances['registration-design_graphic_assistant-field_first_name'] = array(
+    'bundle' => 'design_graphic_assistant',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant-field_last_name'.
+  $field_instances['registration-design_graphic_assistant-field_last_name'] = array(
+    'bundle' => 'design_graphic_assistant',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant-field_please_provide_in_detail_t'.
+  $field_instances['registration-design_graphic_assistant-field_please_provide_in_detail_t'] = array(
+    'bundle' => 'design_graphic_assistant',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please give us details about your experience and familiarity with Adobe Design Suite and your design process.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_please_provide_in_detail_t',
+    'label' => 'Please provide in detail the following:',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant-field_portfolio'.
+  $field_instances['registration-design_graphic_assistant-field_portfolio'] = array(
+    'bundle' => 'design_graphic_assistant',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_portfolio',
+    'label' => 'Portfolio (URL)',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant-field_portfolio_visual'.
+  $field_instances['registration-design_graphic_assistant-field_portfolio_visual'] = array(
+    'bundle' => 'design_graphic_assistant',
+    'deleted' => 0,
+    'description' => 'Please upload a pdf portfolio where possible. If your portfolio is website based, please provide the link is the description field below',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_portfolio_visual',
+    'label' => 'Portfolio',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant-field_resume'.
+  $field_instances['registration-design_graphic_assistant-field_resume'] = array(
+    'bundle' => 'design_graphic_assistant',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_resume',
+    'label' => 'Résumé',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => '',
+      'file_extensions' => 'txt doc docx pdf rtf',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant-field_tell_us_about_yourself'.
+  $field_instances['registration-design_graphic_assistant-field_tell_us_about_yourself'] = array(
+    'bundle' => 'design_graphic_assistant',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_tell_us_about_yourself',
+    'label' => 'Tell us about yourself',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant_cloned_-field__first_name'.
+  $field_instances['registration-design_graphic_assistant_cloned_-field__first_name'] = array(
+    'bundle' => 'design_graphic_assistant_cloned_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field__first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant_cloned_-field_dob'.
+  $field_instances['registration-design_graphic_assistant_cloned_-field_dob'] = array(
+    'bundle' => 'design_graphic_assistant_cloned_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_dob',
+    'label' => 'Date of Birth (dd/mm/yy)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant_cloned_-field_portfolio'.
+  $field_instances['registration-design_graphic_assistant_cloned_-field_portfolio'] = array(
+    'bundle' => 'design_graphic_assistant_cloned_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_portfolio',
+    'label' => 'Portfolio (URL)',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant_cloned_-field_portfolio_visual'.
+  $field_instances['registration-design_graphic_assistant_cloned_-field_portfolio_visual'] = array(
+    'bundle' => 'design_graphic_assistant_cloned_',
+    'deleted' => 0,
+    'description' => 'Please upload a pdf portfolio where possible. If your portfolio is a URL, please provide the link is the field below. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_portfolio_visual',
+    'label' => 'Portfolio',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant_cloned_-field_resume'.
+  $field_instances['registration-design_graphic_assistant_cloned_-field_resume'] = array(
+    'bundle' => 'design_graphic_assistant_cloned_',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_resume',
+    'label' => 'Résumé',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant_cloned_-field_surname'.
+  $field_instances['registration-design_graphic_assistant_cloned_-field_surname'] = array(
+    'bundle' => 'design_graphic_assistant_cloned_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_surname',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-design_graphic_assistant_cloned_-field_tell_us_about_yourself_gue'.
+  $field_instances['registration-design_graphic_assistant_cloned_-field_tell_us_about_yourself_gue'] = array(
+    'bundle' => 'design_graphic_assistant_cloned_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Tell us about yourself and how you will be a suitable candidate for this role',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_tell_us_about_yourself_gue',
+    'label' => 'Tell us about yourself',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'registration-dps_director-field_about_yourself'.
+  $field_instances['registration-dps_director-field_about_yourself'] = array(
+    'bundle' => 'dps_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_about_yourself',
+    'label' => 'Tell us about yourself and what you can bring to this role',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'registration-dps_director-field_dob'.
+  $field_instances['registration-dps_director-field_dob'] = array(
+    'bundle' => 'dps_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_dob',
+    'label' => 'Date of Birth (dd/mm/yy)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'registration-dps_director-field_first_name'.
+  $field_instances['registration-dps_director-field_first_name'] = array(
+    'bundle' => 'dps_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'registration-dps_director-field_last_name'.
+  $field_instances['registration-dps_director-field_last_name'] = array(
+    'bundle' => 'dps_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-dps_director-field_please_detail_any_kills_an'.
+  $field_instances['registration-dps_director-field_please_detail_any_kills_an'] = array(
+    'bundle' => 'dps_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_please_detail_any_kills_an',
+    'label' => 'Please detail any skills and attributes you may bring to this role and the organisation.',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-dps_director-field_please_upload_your_resume'.
+  $field_instances['registration-dps_director-field_please_upload_your_resume'] = array(
+    'bundle' => 'dps_director',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_please_upload_your_resume',
+    'label' => 'Resume',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-dps_director-field_scenario_questions_1'.
+  $field_instances['registration-dps_director-field_scenario_questions_1'] = array(
+    'bundle' => 'dps_director',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Lucy has worked in the volunteers department and was interviewing applicants for a top job in the organisation. Lucy noticed an outstanding applicant. Then she realised that she knew the applicant, Mark. They had hung out together when they were younger. Mark had been a wild kid once and was arrested for shoplifting and had been in some fights. Mark had completed mandatory counseling and, as far as Lucy knew, Mark had straightened out his life and had done well during the last 8 years. Mark had not indicated in his application that he had once been arrested and Lucy knew that the organisation she worked for would never hire someone with that background. What would you advise Lucy to do?',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_scenario_questions_1',
+    'label' => 'Scenario Questions #1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance:
   // 'registration-exhibitors_and_sponsorship-field_about_yourself'.
   $field_instances['registration-exhibitors_and_sponsorship-field_about_yourself'] = array(
     'bundle' => 'exhibitors_and_sponsorship',
@@ -1294,6 +2289,180 @@ function smash_position_types_field_default_field_instances() {
       ),
       'type' => 'file_generic',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'registration-fanfiction_registration-field_dob'.
+  $field_instances['registration-fanfiction_registration-field_dob'] = array(
+    'bundle' => 'fanfiction_registration',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_dob',
+    'label' => 'Date of Birth (dd/mm/yy)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-fanfiction_registration-field_fanfiction_qualifier'.
+  $field_instances['registration-fanfiction_registration-field_fanfiction_qualifier'] = array(
+    'bundle' => 'fanfiction_registration',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_fanfiction_qualifier',
+    'label' => 'How often do you read/write fanfiction? What fandoms are you currently active in? ',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-fanfiction_registration-field_first_name'.
+  $field_instances['registration-fanfiction_registration-field_first_name'] = array(
+    'bundle' => 'fanfiction_registration',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-fanfiction_registration-field_last_name'.
+  $field_instances['registration-fanfiction_registration-field_last_name'] = array(
+    'bundle' => 'fanfiction_registration',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-fanfiction_registration-field_tell_us_about_yourself'.
+  $field_instances['registration-fanfiction_registration-field_tell_us_about_yourself'] = array(
+    'bundle' => 'fanfiction_registration',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_tell_us_about_yourself',
+    'label' => 'Tell us about yourself and how this role suits you',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
     ),
   );
 
@@ -2471,6 +3640,189 @@ function smash_position_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'registration-maid_cafe_2016-field_dob'.
+  $field_instances['registration-maid_cafe_2016-field_dob'] = array(
+    'bundle' => 'maid_cafe_2016',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'You must be 18 years and over at the time of submitting this application to be accepted into the Maid Cafe. You will be required to bring ID on the day of the interviews if you are successful. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_dob',
+    'label' => 'Date of Birth (DD/MM/YY)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'registration-maid_cafe_2016-field_full_name'.
+  $field_instances['registration-maid_cafe_2016-field_full_name'] = array(
+    'bundle' => 'maid_cafe_2016',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_full_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'registration-maid_cafe_2016-field_last_name'.
+  $field_instances['registration-maid_cafe_2016-field_last_name'] = array(
+    'bundle' => 'maid_cafe_2016',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'registration-maid_cafe_2016-field_photo'.
+  $field_instances['registration-maid_cafe_2016-field_photo'] = array(
+    'bundle' => 'maid_cafe_2016',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_photo',
+    'label' => 'Photo',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-maid_cafe_2016-field_please_upload_your_resume'.
+  $field_instances['registration-maid_cafe_2016-field_please_upload_your_resume'] = array(
+    'bundle' => 'maid_cafe_2016',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_please_upload_your_resume',
+    'label' => 'Resume',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf doc docx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'registration-marketing-field_about_yourself'.
   $field_instances['registration-marketing-field_about_yourself'] = array(
     'bundle' => 'marketing',
@@ -2979,6 +4331,183 @@ function smash_position_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'registration-marketing_visual_production-field_dob'.
+  $field_instances['registration-marketing_visual_production-field_dob'] = array(
+    'bundle' => 'marketing_visual_production',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_dob',
+    'label' => 'Date of Birth (dd/mm/yy)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-marketing_visual_production-field_first_name'.
+  $field_instances['registration-marketing_visual_production-field_first_name'] = array(
+    'bundle' => 'marketing_visual_production',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-marketing_visual_production-field_resume'.
+  $field_instances['registration-marketing_visual_production-field_resume'] = array(
+    'bundle' => 'marketing_visual_production',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_resume',
+    'label' => 'Résumé',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-marketing_visual_production-field_surname'.
+  $field_instances['registration-marketing_visual_production-field_surname'] = array(
+    'bundle' => 'marketing_visual_production',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_surname',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-marketing_visual_production-field_tell_us_about_yourself'.
+  $field_instances['registration-marketing_visual_production-field_tell_us_about_yourself'] = array(
+    'bundle' => 'marketing_visual_production',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please include a short 500 words on what you like about your favourite film.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_tell_us_about_yourself',
+    'label' => 'Tell us about yourself and how this role suits you',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
   // 'registration-marketing_website_co_ordinator-field_detail_any_prior_experienc'.
   $field_instances['registration-marketing_website_co_ordinator-field_detail_any_prior_experienc'] = array(
     'bundle' => 'marketing_website_co_ordinator',
@@ -3292,6 +4821,425 @@ If you answered YES to any of the above, please provide details. ',
       ),
       'type' => 'file_generic',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'registration-operations_director-field_dob'.
+  $field_instances['registration-operations_director-field_dob'] = array(
+    'bundle' => 'operations_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_dob',
+    'label' => 'Date of Birth (dd/mm/yyyy)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-operations_director-field_first_name'.
+  $field_instances['registration-operations_director-field_first_name'] = array(
+    'bundle' => 'operations_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-operations_director-field_last_name'.
+  $field_instances['registration-operations_director-field_last_name'] = array(
+    'bundle' => 'operations_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'registration-operations_director-field_resume'.
+  $field_instances['registration-operations_director-field_resume'] = array(
+    'bundle' => 'operations_director',
+    'deleted' => 0,
+    'description' => 'Please attach your resume here. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_resume',
+    'label' => 'Résumé',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt doc docx pdf rtf',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-operations_director-field_scenario_question_2'.
+  $field_instances['registration-operations_director-field_scenario_question_2'] = array(
+    'bundle' => 'operations_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'You have an underperforming coordinator. When you first hired him he was pro-active and took initiative completing tasks. However, as the weeks wore on you realised that important tasks were not done until the last minute, time sensitive emails were not being answered in a timely manner and he has gone MIA for several days at a time with no prior warning and has not turned up to important team meetings. You\'ve spoken to him previously about this already and he says he will try harder but that there are personal issues he is currently dealing with. As the Operations Director, you are responsible for the wellbeing of your team but you also have a responsibility to SMASH Inc and other departments who rely on you for logistical/operational concerns. How do you handle this situation?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_scenario_question_2',
+    'label' => 'Scenario Question #2',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-operations_director-field_scenario_questions_1'.
+  $field_instances['registration-operations_director-field_scenario_questions_1'] = array(
+    'bundle' => 'operations_director',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'You have been tasked to procure 17,000 plastic bags for SMASH. What factors will you consider? Also briefly outline how you will complete this task. 
+',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_scenario_questions_1',
+    'label' => 'Scenario Questions #1',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'registration-people_services-field_dob'.
+  $field_instances['registration-people_services-field_dob'] = array(
+    'bundle' => 'people_services',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_dob',
+    'label' => 'Date Of Birth (DD/MM/YYYY)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'registration-people_services-field_first_name'.
+  $field_instances['registration-people_services-field_first_name'] = array(
+    'bundle' => 'people_services',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'registration-people_services-field_last_name'.
+  $field_instances['registration-people_services-field_last_name'] = array(
+    'bundle' => 'people_services',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'registration-people_services-field_resume'.
+  $field_instances['registration-people_services-field_resume'] = array(
+    'bundle' => 'people_services',
+    'deleted' => 0,
+    'description' => 'Please attach your resume in .docx, .doc or .pdf format. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_resume',
+    'label' => 'Résumé',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf docx doc',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-people_services-field_scenario_questions_1'.
+  $field_instances['registration-people_services-field_scenario_questions_1'] = array(
+    'bundle' => 'people_services',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Lucy has worked in the volunteers department and was interviewing applicants for a top job in the organisation. Lucy noticed an outstanding applicant. Then she realised that she knew the applicant, Mark. They had hung out together when they were younger. Mark had been a wild kid once and was arrested for shoplifting and had been in some fights. Mark had completed mandatory counseling and, as far as Lucy knew, Mark had straightened out his life and had done well during the last 8 years. Mark had not indicated in his application that he had once been arrested and Lucy knew that the organisation she worked for would never hire someone with that background.   What would you advise Lucy to do?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_scenario_questions_1',
+    'label' => 'Scenario Questions #1',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-people_services-field_tell_us_about_yourself_gue'.
+  $field_instances['registration-people_services-field_tell_us_about_yourself_gue'] = array(
+    'bundle' => 'people_services',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Why do you want to be the Crew Coordinator for SMASH 2016? ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_tell_us_about_yourself_gue',
+    'label' => 'Tell us about yourself',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
     ),
   );
 
@@ -3697,6 +5645,179 @@ If you answered YES to any of the above, please provide details. ',
     ),
   );
 
+  // Exported field_instance: 'registration-statistics-field__first_name'.
+  $field_instances['registration-statistics-field__first_name'] = array(
+    'bundle' => 'statistics',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field__first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'registration-statistics-field_dob'.
+  $field_instances['registration-statistics-field_dob'] = array(
+    'bundle' => 'statistics',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_dob',
+    'label' => 'Date of Birth (dd/mm/yy)',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'registration-statistics-field_last_name'.
+  $field_instances['registration-statistics-field_last_name'] = array(
+    'bundle' => 'statistics',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'registration-statistics-field_resume'.
+  $field_instances['registration-statistics-field_resume'] = array(
+    'bundle' => 'statistics',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_resume',
+    'label' => 'Résumé',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf docx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'registration-statistics-field_tell_us_about_yourself'.
+  $field_instances['registration-statistics-field_tell_us_about_yourself'] = array(
+    'bundle' => 'statistics',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_tell_us_about_yourself',
+    'label' => 'Tell us about yourself and how this role suits you',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance:
   // 'registration-ticketing_positions-field_about_yourself'.
   $field_instances['registration-ticketing_positions-field_about_yourself'] = array(
@@ -3920,11 +6041,14 @@ If you answered YES to any of the above, please provide details. ',
 If you answered YES to any of the above, please provide details. ');
   t('Areas of Interest');
   t('Attendance on set-up day is NOT compulsory');
+  t('Body');
   t('Both training dates will take place closer to SMASH! 2013, dates to be confirmed.');
   t('Contact Phone');
   t('Current Address');
   t('DD/MM/YYYY');
+  t('Date Of Birth (DD/MM/YYYY)');
   t('Date of Birth');
+  t('Date of Birth (DD/MM/YY)');
   t('Date of Birth (dd/mm/yy)');
   t('Date of Birth (dd/mm/yyyy)');
   t('Department');
@@ -3937,6 +6061,7 @@ If you answered YES to any of the above, please provide details. ');
   t('Email');
   t('Emergency Contact');
   t('Emergency Contact Details:');
+  t('Enter a comma-separated list of words to describe your content.');
   t('Enter a short description of this position. Should just be an introductory paragraph, does not need to be the entire job description.');
   t('Enter the full position description. Should be long and detailed.');
   t('Experience is not required but will be desireable.');
@@ -3948,9 +6073,11 @@ If you answered YES to any of the above, please provide details. ');
   t('Have you volunteered for SMASH! before?');
   t('Have you volunteered for any other organisations?');
   t('Have you volunteered with SMASH! (Either as a Crew or with the Maid Cafe) before? If yes, in which year(s)?');
+  t('How often do you read/write fanfiction? What fandoms are you currently active in? ');
   t('How will you be able to help?');
   t('Hypothetical Scenario Question');
   t('If YES, please explain what tasks you are unable to, or will have difficulty in performing, if not then just put N/A.');
+  t('Image');
   t('In the last 5 years, have you been charged with any offence which has not been fully determined before a court or otherwise withdrawn or dismissed? *');
   t('In the last 5 years, have you served any part of a sentence of imprisonment, or been charged with any offence that has been proven against you? *');
   t('Is there anything else you\'d like to tell us about yourself?');
@@ -3959,19 +6086,27 @@ If you answered YES to any of the above, please provide details. ');
   t('Last Name');
   t('List any Medical or Physical Conditions you have');
   t('List those organsations and describe the duties you performed.');
+  t('Lucy has worked in the volunteers department and was interviewing applicants for a top job in the organisation. Lucy noticed an outstanding applicant. Then she realised that she knew the applicant, Mark. They had hung out together when they were younger. Mark had been a wild kid once and was arrested for shoplifting and had been in some fights. Mark had completed mandatory counseling and, as far as Lucy knew, Mark had straightened out his life and had done well during the last 8 years. Mark had not indicated in his application that he had once been arrested and Lucy knew that the organisation she worked for would never hire someone with that background.   What would you advise Lucy to do?');
   t('Name');
   t('Other Notes');
   t('Photo');
   t('Please also detail any skills and attributes you may bring to this unique role ');
   t('Please answer honestly:');
   t('Please answer this to the best of your ability');
+  t('Please attach your resume here. ');
+  t('Please attach your resume in .docx, .doc or .pdf format. ');
   t('Please describe why you would make an awesome volunteer for SMASH!');
   t('Please detail any skills and attributes you may bring to this role and the organisation.');
+  t('Please give us details about your experience and familiarity with Adobe Design Suite and your design process.');
+  t('Please include a short 500 words on what you like about your favourite film.');
   t('Please provide an answer to the following: There is a limited stock of wristbands which are handed out in the morning of the convention. You are starting the lines for your guest signing session and there is an attendee who lined up WITHOUT a token. What would you do and how would you handle a situation if the attendee was disrupting the line up process?');
+  t('Please provide in detail the following:');
   t('Please provide of photo of yourself, UNEDITED and minimal to no makeup!!!');
   t('Please put in the nominated emergency contact person\'s detail here. We will need their full name, relation, and contact number.');
   t('Please specify other dietary requirements here');
   t('Please tick only THREE preferences.');
+  t('Please upload a pdf portfolio where possible. If your portfolio is a URL, please provide the link is the field below. ');
+  t('Please upload a pdf portfolio where possible. If your portfolio is website based, please provide the link is the description field below');
   t('Please upload a portfolio/sample of your work in .pdf format. If your portfolio is website based, please provide the link below. A portfolio must be submitted for this application to be considered. ');
   t('Portfolio');
   t('Portfolio (URL)');
@@ -3984,16 +6119,22 @@ If you answered YES to any of the above, please provide details. ');
   t('Registration manifests for this Position are sent to this address every day.');
   t('Resume');
   t('Résumé');
+  t('Scenario Question #2');
+  t('Scenario Questions #1');
   t('Scenario: please answer in 50 words or less');
   t('Select any food allergies, special food/dietary requirements you have');
   t('Short Position Description');
   t('State the section you were in alongside the year you volunteered in.');
   t('State their name, relationship to you and their best contact number.');
+  t('Tags');
   t('Tell us a bit about yourself and why you\'re interested in joining SMASH!');
   t('Tell us about yourself');
+  t('Tell us about yourself and how this role suits you');
+  t('Tell us about yourself and how you will be a suitable candidate for this role');
   t('Tell us about yourself and what you can bring to this role');
   t('Two friends are walking around the main vendor hall and one of them has a 1.5m tall prop sword strapped to their back. You approach them by yourself and politely inform him that SMASH! does not allow attendees to carry any object over a meter in length around the convention as it is an OH & S issue. The attendee angrily states that he paid for his ticket and he should be allowed to do what he wants with his own property. What do you do next?');
   t('URL Slug');
+  t('Upload an image to go with this article.');
   t('Upload your resume here');
   t('Use 50 words or less');
   t('Volunteer info');
@@ -4003,6 +6144,11 @@ If you answered YES to any of the above, please provide details. ');
   t('What is your name?');
   t('Which days are you available to volunteer for Maid Cafe?');
   t('Which year(s) did you volunteer for SMASH!');
+  t('Why do you want to be the Crew Coordinator for SMASH 2016? ');
+  t('You have an underperforming coordinator. When you first hired him he was pro-active and took initiative completing tasks. However, as the weeks wore on you realised that important tasks were not done until the last minute, time sensitive emails were not being answered in a timely manner and he has gone MIA for several days at a time with no prior warning and has not turned up to important team meetings. You\'ve spoken to him previously about this already and he says he will try harder but that there are personal issues he is currently dealing with. As the Operations Director, you are responsible for the wellbeing of your team but you also have a responsibility to SMASH Inc and other departments who rely on you for logistical/operational concerns. How do you handle this situation?');
+  t('You have been tasked to procure 17,000 plastic bags for SMASH. What factors will you consider? Also briefly outline how you will complete this task. 
+');
+  t('You must be 18 years and over at the time of submitting this application to be accepted into the Maid Cafe. You will be required to bring ID on the day of the interviews if you are successful. ');
   t('Your Email');
   t('Your Name');
   t('including suburb, state, and postcode');

@@ -69,6 +69,17 @@ function smash_position_types_default_registration_state() {
     "weight" : "1",
     "rdf_mapping" : []
   }');
+  $items['old'] = entity_import('registration_state', '{
+    "name" : "old",
+    "label" : "Old",
+    "description" : "This application is too old. Please re-apply.",
+    "default_state" : "0",
+    "active" : "1",
+    "held" : "0",
+    "show_on_form" : "0",
+    "weight" : "15",
+    "rdf_mapping" : []
+  }');
   $items['pending'] = entity_import('registration_state', '{
     "name" : "pending",
     "label" : "Pending",
