@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the smash_joinus_mail feature.
  */
+
+include_once 'smash_joinus_mail.features.inc';

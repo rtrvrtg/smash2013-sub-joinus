@@ -552,5 +552,146 @@ function smash_position_list_views_default_views() {
   $handler->display->display_options['block_caching'] = '4';
   $export['promoted_positions'] = $view;
 
+  $view = new view();
+  $view->name = 'registration_status';
+  $view->description = 'The following departments have un-finalised position applications';
+  $view->tag = 'default';
+  $view->base_table = 'registration';
+  $view->human_name = 'Registration Status';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Pending Applications';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_department',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_department' => 'field_department',
+    'title' => 'title',
+    'status' => 'status',
+    'registration_id' => 'registration_id',
+    'state_1' => 'state_1',
+  );
+  $handler->display->display_options['row_options']['separator'] = ' ';
+  /* Relationship: Registration: Registration to Node */
+  $handler->display->display_options['relationships']['registration_related_node']['id'] = 'registration_related_node';
+  $handler->display->display_options['relationships']['registration_related_node']['table'] = 'registration';
+  $handler->display->display_options['relationships']['registration_related_node']['field'] = 'registration_related_node';
+  $handler->display->display_options['relationships']['registration_related_node']['label'] = 'Position';
+  /* Relationship: Registration: Registration type */
+  $handler->display->display_options['relationships']['type']['id'] = 'type';
+  $handler->display->display_options['relationships']['type']['table'] = 'registration';
+  $handler->display->display_options['relationships']['type']['field'] = 'type';
+  $handler->display->display_options['relationships']['type']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_department_target_id']['id'] = 'field_department_target_id';
+  $handler->display->display_options['relationships']['field_department_target_id']['table'] = 'field_data_field_department';
+  $handler->display->display_options['relationships']['field_department_target_id']['field'] = 'field_department_target_id';
+  $handler->display->display_options['relationships']['field_department_target_id']['relationship'] = 'registration_related_node';
+  $handler->display->display_options['relationships']['field_department_target_id']['required'] = TRUE;
+  /* Field: Content: URL Slug */
+  $handler->display->display_options['fields']['field_url_slug']['id'] = 'field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['table'] = 'field_data_field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['field'] = 'field_url_slug';
+  $handler->display->display_options['fields']['field_url_slug']['relationship'] = 'field_department_target_id';
+  $handler->display->display_options['fields']['field_url_slug']['label'] = '';
+  $handler->display->display_options['fields']['field_url_slug']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_url_slug']['element_label_colon'] = FALSE;
+  /* Field: Content: Department */
+  $handler->display->display_options['fields']['field_department']['id'] = 'field_department';
+  $handler->display->display_options['fields']['field_department']['table'] = 'field_data_field_department';
+  $handler->display->display_options['fields']['field_department']['field'] = 'field_department';
+  $handler->display->display_options['fields']['field_department']['relationship'] = 'registration_related_node';
+  $handler->display->display_options['fields']['field_department']['label'] = '';
+  $handler->display->display_options['fields']['field_department']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_department']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_department']['alter']['path'] = 'all-registrations/[field_url_slug]';
+  $handler->display->display_options['fields']['field_department']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['field_department']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_department']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'registration_related_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['relationship'] = 'registration_related_node';
+  $handler->display->display_options['fields']['status']['label'] = '';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['type'] = 'custom';
+  $handler->display->display_options['fields']['status']['type_custom_false'] = '(unpublished)';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: COUNT(Registration: Registration ID) */
+  $handler->display->display_options['fields']['registration_id']['id'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['table'] = 'registration';
+  $handler->display->display_options['fields']['registration_id']['field'] = 'registration_id';
+  $handler->display->display_options['fields']['registration_id']['group_type'] = 'count';
+  $handler->display->display_options['fields']['registration_id']['label'] = '';
+  $handler->display->display_options['fields']['registration_id']['element_label_colon'] = FALSE;
+  /* Field: Registration: State entity */
+  $handler->display->display_options['fields']['state_1']['id'] = 'state_1';
+  $handler->display->display_options['fields']['state_1']['table'] = 'registration';
+  $handler->display->display_options['fields']['state_1']['field'] = 'state';
+  $handler->display->display_options['fields']['state_1']['label'] = '';
+  $handler->display->display_options['fields']['state_1']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Department (field_department) */
+  $handler->display->display_options['sorts']['field_department_target_id']['id'] = 'field_department_target_id';
+  $handler->display->display_options['sorts']['field_department_target_id']['table'] = 'field_data_field_department';
+  $handler->display->display_options['sorts']['field_department_target_id']['field'] = 'field_department_target_id';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['relationship'] = 'registration_related_node';
+  /* Sort criterion: Registration type: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'registration_type';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'type';
+  /* Filter criterion: Registration: State entity */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'registration';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['operator'] = 'not in';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    'complete' => 'complete',
+    'rejected' => 'rejected',
+    'canceled' => 'canceled',
+    'old' => 'old',
+  );
+  $handler->display->display_options['filters']['state']['group'] = 1;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['registration_status'] = $view;
+
   return $export;
 }
